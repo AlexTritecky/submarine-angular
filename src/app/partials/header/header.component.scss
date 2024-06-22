@@ -1,0 +1,18 @@
+header {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1664px;
+  width: 100%;
+  margin: 0 auto;
+
+  .navigation {
+    display: flex;
+    gap: 48px;
+
+    &--links {
+      padding: 8px 24px;
+      border-radius: 50px;
+      background: var(--ffffff, #fff);
+    }
+  }
+}

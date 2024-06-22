@@ -1,0 +1,46 @@
+@import "breakpoints";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+a,
+button {
+  background: none;
+  border: none;
+  text-decoration: none;
+  -webkit-text-decoration-skip: objects;
+
+  &:not(:disabled, .disabled) {
+    cursor: pointer;
+  }
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+a:active,
+a:hover,
+button:active,
+button:hover {
+  outline-width: 0;
+}
+
+img {
+  display: block;
+  margin: 0;
+  border: 0;
+}
