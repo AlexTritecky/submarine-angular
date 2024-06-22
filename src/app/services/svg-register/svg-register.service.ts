@@ -4,6 +4,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 
 export const SVG_ICONS: { [key: string]: string } = {
   'icon-logo': 'assets/icons/icon-logo.svg',
+  'icon-navigation': 'assets/icons/icon-navigation.svg',
 };
 
 @Injectable({

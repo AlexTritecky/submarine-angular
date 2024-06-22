@@ -1,10 +1,22 @@
-<header>
-  <a href="/">
-
+<header [ngClass]="{ 'home-view': !isViewing }">
+  @if(isViewing) {
+  <a class="logo" href="/">
+    <mat-icon svgIcon="icon-logo"></mat-icon>
   </a>
+  }
+
   <div class="navigation">
     <div class="navigation--links">
+      @for(link of navLinks; track link.title) {
+      <a class="nav-link" [routerLink]="link.route">
+        {{ link.title }}
+      </a>
+      }
     </div>
-    <div class="navigation--action"></div>
+    <div class="navigation--action">
+      <button>
+        <mat-icon svgIcon="icon-navigation"></mat-icon>
+      </button>
+    </div>
   </div>
 </header>
