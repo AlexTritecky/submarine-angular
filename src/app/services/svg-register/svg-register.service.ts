@@ -6,6 +6,8 @@ export const SVG_ICONS: { [key: string]: string } = {
   'icon-logo': 'assets/icons/icon-logo.svg',
   'icon-navigation': 'assets/icons/icon-navigation.svg',
   'icon-plus': 'assets/icons/icon-plus.svg',
+  'icon-button-plus': 'assets/icons/icon-button-plus.svg',
+  'icon-arrow-right': 'assets/icons/icon-arrow-right.svg',
 };
 
 @Injectable({

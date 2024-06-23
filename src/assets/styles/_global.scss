@@ -46,13 +46,37 @@ img {
   margin: 0;
   border: 0;
 }
+.app-section {
+  width: 100%;
+}
 
 .app-container {
   max-width: 1664px;
   width: 100%;
   margin: 0 auto;
+
+  @include screen("xl-desktop") {
+    max-width: 1456px;
+  }
+
+  @include screen("big-desktop") {
+    max-width: 1248px;
+  }
 }
 
 .mb-0 {
   margin-bottom: 0;
+}
+
+.app-button {
+  border-radius: 50px;
+  background: var(--default-black);
+
+  color: var(--default-white);
+  font-family: "Unbounded-Medium";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.48px;
+  text-transform: uppercase;
 }
