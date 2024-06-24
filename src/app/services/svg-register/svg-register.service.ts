@@ -12,6 +12,13 @@ export const SVG_ICONS: { [key: string]: string } = {
   'icon-social-arrow': 'assets/icons/icon-social-arrow.svg',
   'icon-left': 'assets/icons/icon-left.svg',
   'icon-right': 'assets/icons/icon-right.svg',
+  'icon-okko': 'assets/icons/icon-okko.svg',
+  'icon-recover': 'assets/icons/icon-recover.svg',
+  'icon-rikota': 'assets/icons/icon-rikota.svg',
+  'icon-okko-logo': 'assets/icons/icon-okko-logo.svg',
+  'icon-rikota-logo': 'assets/icons/icon-rikota-logo.svg',
+  'icon-recover-logo': 'assets/icons/icon-recover-logo.svg',
+
 };
 
 @Injectable({

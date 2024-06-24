@@ -23,6 +23,7 @@
 
 .carousel-item {
   flex: 0 0 auto;
+  transition: transform 0.5s linear ease-in-out;
 }
 
 .carousel-item img {
