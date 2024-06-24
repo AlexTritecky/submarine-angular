@@ -46,21 +46,30 @@ img {
   margin: 0;
   border: 0;
 }
+
 .app-section {
   width: 100%;
 }
 
 .app-container {
-  max-width: 1664px;
+  max-width: calc(1128px + 30px * 2);
+  padding: 0 30px;
   width: 100%;
   margin: 0 auto;
 
-  @include screen("xl-desktop") {
-    max-width: 1456px;
+  @include screen("phone") {
+    padding: 0 16px;
   }
+}
 
-  @include screen("big-desktop") {
-    max-width: 1248px;
+.app-container-xl {
+  max-width: calc(1440px + 30px * 2);
+  padding: 0 30px;
+  width: 100%;
+  margin: 0 auto;
+
+  @include screen("phone") {
+    padding: 0 16px;
   }
 }
 
@@ -74,7 +83,7 @@ img {
 
   color: var(--default-white);
   font-family: "Unbounded-Medium";
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 16px;
   letter-spacing: 0.48px;

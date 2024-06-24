@@ -13,17 +13,16 @@
 }
 
 .info {
-  margin: 128px auto;
+  margin: 80px auto;
 
   h1 {
     color: var(--default-black);
     font-family: "Gilroy-Bold";
-    width: 87%;
-    font-size: 64px;
+    font-size: 50px;
     font-weight: 700;
     line-height: 70px;
     text-transform: uppercase;
-    margin-bottom: 64px;
+    margin-bottom: 42px;
 
     span {
       color: var(--primary-100);
@@ -51,7 +50,7 @@
     font-weight: 900;
     line-height: 24px;
     letter-spacing: 0.6px;
-    font-family: "Gilroy-Bold";
+    font-family: "Gilroy-Black";
   }
 }
 
@@ -59,21 +58,20 @@
   h2 {
     color: var(--default-black);
     font-family: "Gilroy-Bold";
-    font-size: 96px;
+    font-size: 50px;
     font-weight: 700;
-    line-height: 100px;
-    margin-bottom: 64px;
+    line-height: 70px;
+    margin-bottom: 42px;
   }
 
   .cards {
     display: flex;
     gap: 24px;
+    flex-direction: column;
 
     .big-card {
-      // height: 724px;
       border-radius: 50px;
       padding: 48px 24px;
-      max-width: 398px;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -100,7 +98,7 @@
         h3 {
           color: var(--default-black);
           font-family: "Gilroy-Bold";
-          font-size: 52px;
+          font-size: 45px;
           font-weight: 700;
           line-height: 32px;
           margin-bottom: 14px;
@@ -152,7 +150,7 @@
         h3 {
           color: var(--default-black);
           font-family: "Gilroy-Bold";
-          font-size: 52px;
+          font-size: 40px;
           font-weight: 700;
           line-height: 32px;
           margin-bottom: 14px;
@@ -161,14 +159,14 @@
         h4 {
           color: var(--default-black);
           font-family: "Gilroy-Bold";
-          font-size: 36px;
+          font-size: 30px;
           font-weight: 700;
           line-height: 100%;
         }
 
         .description {
           height: 72px;
-          margin-top: 4px;
+          margin-top: 10px;
           display: flex;
           justify-content: flex-end;
           flex-direction: column;
@@ -176,7 +174,7 @@
           p {
             color: var(--default-black);
             font-family: "Gilroy-Regular";
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 400;
             line-height: 24px;
             letter-spacing: 0.6px;
@@ -240,7 +238,7 @@
       display: flex;
       gap: 10px;
       align-items: center;
-      padding: 32px 48px;
+      padding: 24px 32px;
 
       mat-icon {
         width: 14px;
@@ -250,20 +248,32 @@
   }
 }
 
-.cooperation {
-  margin: 128px auto;
+.clients {
+  margin: 80px auto;
 
+  h2 {
+    color: var(--default-black);
+    font-family: "Gilroy-Bold";
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 70px;
+    margin-bottom: 42px;
+  }
+}
+
+.cooperation {
+  margin: 80px auto;
   h1 {
     color: var(--default-black);
     font-family: "Gilroy-Bold";
-    font-size: 96px;
+    font-size: 50px;
     font-weight: 700;
-    line-height: 100px;
-    margin-bottom: 64px;
+    line-height: 70px;
+    margin-bottom: 42px;
   }
 
   .block-info {
-    padding: 0 40px 57.5px;
+    padding-bottom: 57.5px;
     display: flex;
     flex-direction: column;
 
@@ -273,19 +283,19 @@
       margin-bottom: 11.5px;
 
       .step {
-        max-width: 358px;
-        width: 100%;
+        width: calc(100% / 4 + 9.25px);
         height: 71px;
         display: flex;
         align-items: center;
         justify-content: center;
         background-repeat: no-repeat;
         background-size: contain;
+        background-position: center;
 
         h3 {
           color: var(--default-black);
-          font-family: "Unbounded-Medium";
-          font-size: 24px;
+          font-family: "Unbounded-Bold";
+          font-size: 16px;
           font-weight: 700;
           line-height: 24px;
           letter-spacing: 0.72px;
@@ -303,19 +313,20 @@
 
     .steps-description {
       display: flex;
-      gap: 64px;
+      justify-content: space-evenly;
 
       .step {
-        max-width: 267px;
+        max-width: 200px;
         width: 100%;
 
         &:first-child {
-          margin-left: 60px;
+          margin-left: 25px;
         }
+
         p {
           font-family: "Gilroy-Regular";
           color: var(--default-black);
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 400;
           line-height: 20px;
           letter-spacing: 0.48px;

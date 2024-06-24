@@ -16,9 +16,21 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Gilroy-Black';
+  src: url('./../fonts/Gilroy-Black.ttf') format('truetype');
+  font-style: normal;
+}
+
 
 @font-face {
   font-family: 'Unbounded-Medium';
   src: url(./../fonts/Unbounded-Medium.ttf) format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Unbounded-Bold';
+  src: url(./../fonts/Unbounded-Bold.ttf) format('truetype');
   font-style: normal;
 }

@@ -1,0 +1,13 @@
+::ng-deep .owl-carousel .owl-item {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: auto;
+    max-width: 233px;
+    height: 100%;
+    max-height: 60px;
+  }
+}
