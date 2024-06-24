@@ -1,0 +1,18 @@
+<div class="carousel-container">
+  <button (click)="prev()">
+    <mat-icon svgIcon="icon-left"></mat-icon>
+  </button>
+  <div class="carousel-items">
+    @for(item of visibleItems; track item.id) {
+    <div
+      class="carousel-item"
+      [ngStyle]="{ width: item.width, height: item.height }"
+    >
+      <img [src]="item.image" alt="Carousel item" />
+    </div>
+    }
+  </div>
+  <button (click)="next()">
+    <mat-icon svgIcon="icon-right"></mat-icon>
+  </button>
+</div>
