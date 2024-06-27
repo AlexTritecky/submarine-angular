@@ -110,3 +110,21 @@ img {
     transform: rotate(0deg);
   }
 }
+
+.mat-mdc-dialog-container {
+  border-radius: 50px 0px 0px 50px;
+  background: var(--default-white);
+  box-shadow: -8px -2px 5px 0px #00000040;
+}
+
+.cdk-overlay-dark-backdrop {
+  background: var(--bg_blur, rgba(0, 0, 0, 0.5));
+  backdrop-filter: blur(17.5px);
+}
+
+.mat-mdc-dialog-surface {
+  border-radius: 50px 0px 0px 50px !important;
+}
+.mat-mdc-dialog-inner-container {
+  border-radius: 50px 0px 0px 50px;
+}

@@ -1,0 +1,72 @@
+<div class="dialog-content">
+  <h2>РОЗКАЖІТЬ ПРО СЕБЕ</h2>
+  <p>Щоб почати з нами співпрацю</p>
+  <form [formGroup]="contactForm">
+    <div class="main-infos">
+      <div class="form-field">
+        <label
+          for="name"
+          [ngClass]="{ 'error-label': name.invalid && name.touched }"
+          >Як до вас звертатись*</label
+        >
+        <input type="text" placeholder="Ваше Ім'я" formControlName="name" />
+      </div>
+      <div class="form-field">
+        <label
+          for="phone"
+          [ngClass]="{ 'error-label': phone.invalid && phone.touched }"
+          >Телефон*</label
+        >
+        <input
+          type="text"
+          placeholder="Ваш номер телефону"
+          formControlName="phone"
+        />
+      </div>
+      <div class="form-field">
+        <label
+          for="email"
+          [ngClass]="{ 'error-label': email.invalid && email.touched }"
+          >Email*</label
+        >
+        <input
+          type="text"
+          placeholder="Ваша електронна адреса"
+          formControlName="email"
+        />
+      </div>
+      <div class="form-field">
+        <label
+          for="company_name"
+          [ngClass]="{
+            'error-label': company_name.invalid && company_name.touched
+          }"
+          >Назва компанії *</label
+        >
+        <input
+          type="text"
+          placeholder="Назва вашоі компанії"
+          formControlName="company_name"
+        />
+      </div>
+    </div>
+
+    <h3>ОБЕРІТЬ ПОСЛУГИ</h3>
+
+    <p>Які вас цікавлять</p>
+    <mat-chip-set #chipList>
+      @for(service of servicesList; track service) {
+      <mat-chip
+        [removable]="true"
+        [value]="service"
+        multiple
+        [highlighted]="servicesList.includes(service)"
+        color="primary"
+        (click)="toggleSelection(service)"
+      >
+        {{ service }}
+      </mat-chip>
+      }
+    </mat-chip-set>
+  </form>
+</div>
