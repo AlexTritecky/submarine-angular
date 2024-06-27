@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { NavigationItem, navigation } from '../../models/navigation.model';
+import { NavigationScrollService } from '../../services/scroll-navigation/navigation-scroll.service';
 
 @Component({
   selector: 'app-header',
@@ -15,4 +16,9 @@ export class HeaderComponent {
   @Input() isViewing: boolean = true;
 
   navLinks: NavigationItem[] = navigation;
+  constructor(private navigationScrollService: NavigationScrollService) {}
+
+  onNavLinkClick(link: NavigationItem) {
+    this.navigationScrollService.navigateAndScroll('', link.route);
+  }
 }

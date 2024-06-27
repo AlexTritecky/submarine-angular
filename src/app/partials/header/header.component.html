@@ -8,7 +8,7 @@
   <div class="navigation">
     <div class="navigation--links">
       @for(link of navLinks; track link.title) {
-      <a class="nav-link" [routerLink]="link.route">
+      <a class="nav-link" (click)="onNavLinkClick(link)">
         {{ link.title }}
       </a>
       }

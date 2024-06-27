@@ -18,22 +18,25 @@ footer {
 
   .footer {
     display: flex;
-    gap: 192px;
+    justify-content: space-between;
+
+    width: 100%;
 
     .block-info {
+      width: 65%;
       h2 {
         max-width: 993px;
         width: 100%;
         color: var(--default-white);
         font-family: "Gilroy-SemiBold";
-        font-size: 64px;
+        font-size: 35px;
         font-weight: 600;
         line-height: 94.447%;
-        margin-bottom: 48px;
+        margin-bottom: 24px;
       }
 
       .app-button {
-        padding: 32px 48px;
+        padding: 24px;
         display: flex;
         gap: 10px;
         align-items: center;
@@ -57,28 +60,107 @@ footer {
       p {
         color: var(--default-white);
         font-family: "Gilroy-Regular";
-        font-size: 20px;
+        font-size: 18px;
         width: 100%;
-        max-width: 455px;
         font-weight: 400;
         line-height: 24px;
         letter-spacing: 0.6px;
-        margin-top: 48px;
+        margin-top: 24px;
         margin-bottom: 24px;
-      }
 
-      a {
-        text-decoration: none;
-        color: var(--default-white);
-        font-family: "Unbounded-Medium";
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 20px;
-        letter-spacing: 0.6px;
+        a {
+          text-decoration: none;
+          color: var(--default-white);
+          font-family: "Unbounded-Medium";
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 20px;
+          letter-spacing: 0.6px;
+        }
       }
 
       .rigths {
-        margin-top: 104px;
+        margin-top: 45px;
+      }
+    }
+
+    .block-follow {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      width: 35%;
+
+      .social {
+        display: flex;
+        flex-direction: column;
+
+        h4 {
+          color: var(--default-white);
+          font-family: "Unbounded-Bold";
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 24px;
+          letter-spacing: 0.6px;
+          margin-bottom: 16px;
+        }
+
+        a {
+          color: var(--default-white);
+          text-decoration: none;
+          font-family: "Gilroy-Regular";
+          font-size: 20px;
+          display: inline-flex;
+          justify-content: space-between;
+          align-items: center;
+          font-weight: 400;
+          max-width: 162px;
+          width: 100%;
+          line-height: 24px;
+          letter-spacing: 0.6px;
+          margin-bottom: 8px;
+
+          transition: transform 0.4s linear;
+
+          mat-icon {
+            margin-left: 16px;
+            width: 16px;
+            height: 16px;
+            transition: transform 0.4s linear;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          &:hover {
+            mat-icon {
+              transition: transform 0.4s linear;
+              transform: rotate(90deg);
+            }
+          }
+        }
+      }
+
+      .contacts {
+        margin-top: 30px;
+
+        p {
+          color: var(--default-white);
+        font-family: "Gilroy-Regular";
+        font-size: 18px;
+        width: 100%;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.6px;
+        }
+
+        a {
+          margin-top: 8px;
+font-size: 18px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0.6px;
+        }
       }
     }
   }

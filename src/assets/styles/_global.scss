@@ -88,4 +88,25 @@ img {
   line-height: 16px;
   letter-spacing: 0.48px;
   text-transform: uppercase;
+
+  &:hover {
+    mat-icon {
+      animation: rotateAnimationOut 1s forwards;
+      transition-duration: 0.5s;
+    }
+  }
+}
+
+@keyframes rotateAnimationOut {
+  0% {
+    transform: rotate(90deg);
+  }
+
+  30% {
+    transform: rotate(120deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }

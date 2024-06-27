@@ -8,22 +8,35 @@
         СТАТИ КЛІЄНТОМ
       </button>
 
-      <p>Не любиш заповнювати форми? Пишіть нам на мейл:</p>
+      <p>Не любиш заповнювати форми?</p>
 
-      <a href="mailto: project@submarineagency.com.ua">
-        project&#64;submarineagency.com.ua
-      </a>
+      <p class="mail-info">
+        Пишіть нам на мейл:
+        <a href="mailto: project@submarineagency.com.ua">
+          project&#64;submarineagency.com.ua
+        </a>
+      </p>
 
       <p class="rigths">© Submarine Creative 2023. All rights reserved</p>
     </div>
     <div class="block-follow">
       <div class="social">
-        <h4>
-          Фолов нас:
-        </h4>
-        <a href="">
+        <h4>Фолов нас:</h4>
+        @for(item of footerLinks; track item.label) {
+        <a href="{{ item.route }}" target="_blank">
+          {{ item.label }}
 
+          <mat-icon svgIcon="icon-arrow-footer"></mat-icon>
         </a>
+        }
+      </div>
+
+      <div class="social contacts">
+        <h4>Контакти:</h4>
+
+        <p>79007 Україна м.Львів, вул. Шопена, 10/2</p>
+
+        <a href="tel:+380672604811">+380672604811</a>
       </div>
     </div>
   </div>
