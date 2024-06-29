@@ -9,6 +9,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { EmailService } from '../../services/email/email.service';
 
 @Component({
   selector: 'app-contact-dialog',
@@ -30,7 +31,7 @@ export class ContactDialogComponent {
 
   contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private emailService: EmailService) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       phone: [
@@ -64,9 +65,31 @@ export class ContactDialogComponent {
   }
 
   onSubmit(): void {
-    if (this.contactForm.valid) {
-      console.log('Form Submitted', this.contactForm.value);
+    // if (this.contactForm.valid) {
+    //   console.log('Form Submitted', this.contactForm.value);
+    // }
+
+    const formvalue = {
+      name: 'John Doe',
+      phone: '+380123456789',
+      email: 'test@email.com',
+      companyName: 'Test Company',
+      services: [
+        'Візуал',
+        'Айдентика',
+        'SMM-стратегія',
+        'Комунікаційна стратегія',
+        'SMM',
+        'Дизайн та веб-розробка сайту',
+        'Консультація',
+      ],
+      message: 'Test message',
     }
+
+    this.emailService.sendCustomerRequest(formvalue).subscribe( res => {
+      console.log(111, res);
+
+    });
   }
 
   toggleSelection(service: string): void {

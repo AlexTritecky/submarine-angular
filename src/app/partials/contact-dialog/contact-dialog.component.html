@@ -1,7 +1,7 @@
 <div class="dialog-content">
   <h2>РОЗКАЖІТЬ ПРО СЕБЕ</h2>
   <p>Щоб почати з нами співпрацю</p>
-  <form [formGroup]="contactForm">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
     <div class="main-infos">
       <div class="form-field">
         <label
@@ -68,5 +68,8 @@
       </mat-chip>
       }
     </mat-chip-set>
+
+
+    <button type="submit">SUBMIT</button>
   </form>
 </div>
