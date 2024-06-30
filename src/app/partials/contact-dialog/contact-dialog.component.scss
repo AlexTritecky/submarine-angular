@@ -75,7 +75,7 @@
     h3 {
       color: var(--default-black);
       font-family: "Gilroy-SemiBold";
-      font-size: 48px;
+      font-size: 32px;
       font-weight: 600;
       margin-bottom: 16px;
       line-height: 94.447%;
@@ -84,12 +84,71 @@
     p {
       color: var(--default-black);
       font-family: "Gilroy-Regular";
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 400;
       line-height: 24px;
       letter-spacing: 0.6px;
       margin-bottom: 24px;
     }
+
+    .services-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      button {
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 8px 16px;
+
+        border-radius: 50px;
+        background: var(--default-white);
+        box-shadow: 2px 2px 5px 0px #000;
+
+        color: var(--default-black);
+        font-family: "Gilroy-Regular";
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.6px;
+
+        &.selected {
+          background: var(--default-black);
+          color: var(--default-white);
+        }
+      }
+    }
+
+    .for_description {
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    textarea {
+      padding: 24px;
+      max-width: 644px;
+      border: none;
+      width: 100%;
+      border-radius: 50px;
+      background: var(--default-white);
+      box-shadow: 2px 2px 5px 0px #000;
+      font-family: "Unbounded-Light";
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--default-black);
+      line-height: 16px;
+      letter-spacing: 0.48px;
+
+      &::placeholder {
+        color: var(--default-black);
+        opacity: 0.5;
+        font-family: "Unbounded-Light";
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 16px;
+        letter-spacing: 0.48px;
+      }
+    }
   }
 }
-

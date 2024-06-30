@@ -16,7 +16,7 @@ import { EmailService } from '../../services/email/email.service';
   standalone: true,
   imports: [ReactiveFormsModule, FormsModule, NgClass, MatChipsModule],
   templateUrl: './contact-dialog.component.html',
-  styleUrl: './contact-dialog.component.scss',
+  styleUrls: ['./contact-dialog.component.scss'],
 })
 export class ContactDialogComponent {
   servicesList: string[] = [
@@ -43,7 +43,7 @@ export class ContactDialogComponent {
       ],
       email: ['', [Validators.required, Validators.email]],
       company_name: ['', Validators.required],
-      services: ['Консультація'],
+      services: [[]],
       description: [''],
     });
   }
@@ -64,57 +64,41 @@ export class ContactDialogComponent {
     return this.contactForm.get('company_name') as AbstractControl;
   }
 
-  onSubmit(): void {
-    // if (this.contactForm.valid) {
-    //   console.log('Form Submitted', this.contactForm.value);
-    // }
-
-    const formvalue = {
-      name: 'John Doe',
-      phone: '+380123456789',
-      email: 'test@email.com',
-      companyName: 'Test Company',
-      services: [
-        'Візуал',
-        'Айдентика',
-        'SMM-стратегія',
-        'Комунікаційна стратегія',
-        'SMM',
-        'Дизайн та веб-розробка сайту',
-        'Консультація',
-      ],
-      message: 'Test message',
-    }
-
-    this.emailService.sendCustomerRequest(formvalue).subscribe( res => {
-      console.log(111, res);
-
-    });
+  isSelected(service: string): boolean {
+    const services = this.contactForm.get('services')?.value as string[];
+    return services?.includes(service);
   }
 
-  toggleSelection(service: string): void {
+  toggleService(service: string): void {
+    let services = this.contactForm.get('services')?.value as string[];
+    if (!services) {
+      services = [];
+    }
 
-    console.log(111, service);
-
-    let selectedServices =
-      this.contactForm
-        .get('services')
-        ?.value.split(',')
-        .map((s: string) => s.trim()) || [];
-    const index = selectedServices.indexOf(service);
-
+    const index = services.indexOf(service);
     if (index >= 0) {
-      selectedServices.splice(index, 1);
+      services.splice(index, 1);
     } else {
-      selectedServices.push(service);
+      services.push(service);
     }
 
-    if (selectedServices.length === 0) {
-      selectedServices = ['Консультація'];
+    this.contactForm.get('services')?.setValue(services);
+  }
+
+  onSubmit(): void {
+    if (this.contactForm.valid) {
+      const services = this.contactForm.get('services')?.value as string[];
+      if (services.length === 0) {
+        this.contactForm
+          .get('services')
+          ?.setValue(['Консультація, людина нічого не вибрала']);
+      }
+
+      console.log('Form Submitted', this.contactForm.value);
+
+      // this.emailService.sendCustomerRequest(this.contactForm.value).subscribe((res) => {
+      //   console.log('Email sent successfully', res);
+      // });
     }
-
-    console.log(11, selectedServices);
-
-    this.contactForm.get('services')?.setValue(selectedServices.join(', '));
   }
 }

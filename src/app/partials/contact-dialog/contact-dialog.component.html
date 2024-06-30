@@ -54,21 +54,22 @@
     <h3>ОБЕРІТЬ ПОСЛУГИ</h3>
 
     <p>Які вас цікавлять</p>
-    <mat-chip-set #chipList>
+
+    <div class="services-container">
       @for(service of servicesList; track service) {
-      <mat-chip
-        [removable]="true"
-        [value]="service"
-        multiple
-        [highlighted]="servicesList.includes(service)"
-        color="primary"
-        (click)="toggleSelection(service)"
+      <button
+        type="button"
+        [ngClass]="{ selected: isSelected(service) }"
+        (click)="toggleService(service)"
       >
         {{ service }}
-      </mat-chip>
+      </button>
       }
-    </mat-chip-set>
+    </div>
 
+    <p class="for_description">Розкажіть нам більше про свій проєкт</p>
+
+    <textarea formControlName="description" placeholder="Додаткова інформація"></textarea>
 
     <button type="submit">SUBMIT</button>
   </form>
