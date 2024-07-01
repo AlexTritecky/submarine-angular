@@ -4,8 +4,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { CarouselComponent } from '../../partials/carousel/carousel.component';
 import { ContactDialogComponent } from '../../partials/contact-dialog/contact-dialog.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { EmailService } from '../../services/email/email.service';
-
 @Component({
   selector: 'app-home-page',
   standalone: true,
@@ -14,7 +12,7 @@ import { EmailService } from '../../services/email/email.service';
   styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent {
-  constructor(public dialog: MatDialog, private emailService: EmailService) {}
+  constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(ContactDialogComponent, {

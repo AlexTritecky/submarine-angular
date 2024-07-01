@@ -1,31 +1,21 @@
 .carousel-container {
-  display: flex;
-  align-items: center;
   width: 100%;
-  justify-content: space-between;
-  gap: 52px;
-
-  button {
-    mat-icon {
-      width: 50px;
-      height: 50px;
-    }
-  }
-}
-
-.carousel-items {
-  display: flex;
-  overflow: hidden;
-  height: 60px;
-  gap: 52px;
-  align-items: center;
 }
 
 .carousel-item {
-  flex: 0 0 auto;
-  transition: transform 0.5s linear ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100%;
 }
 
-.carousel-item img {
-  height: 100%;
+::ng-deep .owl-theme .owl-nav [class*="owl-"] {
+  padding: 8px 16px;
+  background: #c0b7ee;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
 }

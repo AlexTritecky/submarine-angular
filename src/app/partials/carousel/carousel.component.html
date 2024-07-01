@@ -1,18 +1,15 @@
 <div class="carousel-container">
-  <button (click)="prev()">
-    <mat-icon svgIcon="icon-left"></mat-icon>
-  </button>
-  <div class="carousel-items">
-    @for(item of visibleItems; track item.id) {
-    <div
-      class="carousel-item"
-      [ngStyle]="{ width: item.width, height: item.height }"
-    >
-      <img [src]="item.image" alt="Carousel item" />
-    </div>
-    }
-  </div>
-  <button (click)="next()">
-    <mat-icon svgIcon="icon-right"></mat-icon>
-  </button>
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let slide of items">
+      <ng-template carouselSlide [id]="slide.id">
+        <div class="carousel-item">
+          <img
+            [src]="slide.image"
+            [ngStyle]="{ width: slide.width, height: slide.height }"
+            alt=""
+          />
+        </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
 </div>

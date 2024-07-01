@@ -1,40 +1,47 @@
 import { Component } from '@angular/core';
 import { CarouselItem, carouselItems } from '../../models/carousel.model';
 import { MatIconModule } from '@angular/material/icon';
-import { NgStyle } from '@angular/common';
-import { trigger, transition, style, animate } from '@angular/animations';
+import { NgFor, NgStyle } from '@angular/common';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [MatIconModule, NgStyle],
+  imports: [MatIconModule, NgStyle, CarouselModule, NgFor],
   templateUrl: './carousel.component.html',
-  styleUrl: './carousel.component.scss'
+  styleUrl: './carousel.component.scss',
 })
 export class CarouselComponent {
   items: CarouselItem[] = carouselItems.sort((a, b) => a.order - b.order);
+
+  customOptions: OwlOptions = {
+    items: 4,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 1000,
+    autoplayHoverPause: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+
+    dots: false,
+    startPosition: 0,
+    navSpeed: 700,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 2,
+      },
+      740: {
+        items: 3,
+      },
+      940: {
+        items: 4,
+      },
+    },
+    nav: false,
+  };
   constructor() {}
-
-  currentStartIndex = 0;
-  itemsToShow = 5;
-
-  get visibleItems() {
-    return this.items.slice(this.currentStartIndex, this.currentStartIndex + this.itemsToShow);
-  }
-
-  next() {
-    if (this.currentStartIndex + this.itemsToShow < this.items.length) {
-      this.currentStartIndex++;
-    } else {
-      this.currentStartIndex = 0;
-    }
-  }
-
-  prev() {
-    if (this.currentStartIndex > 0) {
-      this.currentStartIndex--;
-    } else {
-      this.currentStartIndex = this.items.length - this.itemsToShow;
-    }
-  }
 }
