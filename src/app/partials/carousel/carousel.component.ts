@@ -12,7 +12,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
   styleUrl: './carousel.component.scss'
 })
 export class CarouselComponent {
-  items: CarouselItem[] = carouselItems;
+  items: CarouselItem[] = carouselItems.sort((a, b) => a.order - b.order);
   constructor() {}
 
   currentStartIndex = 0;
