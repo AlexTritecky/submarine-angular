@@ -181,3 +181,51 @@
     }
   }
 }
+
+.dialog-response {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  h2 {
+    color: var(--default-black);
+    font-family: "Gilroy-Bold";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.447%;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: var(--default-black);
+    font-family: "Unbounded-Regular";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.6px;
+  }
+
+  .actions {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      padding: 24px;
+      border-radius: 50px;
+      background: var(--default-black);
+
+      color: var(--default-white);
+
+      font-family: "Unbounded-Regular";
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.48px;
+      text-transform: uppercase;
+    }
+  }
+}

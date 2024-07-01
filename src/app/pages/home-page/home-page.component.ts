@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CarouselComponent } from '../../partials/carousel/carousel.component';
 import { ContactDialogComponent } from '../../partials/contact-dialog/contact-dialog.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { EmailService } from '../../services/email/email.service';
 
 @Component({
   selector: 'app-home-page',
@@ -13,9 +14,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
   styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent {
-  constructor(public dialog: MatDialog) {
-    this.openDialog();
-  }
+  constructor(public dialog: MatDialog, private emailService: EmailService) {}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(ContactDialogComponent, {
@@ -26,7 +25,6 @@ export class HomePageComponent {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
     });
   }
 }

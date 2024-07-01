@@ -1,3 +1,4 @@
+@if(!showContent) {
 <div class="dialog-content">
   <h2>РОЗКАЖІТЬ ПРО СЕБЕ</h2>
   <p>Щоб почати з нами співпрацю</p>
@@ -39,7 +40,7 @@
         <label
           for="company_name"
           [ngClass]="{
-            'error-label': company_name.invalid && company_name.touched
+            'error-label': companyName.invalid && companyName.touched
           }"
           >Назва компанії *</label
         >
@@ -83,3 +84,12 @@
     </div>
   </form>
 </div>
+} @else {
+<div class="dialog-response dialog-content">
+  <h2>Наш менеджер зв’яжеться з вами найближчим часом!</h2>
+  <p>З нетерпінням чекаємо на співпрацю! Вдалого дня!</p>
+  <div class="actions">
+    <button (click)="close()">Повернутись на домашню сторінку</button>
+  </div>
+</div>
+}

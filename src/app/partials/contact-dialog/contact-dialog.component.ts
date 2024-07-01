@@ -10,6 +10,9 @@ import {
 } from '@angular/forms';
 import { EmailService } from '../../services/email/email.service';
 import { MatIconModule } from '@angular/material/icon';
+import { CustomerRequest } from '../../models/customer.model';
+import { MatDialogRef } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-contact-dialog',
@@ -29,9 +32,17 @@ export class ContactDialogComponent {
     'Консультація',
   ];
 
-  contactForm: FormGroup;
+  public showContent = false;
 
-  constructor(private fb: FormBuilder, private emailService: EmailService) {
+  contactForm: FormGroup;
+  private formStateSubscription: Subscription;
+  private isPatchingForm = false;
+
+  constructor(
+    private fb: FormBuilder,
+    private emailService: EmailService,
+    private dialogRef: MatDialogRef<ContactDialogComponent>
+  ) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       phone: [
@@ -46,6 +57,14 @@ export class ContactDialogComponent {
       services: [[]],
       description: [''],
     });
+
+    this.formStateSubscription = this.contactForm.valueChanges.subscribe(
+      (value) => {
+        if (!this.isPatchingForm) {
+          this.emailService.saveFormState(value);
+        }
+      }
+    );
   }
 
   get name(): AbstractControl {
@@ -60,8 +79,26 @@ export class ContactDialogComponent {
     return this.contactForm.get('email') as AbstractControl;
   }
 
-  get company_name(): AbstractControl {
+  get companyName(): AbstractControl {
     return this.contactForm.get('company_name') as AbstractControl;
+  }
+
+  ngOnInit(): void {
+    this.emailService.getFormState().subscribe((state) => {
+      if (state) {
+        this.isPatchingForm = true;
+        this.contactForm.patchValue(state);
+        this.isPatchingForm = false;
+      }
+    });
+
+    this.dialogRef.backdropClick().subscribe(() => {
+      this.saveFormState();
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.formStateSubscription.unsubscribe();
   }
 
   isSelected(service: string): boolean {
@@ -94,11 +131,31 @@ export class ContactDialogComponent {
           ?.setValue(['Консультація, людина нічого не вибрала']);
       }
 
-      console.log('Form Submitted', this.contactForm.value);
+      const sendObject: CustomerRequest = {
+        name: this.contactForm.value.name,
+        phone: this.contactForm.value.phone,
+        email: this.contactForm.value.email,
+        companyName: this.contactForm.value.company_name,
+        services: this.contactForm.value.services,
+        message: this.contactForm.value.description,
+      };
 
-      // this.emailService.sendCustomerRequest(this.contactForm.value).subscribe((res) => {
-      //   console.log('Email sent successfully', res);
-      // });
+      this.emailService.sendCustomerRequest(sendObject).subscribe((res) => {
+        if (res.complete) {
+          this.emailService.clearFormState();
+          this.contactForm.reset();
+          this.showContent = res.complete;
+        }
+      });
     }
+  }
+
+  close() {
+    this.saveFormState();
+    this.dialogRef.close();
+  }
+
+  private saveFormState(): void {
+    this.emailService.saveFormState(this.contactForm.value);
   }
 }
