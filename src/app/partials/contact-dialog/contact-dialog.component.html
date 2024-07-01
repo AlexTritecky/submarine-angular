@@ -69,8 +69,17 @@
 
     <p class="for_description">Розкажіть нам більше про свій проєкт</p>
 
-    <textarea formControlName="description" placeholder="Додаткова інформація"></textarea>
+    <textarea
+      formControlName="description"
+      rows="3"
+      placeholder="Додаткова інформація"
+    ></textarea>
 
-    <button type="submit">SUBMIT</button>
+    <div class="form-actions">
+      <button type="submit">
+        <mat-icon svgIcon="icon-plus-simple"></mat-icon>
+        Надіслати
+      </button>
+    </div>
   </form>
 </div>

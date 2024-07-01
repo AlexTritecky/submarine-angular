@@ -1,6 +1,5 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
-import { MatChipsModule } from '@angular/material/chips';
 import {
   AbstractControl,
   FormBuilder,
@@ -10,11 +9,12 @@ import {
   Validators,
 } from '@angular/forms';
 import { EmailService } from '../../services/email/email.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-contact-dialog',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, NgClass, MatChipsModule],
+  imports: [ReactiveFormsModule, FormsModule, NgClass, MatIconModule],
   templateUrl: './contact-dialog.component.html',
   styleUrls: ['./contact-dialog.component.scss'],
 })

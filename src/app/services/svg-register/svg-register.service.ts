@@ -19,6 +19,7 @@ export const SVG_ICONS: { [key: string]: string } = {
   'icon-rikota-logo': 'assets/icons/icon-rikota-logo.svg',
   'icon-recover-logo': 'assets/icons/icon-recover-logo.svg',
   'icon-arrow-footer': 'assets/icons/icon-arrow-footer.svg',
+  'icon-plus-simple': 'assets/icons/icon-plus-simple.svg',
 
 };
 
