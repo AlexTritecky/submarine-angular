@@ -300,7 +300,7 @@
 
       .logo-okko {
         width: 176.001px;
-height: 41.406px;
+        height: 41.406px;
       }
 
       p {
@@ -366,6 +366,26 @@ height: 41.406px;
             margin-right: 0;
           }
         }
+      }
+    }
+  }
+
+  &__action {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-top: 32px;
+    justify-content: center;
+
+    .app-button {
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      mat-icon {
+        margin-left: 16px;
+        width: 24px;
       }
     }
   }
