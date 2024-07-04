@@ -1,48 +1,68 @@
 import { NgClass } from '@angular/common';
-import { Component, Input, Renderer2 } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { NavigationItem, navigation } from '../../models/navigation.model';
+import {
+  FooterLink,
+  NavigationItem,
+  footerSocial,
+  navOverlayLinks,
+  navigation,
+} from '../../models/navigation.model';
 import { NavigationScrollService } from '../../services/scroll-navigation/navigation-scroll.service';
-import { NavigationOverlayComponent } from '../navigation-overlay/navigation-overlay.component';
+import { StateService } from '../../services/state/state.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, MatIconModule, NgClass, MatDialogModule],
+  imports: [RouterLink, MatIconModule, NgClass],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
   @Input() isViewing: boolean = true;
 
-  navLinks: NavigationItem[] = navigation;
+  public navigationOpen: boolean = false;
+  public overlayBlackClass: string = '';
+  public overlayWhiteClass: string = '';
+
+  public footerLinks: FooterLink[] = footerSocial;
+  public navLinks: NavigationItem[] = navigation;
+  public navOverlayLinks: NavigationItem[] = navOverlayLinks;
+
   constructor(
     private navigationScrollService: NavigationScrollService,
-    private dialog: MatDialog,
-    private renderer: Renderer2
+    private state: StateService
   ) {}
 
   onNavLinkClick(link: NavigationItem) {
     this.navigationScrollService.navigateAndScroll('', link.route);
   }
+  onOverlayLinkClick(link: NavigationItem) {
+    if (link.scroll) {
+      this.navigationScrollService.navigateAndScroll(link.route, link.scroll);
+      this.closeNavigation();
+    }
+
+    if (link.openForm) {
+      this.state.openStateDialog();
+      this.closeNavigation();
+    }
+  }
 
   openNavigation() {
-    const dialogRef = this.dialog.open(NavigationOverlayComponent, {
-      width: '100vw',
-      height: '100vh',
-      panelClass: 'navigation-dialog-container',
-      backdropClass: 'navigation-dialog-backdrop',
-    });
-    this.renderer.addClass(document.body, 'no-scroll');
+    this.navigationOpen = true;
+    this.overlayBlackClass = 'fade-in-down';
+    this.overlayWhiteClass = 'fade-in-up';
+  }
 
-    dialogRef.afterClosed().subscribe(() => {
-      this.renderer.removeClass(document.body, 'no-scroll');
-    });
-
-    dialogRef.componentInstance.close.subscribe(() => {
-      dialogRef.close();
-    });
+  closeNavigation() {
+    this.overlayBlackClass = 'fade-out-up';
+    this.overlayWhiteClass = 'fade-out-down';
+    setTimeout(() => {
+      this.navigationOpen = false;
+      this.overlayBlackClass = '';
+      this.overlayWhiteClass = '';
+    }, 500); // match this with the animation duration
   }
 }

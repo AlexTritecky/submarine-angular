@@ -20,3 +20,46 @@
     </div>
   </div>
 </header>
+
+@if(navigationOpen) {
+<div class="navigation-overlay">
+  <div class="navigation-overlay--black" [ngClass]="overlayBlackClass">
+    <a href="">
+      <mat-icon svgIcon="icon-logo"></mat-icon>
+    </a>
+
+    <div class="follow-us">
+      <h4>Фоловте нас:</h4>
+
+      @for(item of footerLinks; track item.label) {
+      <a href="{{ item.route }}" target="_blank">
+        {{ item.label }}
+
+        <mat-icon svgIcon="icon-arrow-footer"></mat-icon>
+      </a>
+      }
+    </div>
+  </div>
+  <div class="navigation-overlay--white" [ngClass]="overlayWhiteClass">
+    <div class="navigation-action">
+      <button (click)="closeNavigation()">
+        <mat-icon svgIcon="icon-navigation"></mat-icon>
+      </button>
+    </div>
+
+    <div class="nav-block">
+      <div class="links-block">
+        @for(link of navOverlayLinks; track link.title) {
+        <a class="nav-link" (click)="onOverlayLinkClick(link)">
+          {{ link.title }}
+        </a>
+        }
+      </div>
+      <div class="copyright-block">
+        <p>© Submarine Creative 2023.</p>
+        <p>All rights reserved</p>
+      </div>
+    </div>
+  </div>
+</div>
+}

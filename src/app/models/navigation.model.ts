@@ -1,6 +1,8 @@
 export interface NavigationItem {
   title: string;
   route: string;
+  scroll?: string;
+  openForm?: boolean;
 }
 
 export const navigation: NavigationItem[] = [
@@ -23,6 +25,46 @@ export const navigation: NavigationItem[] = [
   {
     title: 'Співпраця',
     route: 'cooperation',
+  },
+];
+
+export const navOverlayLinks: NavigationItem[] = [
+  {
+    title: 'Домашня сторінка',
+    route: '',
+  },
+  {
+    title: 'Про нас',
+    route: '',
+    scroll: 'about-us',
+  },
+  {
+    title: 'Послуги',
+    route: '',
+    scroll: 'services',
+  },
+  {
+    title: 'Портфоліо',
+    route: 'portfolio',
+  },
+  {
+    title: 'Клієнти',
+    route: '',
+    scroll: 'clients',
+  },
+  {
+    title: 'Співпраця',
+    route: '',
+    scroll: 'cooperation',
+  },
+  {
+    title: 'Команда',
+    route: 'team',
+  },
+  {
+    title: 'Написати нам',
+    route: '',
+    openForm: true,
   },
 ];
 
