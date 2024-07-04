@@ -23,7 +23,7 @@ export class FooterComponent {
       width: '901px',
       height: '901px',
       position: { right: '0' },
-      panelClass: 'custom-dialog-container',
+      panelClass: 'contact-dialog-container',
     });
 
     dialogRef.afterClosed().subscribe((result) => {});
