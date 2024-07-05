@@ -132,3 +132,7 @@ img {
 .no-scroll {
   overflow: hidden;
 }
+
+.service-dialog-container {
+  --mat-dialog-container-max-width: 100vw;
+}

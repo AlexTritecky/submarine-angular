@@ -5,6 +5,7 @@ import { CarouselComponent } from '../../partials/carousel/carousel.component';
 import { ContactDialogComponent } from '../../partials/contact-dialog/contact-dialog.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { StateService } from '../../services/state/state.service';
+import { ServiceType } from '../../models/service.model';
 @Component({
   selector: 'app-home-page',
   standalone: true,
@@ -16,7 +17,13 @@ import { StateService } from '../../services/state/state.service';
 export class HomePageComponent {
   constructor(public dialog: MatDialog, private state: StateService) {}
 
+  types = ServiceType;
+
   openDialog(): void {
     this.state.openStateDialog();
+  }
+
+  openServiceDialog(id: ServiceType): void {
+    this.state.openServiceDialog(id);
   }
 }

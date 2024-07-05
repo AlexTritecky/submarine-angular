@@ -1,0 +1,51 @@
+<div class="app-container block">
+  <div class="block-info">
+    <div class="image-block">
+      @if(data.small_title) {
+      <div class="date jcsb">
+        <div class="label">
+          {{ data.small_title }}
+        </div>
+
+        <div class="label">{{ data.days }} днів</div>
+      </div>
+      } @else {
+        <div class="date">
+          <div class="label">{{ data.days }} днів</div>
+        </div>
+
+      }
+
+      <div class="image">
+        <img [src]="data.image_desktop" alt="">
+      </div>
+      <div class="roles">
+        @for(role of data.roles; track role) {
+          <div class="label">
+            {{ role }}
+          </div>
+          }
+      </div>
+    </div>
+
+    <div class="text-block">
+      <h3>{{ data.title }}</h3>
+
+      <div class="list">
+        @for(item of data.properties; track item) {
+          <div class="item">
+            <mat-icon svgIcon="icon-p"></mat-icon>
+            <p>{{ item }}</p>
+          </div>
+          }
+      </div>
+
+    </div>
+  </div>
+  <div class="block-actions">
+    <button class="app-button">
+      <mat-icon svgIcon="icon-button-plus"></mat-icon>
+      отримати прорахунок
+    </button>
+  </div>
+</div>
