@@ -63,7 +63,7 @@ header {
     height: 100%;
     width: 30%;
     background: var(--default-black);
-    padding: 60px  0 32px 32px;
+    padding: 60px 0 32px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -174,9 +174,29 @@ header {
           line-height: 60px;
           text-transform: uppercase;
           margin-bottom: 16px;
+          display: flex;
+          align-items: center;
+          gap: 16px;
 
           &:last-child {
             margin-bottom: 0;
+          }
+
+          &::before {
+            content: "";
+            width: 0;
+            height: 10px;
+            background-color: var(--default-black);
+            transition: width 0.5s;
+            margin-left: 10px;
+            border-right: 1vw solid #fff;
+          }
+
+          &:hover {
+            &::before {
+              transition-delay: 0.3s;
+              width: 70px;
+            }
           }
         }
       }
