@@ -2,22 +2,39 @@
   @if(allIdsAreBranding()) {
   <div class="branding">
     @for(item of dataItems; track item.id){
-      <div class="branding__item">
-        <div class="for_label">
-          <div class="label">
-            {{item.small_title}}
+    <div class="branding__item">
+      <div class="branding__item-inner">
+        <div class="branding__item-front">
+          <div class="for_label">
+            <div class="label">
+              {{ item.small_title }}
+            </div>
+            <div class="label">{{ item.days }} днів</div>
           </div>
-          <div class="label">
-            {{item.days}} днів
+          <div class="for_image">
+            <img [src]="item.image_desktop" alt="" />
+          </div>
+          <div class="roles">
+            @for(role of item.roles; track role) {
+            <div class="label">{{ role }}</div>
+            }
           </div>
         </div>
-        <div class="for_image">
-          <img [src]="item.image_desktop" alt="">
-        </div>
-          <div class="roles"></div>
-      </div>
-    }
 
+        <div class="branding__item-back">
+          <h3>{{ item.title }}</h3>
+          <div class="list">
+            @for(list of item.properties; track list) {
+            <div class="item">
+              <mat-icon svgIcon="icon-p"></mat-icon>
+              <p>{{ list }}</p>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    }
   </div>
   } @else {
   <div class="block-info">
