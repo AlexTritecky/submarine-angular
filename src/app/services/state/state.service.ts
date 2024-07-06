@@ -22,7 +22,7 @@ export class StateService {
   }
 
   openServiceDialog(id: ServiceType): void {
-    const dataDialog = servicePopUpItems.find((item) => item.id === id);
+    const dataDialog = servicePopUpItems.filter((item) => item.id === id);
     if (!dataDialog) return console.error('Service not found');
 
     const dialogRef = this.dialog.open(ServiceDialogComponent, {
