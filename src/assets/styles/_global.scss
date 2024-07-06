@@ -136,3 +136,16 @@ img {
 .service-dialog-container {
   --mat-dialog-container-max-width: 100vw;
 }
+
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none !important;
+}
+
+.mat-expansion-panel-header {
+  background-color: transparent !important;
+}
+
+.mat-expansion-panel-body {
+  padding: 0 24px;
+}

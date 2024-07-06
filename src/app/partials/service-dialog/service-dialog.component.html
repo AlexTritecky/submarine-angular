@@ -1,4 +1,5 @@
 <div class="app-container block">
+  @if(data.id === types.BRENDING ) { } @else {
   <div class="block-info">
     <div class="image-block">
       @if(data.small_title) {
@@ -10,38 +11,90 @@
         <div class="label">{{ data.days }} днів</div>
       </div>
       } @else {
-        <div class="date">
-          <div class="label">{{ data.days }} днів</div>
-        </div>
+      <div class="date">
+        <div class="label">{{ data.days }} днів</div>
+      </div>
 
       }
 
       <div class="image">
-        <img [src]="data.image_desktop" alt="">
+        <img [src]="data.image_desktop" alt="" />
       </div>
       <div class="roles">
         @for(role of data.roles; track role) {
-          <div class="label">
-            {{ role }}
-          </div>
-          }
+        <div class="label">
+          {{ role }}
+        </div>
+        }
       </div>
     </div>
 
     <div class="text-block">
       <h3>{{ data.title }}</h3>
 
+      @if(data.id === types.COMUNIKATSIYNA_STRATEGIYA ) {
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <h5>{{ data.sub_title_1 }}</h5>
+          </mat-expansion-panel-header>
+          <div class="list">
+            @for(item of data.properties; track item) {
+            <div class="item">
+              <mat-icon svgIcon="icon-p"></mat-icon>
+              <p>{{ item }}</p>
+            </div>
+            }
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <h5>{{ data.sub_title_2 }}</h5>
+          </mat-expansion-panel-header>
+          <div class="list">
+            @for(item of data.properties_2; track item) {
+            <div class="item">
+              <mat-icon svgIcon="icon-p"></mat-icon>
+              <p>{{ item }}</p>
+            </div>
+            }
+            <div class="small-list">
+              @for(item of data.sub_properties; track item) {
+              <div class="item">- {{ item }}</div>
+              }
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      } @else {
+
       <div class="list">
         @for(item of data.properties; track item) {
-          <div class="item">
-            <mat-icon svgIcon="icon-p"></mat-icon>
-            <p>{{ item }}</p>
-          </div>
-          }
+        <div class="item">
+          <mat-icon svgIcon="icon-p"></mat-icon>
+          <p>{{ item }}</p>
+        </div>
+        }
       </div>
 
+      @if(data.id === types.PROMOTION) {
+      <h3 class="mt-16">{{ data.title_2 }}</h3>
+
+      <div class="list">
+        @for(item of data.properties_2; track item) {
+        <div class="item">
+          <mat-icon svgIcon="icon-p"></mat-icon>
+          <p>{{ item }}</p>
+        </div>
+        }
+      </div>
+      } }
     </div>
   </div>
+  }
+
   <div class="block-actions">
     <button class="app-button">
       <mat-icon svgIcon="icon-button-plus"></mat-icon>
