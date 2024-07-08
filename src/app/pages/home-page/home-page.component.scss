@@ -140,9 +140,17 @@
           margin-bottom: 4px;
 
           button {
+            transition:.5s ease-in-out;
             mat-icon {
               width: 45px;
               height: 45px;
+              transition:.5s ease-in-out;
+            }
+
+            &:hover {
+              mat-icon {
+                rotate: 3.1416rad;
+              }
             }
           }
         }

@@ -89,10 +89,13 @@ img {
   letter-spacing: 0.48px;
   text-transform: uppercase;
 
+  mat-icon {
+    transition: 0.5s ease-in-out;
+  }
+
   &:hover {
     mat-icon {
-      animation: rotateAnimationOut 1s forwards;
-      transition-duration: 0.5s;
+      rotate: 3.1416rad;
     }
   }
 }
@@ -137,8 +140,7 @@ img {
   --mat-dialog-container-max-width: 100vw;
 }
 
-
-.mat-expansion-panel:not([class*=mat-elevation-z]) {
+.mat-expansion-panel:not([class*="mat-elevation-z"]) {
   box-shadow: none !important;
 }
 

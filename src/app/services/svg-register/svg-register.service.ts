@@ -22,6 +22,7 @@ export const SVG_ICONS: { [key: string]: string } = {
   'icon-plus-simple': 'assets/icons/icon-plus-simple.svg',
   'icon-circle-arrow': 'assets/icons/icon-circle-arrow.svg',
   'icon-p': 'assets/icons/icon-p.svg',
+  'icon-navigation-close': 'assets/icons/icon-navigation-close.svg',
 
 };
 

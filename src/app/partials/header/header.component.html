@@ -14,9 +14,11 @@
       }
     </div>
     <div class="navigation--action">
-      <button (click)="openNavigation()">
-        <mat-icon svgIcon="icon-navigation"></mat-icon>
-      </button>
+      @if(!navigationOpen) {
+        <button  (click)="openNavigation()">
+          <mat-icon svgIcon="icon-navigation"></mat-icon>
+        </button>
+      }
     </div>
   </div>
 </header>
@@ -42,9 +44,11 @@
   </div>
   <div class="navigation-overlay--white" [ngClass]="overlayWhiteClass">
     <div class="navigation-action">
-      <button (click)="closeNavigation()">
-        <mat-icon svgIcon="icon-navigation"></mat-icon>
-      </button>
+      @if(navigationOpen) {
+        <button (click)="closeNavigation()">
+          <mat-icon svgIcon="icon-navigation-close"></mat-icon>
+        </button>
+      }
     </div>
 
     <div class="nav-block">
