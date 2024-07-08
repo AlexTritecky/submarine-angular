@@ -140,11 +140,11 @@
           margin-bottom: 4px;
 
           button {
-            transition:.5s ease-in-out;
+            transition: 0.5s ease-in-out;
             mat-icon {
               width: 45px;
               height: 45px;
-              transition:.5s ease-in-out;
+              transition: 0.5s ease-in-out;
             }
 
             &:hover {
@@ -247,10 +247,47 @@
       gap: 10px;
       align-items: center;
       padding: 24px 32px;
+      transition: 0.5s ease-in-out;
+      position: relative;
+      transition-duration: 0.4s;
+      -webkit-transition-duration: 0.4s;
+
+      &:hover {
+        padding: 24px 38px;
+        transition: 0.5s ease-in-out;
+      }
 
       mat-icon {
         width: 14px;
         height: 14px;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 4em;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.5s;
+        box-shadow: 0 0 8px 16px var(--default-black);
+      }
+
+      &:active {
+        top: 1px;
+      }
+
+      &:active::after {
+        box-shadow: 0 0 0 0 var(--default-black);
+        position: absolute;
+        border-radius: 4em;
+        left: 0;
+        top: 0;
+        opacity: 1;
+        transition: 0s;
       }
     }
   }
@@ -390,6 +427,47 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: 0.5s ease-in-out;
+      position: relative;
+      transition-duration: 0.4s;
+      -webkit-transition-duration: 0.4s;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 4em;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.5s;
+        box-shadow: 0 0 8px 16px var(--default-black);
+      }
+
+      &:active {
+        top: 1px;
+      }
+
+      &:active::after {
+        box-shadow: 0 0 0 0 var(--default-black);
+        position: absolute;
+        border-radius: 4em;
+        left: 0;
+        top: 0;
+        opacity: 1;
+        transition: 0s;
+      }
+
+      &:hover {
+        padding: 24px 38px;
+        transition: 0.5s ease-in-out;
+
+        mat-icon {
+          rotate: 1.5599rad;
+        }
+      }
 
       mat-icon {
         margin-left: 16px;
@@ -476,5 +554,19 @@
         width: 24px;
       }
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
   }
 }
