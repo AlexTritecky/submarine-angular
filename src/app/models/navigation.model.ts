@@ -76,8 +76,7 @@ export interface FooterLink {
 export const footerSocial: FooterLink[] = [
   {
     label: 'instagram',
-    route:
-      'https://www.instagram.com/submarine_agency/?igsh=MXJtd2J0ZWczaHhpcw%3D%3D',
+    route: 'https://www.instagram.com/submarine_agency/?igsh=MXJtd2J0ZWczaHhpcw%3D%3D',
   },
   {
     label: 'linkedin',

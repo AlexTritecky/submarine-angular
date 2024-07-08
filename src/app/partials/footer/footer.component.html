@@ -12,9 +12,7 @@
 
       <p class="mail-info">
         Пишіть нам на мейл:
-        <a href="mailto: project@submarineagency.com.ua">
-          project&#64;submarineagency.com.ua
-        </a>
+        <a href="mailto: project@submarineagency.com.ua"> project&#64;submarineagency.com.ua </a>
       </p>
 
       <p class="rigths">© Submarine Creative 2023. All rights reserved</p>
@@ -22,12 +20,12 @@
     <div class="block-follow">
       <div class="social">
         <h4>Фолов нас:</h4>
-        @for(item of footerLinks; track item.label) {
-        <a href="{{ item.route }}" target="_blank">
-          {{ item.label }}
+        @for (item of footerLinks; track item.label) {
+          <a href="{{ item.route }}" target="_blank">
+            {{ item.label }}
 
-          <mat-icon svgIcon="icon-arrow-footer"></mat-icon>
-        </a>
+            <mat-icon svgIcon="icon-arrow-footer"></mat-icon>
+          </a>
         }
       </div>
 

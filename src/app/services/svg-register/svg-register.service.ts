@@ -23,18 +23,23 @@ export const SVG_ICONS: { [key: string]: string } = {
   'icon-circle-arrow': 'assets/icons/icon-circle-arrow.svg',
   'icon-p': 'assets/icons/icon-p.svg',
   'icon-navigation-close': 'assets/icons/icon-navigation-close.svg',
-
 };
 
 @Injectable({
   providedIn: 'root',
 })
 export class SvgRegisterService {
-  constructor(private readonly iconRegistry: MatIconRegistry, private readonly sanitizer: DomSanitizer) {}
+  constructor(
+    private readonly iconRegistry: MatIconRegistry,
+    private readonly sanitizer: DomSanitizer,
+  ) {}
 
   public registerSvg(): void {
     Object.keys(SVG_ICONS).forEach((key) => {
-      this.iconRegistry.addSvgIcon(key, this.sanitizer.bypassSecurityTrustResourceUrl(SVG_ICONS[key]));
+      this.iconRegistry.addSvgIcon(
+        key,
+        this.sanitizer.bypassSecurityTrustResourceUrl(SVG_ICONS[key]),
+      );
     });
   }
 }

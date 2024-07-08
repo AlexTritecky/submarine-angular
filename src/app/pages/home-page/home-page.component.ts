@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../../partials/header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { CarouselComponent } from '../../partials/carousel/carousel.component';
-import { ContactDialogComponent } from '../../partials/contact-dialog/contact-dialog.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { StateService } from '../../services/state/state.service';
 import { ServiceType } from '../../models/service.model';
@@ -15,7 +14,10 @@ import { ServiceType } from '../../models/service.model';
   styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent {
-  constructor(public dialog: MatDialog, private state: StateService) {}
+  constructor(
+    public dialog: MatDialog,
+    private state: StateService,
+  ) {}
 
   types = ServiceType;
 

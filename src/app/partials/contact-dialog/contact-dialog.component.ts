@@ -41,30 +41,22 @@ export class ContactDialogComponent {
   constructor(
     private fb: FormBuilder,
     private emailService: EmailService,
-    private dialogRef: MatDialogRef<ContactDialogComponent>
+    private dialogRef: MatDialogRef<ContactDialogComponent>,
   ) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
-      phone: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(/^(\+?\d{1,4}|\d{1,4})?\s?\d{10}$/),
-        ],
-      ],
+      phone: ['', [Validators.required, Validators.pattern(/^(\+?\d{1,4}|\d{1,4})?\s?\d{10}$/)]],
       email: ['', [Validators.required, Validators.email]],
       company_name: ['', Validators.required],
       services: [[]],
       description: [''],
     });
 
-    this.formStateSubscription = this.contactForm.valueChanges.subscribe(
-      (value) => {
-        if (!this.isPatchingForm) {
-          this.emailService.saveFormState(value);
-        }
+    this.formStateSubscription = this.contactForm.valueChanges.subscribe((value) => {
+      if (!this.isPatchingForm) {
+        this.emailService.saveFormState(value);
       }
-    );
+    });
   }
 
   get name(): AbstractControl {
@@ -126,9 +118,7 @@ export class ContactDialogComponent {
     if (this.contactForm.valid) {
       const services = this.contactForm.get('services')?.value as string[];
       if (services.length === 0) {
-        this.contactForm
-          .get('services')
-          ?.setValue(['Консультація, людина нічого не вибрала']);
+        this.contactForm.get('services')?.setValue(['Консультація, людина нічого не вибрала']);
       }
 
       const sendObject: CustomerRequest = {

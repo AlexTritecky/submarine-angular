@@ -32,7 +32,7 @@ export class HeaderComponent {
 
   constructor(
     private navigationScrollService: NavigationScrollService,
-    private state: StateService
+    private state: StateService,
   ) {}
 
   onNavLinkClick(link: NavigationItem) {

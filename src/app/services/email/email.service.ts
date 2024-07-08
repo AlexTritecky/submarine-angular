@@ -9,14 +9,11 @@ import { CustomerRequest, CustomerResponse } from '../../models/customer.model';
 })
 export class EmailService {
   private apiUrl = environment.apiUrl;
-  private formStateSubject =
-    new BehaviorSubject<Partial<CustomerRequest> | null>(null);
+  private formStateSubject = new BehaviorSubject<Partial<CustomerRequest> | null>(null);
 
   constructor(private http: HttpClient) {}
 
-  sendCustomerRequest(
-    customerData: CustomerRequest
-  ): Observable<CustomerResponse> {
+  sendCustomerRequest(customerData: CustomerRequest): Observable<CustomerResponse> {
     return this.http.post<CustomerResponse>(this.apiUrl, customerData);
   }
 

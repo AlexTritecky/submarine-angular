@@ -1,21 +1,21 @@
 <header class="app-container-xl" [ngClass]="{ 'home-view': !isViewing }">
-  @if(isViewing) {
-  <a class="logo" href="/">
-    <mat-icon svgIcon="icon-logo"></mat-icon>
-  </a>
+  @if (isViewing) {
+    <a class="logo" href="/">
+      <mat-icon svgIcon="icon-logo"></mat-icon>
+    </a>
   }
 
   <div class="navigation">
     <div class="navigation--links">
-      @for(link of navLinks; track link.title) {
-      <a class="nav-link" (click)="onNavLinkClick(link)">
-        {{ link.title }}
-      </a>
+      @for (link of navLinks; track link.title) {
+        <a class="nav-link" (click)="onNavLinkClick(link)">
+          {{ link.title }}
+        </a>
       }
     </div>
     <div class="navigation--action">
-      @if(!navigationOpen) {
-        <button  (click)="openNavigation()">
+      @if (!navigationOpen) {
+        <button (click)="openNavigation()">
           <mat-icon svgIcon="icon-navigation"></mat-icon>
         </button>
       }
@@ -23,47 +23,47 @@
   </div>
 </header>
 
-@if(navigationOpen) {
-<div class="navigation-overlay">
-  <div class="navigation-overlay--black" [ngClass]="overlayBlackClass">
-    <a href="">
-      <mat-icon svgIcon="icon-logo"></mat-icon>
-    </a>
-
-    <div class="follow-us">
-      <h4>Фоловте нас:</h4>
-
-      @for(item of footerLinks; track item.label) {
-      <a href="{{ item.route }}" target="_blank">
-        {{ item.label }}
-
-        <mat-icon svgIcon="icon-arrow-footer"></mat-icon>
+@if (navigationOpen) {
+  <div class="navigation-overlay">
+    <div class="navigation-overlay--black" [ngClass]="overlayBlackClass">
+      <a href="">
+        <mat-icon svgIcon="icon-logo"></mat-icon>
       </a>
-      }
-    </div>
-  </div>
-  <div class="navigation-overlay--white" [ngClass]="overlayWhiteClass">
-    <div class="navigation-action">
-      @if(navigationOpen) {
-        <button (click)="closeNavigation()">
-          <mat-icon svgIcon="icon-navigation-close"></mat-icon>
-        </button>
-      }
-    </div>
 
-    <div class="nav-block">
-      <div class="links-block">
-        @for(link of navOverlayLinks; track link.title) {
-        <a class="nav-link" (click)="onOverlayLinkClick(link)">
-          {{ link.title }}
-        </a>
+      <div class="follow-us">
+        <h4>Фоловте нас:</h4>
+
+        @for (item of footerLinks; track item.label) {
+          <a href="{{ item.route }}" target="_blank">
+            {{ item.label }}
+
+            <mat-icon svgIcon="icon-arrow-footer"></mat-icon>
+          </a>
         }
       </div>
-      <div class="copyright-block">
-        <p>© Submarine Creative 2023.</p>
-        <p>All rights reserved</p>
+    </div>
+    <div class="navigation-overlay--white" [ngClass]="overlayWhiteClass">
+      <div class="navigation-action">
+        @if (navigationOpen) {
+          <button (click)="closeNavigation()">
+            <mat-icon svgIcon="icon-navigation-close"></mat-icon>
+          </button>
+        }
+      </div>
+
+      <div class="nav-block">
+        <div class="links-block">
+          @for (link of navOverlayLinks; track link.title) {
+            <a class="nav-link" (click)="onOverlayLinkClick(link)">
+              {{ link.title }}
+            </a>
+          }
+        </div>
+        <div class="copyright-block">
+          <p>© Submarine Creative 2023.</p>
+          <p>All rights reserved</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 }

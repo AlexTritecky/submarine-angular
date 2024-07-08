@@ -7,7 +7,7 @@ import { FooterComponent } from './partials/footer/footer.component';
   standalone: true,
   imports: [RouterOutlet, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'app';

@@ -59,8 +59,7 @@ export const servicePopUpItems: ServicePopUpItem[] = [
   // COMMUNICATION STRATEGY
   {
     days: '60',
-    image_desktop:
-      'assets/images/services/communication_strategy_pop_up_desktop.webp',
+    image_desktop: 'assets/images/services/communication_strategy_pop_up_desktop.webp',
     id: ServiceType.COMUNIKATSIYNA_STRATEGIYA,
     roles: ['стратег', 'дизайнер', 'копірайтер'],
     title: 'КОМУНІКАЦІЙНА СТРАТЕГІЯ',
