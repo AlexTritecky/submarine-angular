@@ -1,0 +1,62 @@
+@import "breakpoints";
+
+.hero {
+  background: url(/assets/images/hero-bg.webp) lightgray 50% / cover no-repeat;
+}
+
+.team {
+  margin: 80px auto;
+  width: 100%;
+
+  h1 {
+    color: var(--default-black);
+    font-family: "Gilroy-Bold";
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 70px;
+    margin-bottom: 42px;
+  }
+
+  &__list {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+    position: relative;
+  }
+
+  &--item {
+    position: relative;
+
+    img.main-image {
+      width: 100%;
+      display: block;
+    }
+
+    .cover {
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transform: scale(0);
+      transition: transform 0.5s ease-in-out;
+    }
+
+    &:hover .cover {
+      z-index: 1;
+      transform-origin: top left;
+      transform: scale(1);
+    }
+
+    &:not(:hover) .cover {
+      z-index: -1;
+      transform: scale(0);
+      transition: transform 0.7s ease-in-out;
+      transform-origin: bottom right top left;
+    }
+  }
+}
