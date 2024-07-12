@@ -14,4 +14,10 @@ import { NgStyle } from '@angular/common';
 })
 export class TeamComponent {
   teams: TeamMember[] = teamMembers;
+
+  constructor() {
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
+  }
 }

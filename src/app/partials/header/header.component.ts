@@ -1,7 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import {
   FooterLink,
   NavigationItem,
@@ -33,12 +33,15 @@ export class HeaderComponent {
   constructor(
     private navigationScrollService: NavigationScrollService,
     private state: StateService,
+    private router: Router
   ) {}
 
   onNavLinkClick(link: NavigationItem) {
     this.navigationScrollService.navigateAndScroll('', link.route);
   }
   onOverlayLinkClick(link: NavigationItem) {
+    console.log(1, link);
+
     if (link.scroll) {
       this.navigationScrollService.navigateAndScroll(link.route, link.scroll);
       this.closeNavigation();
@@ -46,6 +49,11 @@ export class HeaderComponent {
 
     if (link.openForm) {
       this.state.openStateDialog();
+      this.closeNavigation();
+    }
+
+    if (link.route) {
+      this.router.navigate([link.route]);
       this.closeNavigation();
     }
   }
