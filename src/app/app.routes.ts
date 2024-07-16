@@ -10,4 +10,9 @@ export const routes: Routes = [
     path: 'team',
     loadComponent: () => import('./pages/team/team.component').then((m) => m.TeamComponent),
   },
+  {
+    path: 'portfolio',
+    loadComponent: () =>
+      import('./pages/portfolio/portfolio.component').then((m) => m.PortfolioComponent),
+  },
 ];

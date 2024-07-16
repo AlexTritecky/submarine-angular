@@ -275,3 +275,11 @@ export const carouselItems: CarouselItem[] = [
     height: '40px',
   },
 ];
+
+export const portfolioCarouselItems: CarouselItem[] = [
+  { id: '1', image: '/assets/images/portfolio-carousel/desktop_portfolio_photo_1.webp', order: 1 },
+  { id: '2', image: 'assets/images/portfolio-carousel/desktop_portfolio_photo_2.webp', order: 2 },
+  // { id: '3', image: 'assets/images/portfolio-carousel/desktop_portfolio_photo_3.webp', order: 3 },
+  // { id: '4', image: 'assets/images/portfolio-carousel/desktop_portfolio_photo_4.webp', order: 4 },
+  // { id: '5', image: 'assets/images/portfolio-carousel/desktop_portfolio_photo_5.webp', order: 5 },
+];
