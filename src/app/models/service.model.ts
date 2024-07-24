@@ -38,7 +38,7 @@ export const servicePopUpItems: ServicePopUpItem[] = [
     days: '30',
     image_desktop: 'assets/images/services/smm_strategy_desktop.webp',
     id: ServiceType.SMM_STRATEGIYA,
-    roles: ['стратег', 'дизайнер', 'копірайтер'],
+    roles: ['стратег', 'дизайнер', 'копірайтер', 'сторіс-дизайнер'],
     title: 'SMM-СТРАТЕГІЯ',
     properties: [
       'Аналіз проробленої роботи',
@@ -174,7 +174,7 @@ export const servicePopUpItems: ServicePopUpItem[] = [
     title_2: 'СПІВПРАЦЯ З ІНФЛУЕНСЕРАМИ',
     properties: [
       'Створення карти медіа',
-      'План теми для прес-релізів',
+      'План тем для прес-релізів',
       'Комунікація з медіа',
       'Прес-реліз',
     ],
@@ -190,7 +190,7 @@ export const servicePopUpItems: ServicePopUpItem[] = [
     days: '10',
     image_desktop: 'assets/images/services/production_desktop.webp',
     id: ServiceType.PRODUCTION,
-    roles: ['контент-менеджер'],
+    roles: ['арт-директор', 'відеооператор', 'контент-менеджер', 'фотограф'],
     title: 'ФОТОЗЙОМКА',
     properties: [
       'Підготовка кошторису, таймінгів, розкадровки та плану зйомки',
