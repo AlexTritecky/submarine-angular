@@ -38,7 +38,7 @@ export class CarouselComponent {
         items: 3,
       },
       940: {
-        items: 4,
+        items: 7,
       },
     },
     nav: false,

@@ -66,6 +66,14 @@ export const teamMembers: TeamMember[] = [
 
   {
     id: 8,
+    image: 'assets/images/teams/content-manager-2.svg',
+    name: 'Антон',
+    position: 'контент-менеджер',
+    cover_image: 'assets/images/teams/content-manager-2-cover.svg',
+  },
+
+  {
+    id: 9,
     image: 'assets/images/teams/copywriter.svg',
     name: 'Анна',
     position: 'копірайтер',
@@ -73,24 +81,19 @@ export const teamMembers: TeamMember[] = [
   },
 
   {
-    id: 9,
+    id: 10,
+    image: 'assets/images/teams/stories-designer.svg',
+    name: 'Христина',
+    position: 'stories-дизайнер ',
+    cover_image: 'assets/images/teams/stories-designer-cover.svg',
+  },
+
+  {
+    id: 11,
     image: 'assets/images/teams/people-ops.svg',
     name: 'Катерина',
     position: 'people Ops',
     cover_image: 'assets/images/teams/people-ops-cover.svg',
   },
-  {
-    id: 10,
-    image: 'assets/images/teams/content-manager-2.svg',
-    name: 'Антон',
-    position: 'контент-менеджер',
-    cover_image: 'assets/images/teams/content-manager-2-cover.svg',
-  },
-  {
-    id: 11,
-    image: 'assets/images/teams/stories-designer.svg',
-    name: 'Христина',
-    position: 'stories-дизайнер ',
-    cover_image: 'assets/images/teams/stories-designer-cover.svg',
-  }
+
 ];
