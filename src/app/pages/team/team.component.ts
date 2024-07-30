@@ -14,10 +14,15 @@ import { NgStyle } from '@angular/common';
 })
 export class TeamComponent {
   teams: TeamMember[] = teamMembers;
+  readonly memberlink = 'https://t.me/SUBMARINETEAM'
 
   constructor() {
     if (typeof window !== 'undefined') {
       window.scrollTo(0, 0);
     }
+  }
+
+  becameMember() {
+    window.open(this.memberlink, '_blank');
   }
 }
