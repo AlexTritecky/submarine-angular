@@ -54,6 +54,8 @@ img {
 	max-height: 948px;
 	height: 100%;
 
+
+
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -116,6 +118,10 @@ img {
 
 	@include screen("xl-desktop") {
 		max-height: 745px;
+	}
+
+	@include screen("phone") {
+		max-height: 300px;
 	}
 }
 

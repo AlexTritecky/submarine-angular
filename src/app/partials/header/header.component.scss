@@ -55,6 +55,11 @@ header {
 						width: 77px;
 						height: 77px;
 					}
+
+					@include screen("phone") {
+						width: 44px;
+						height: 44px;
+					}
 				}
 			}
 		}
