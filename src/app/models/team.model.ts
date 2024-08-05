@@ -103,5 +103,11 @@ export const teamMembers: TeamMember[] = [
     position: 'проджект-менеджер',
     cover_image: 'assets/images/teams/project-manager-darya-cover.svg',
   },
-
+  {
+    id: 13,
+    image: 'assets/images/teams/project-manager-anastasia.svg',
+    name: 'Анастасія',
+    position: 'проджект-менеджер',
+    cover_image: 'assets/images/teams/project-manager-anastasia-cover.svg',
+  }
 ];

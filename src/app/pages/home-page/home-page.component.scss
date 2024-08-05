@@ -320,10 +320,14 @@
     gap: 24px;
 
     .card {
+      max-width: 350px;
+      width: 100%;
+      height: 500px;
       border-radius: 50px;
       display: flex;
       flex-direction: column;
       padding: 24px;
+      justify-content: space-between;
 
       mat-icon {
         width: 48px;
@@ -346,6 +350,24 @@
         height: 36px;
       }
 
+      .time-title {
+        display: flex;
+        position: relative;
+        height: 100%;
+        justify-content: center;
+        // align-items: center;
+        h4 {
+          position: absolute;
+          top: 50%;
+          color: var(--default-black);
+          text-align: center;
+          font-family: "Gilroy-SemiBold";
+          font-size: 32px;
+          font-weight: 600;
+          line-height: 32px;
+        }
+      }
+
       p {
         margin-top: 24px;
         color: var(--default-black);
@@ -363,6 +385,8 @@
         margin-top: 80px;
         width: 100%;
         display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
         align-items: center;
         justify-content: center;
 
@@ -370,7 +394,7 @@
           padding: 4px 16px;
           border-radius: 50px;
           background: var(--smm-comunicacation);
-          margin-right: 15px;
+          // margin-right: 15px;
           color: var(--default-black);
           text-align: center;
           font-family: "Gilroy-Regular";
@@ -396,12 +420,13 @@
 
       .short-infos {
         flex-wrap: wrap;
+        gap: 8px;
         .block {
           background: var(--smm-webdesign);
-          margin-right: 8px;
+          // margin-right: 8px;
 
           &:first-child {
-            margin-bottom: 8px;
+            // margin-bottom: 8px;
             margin-right: 0;
           }
 
