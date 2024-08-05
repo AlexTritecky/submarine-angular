@@ -11,6 +11,7 @@ import { HomeServicesComponent } from '../../partials/home-services/home-service
 import { HomeCasesComponent } from '../../partials/home-cases/home-cases.component';
 import { HomeCooperationComponent } from '../../partials/home-cooperation/home-cooperation.component';
 import { isPlatformBrowser } from '@angular/common';
+import { LazyLoadDirective } from '../../lazy-load.directive';
 @Component({
   selector: 'app-home-page',
   standalone: true,
@@ -24,7 +25,8 @@ import { isPlatformBrowser } from '@angular/common';
     HomeServicesComponent,
     HomeCasesComponent,
     HomeCooperationComponent,
-    LoaderComponent
+    LoaderComponent,
+    LazyLoadDirective,
   ],
   providers: [StateService],
   templateUrl: './home-page.component.html',
@@ -40,7 +42,6 @@ export class HomePageComponent implements OnInit {
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
 
-
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.loadBackgroundImage();
@@ -50,14 +51,14 @@ export class HomePageComponent implements OnInit {
   loadBackgroundImage() {
     const backgroundImage = this.renderer.createElement('img');
     this.renderer.setAttribute(backgroundImage, 'src', '/assets/images/hero-bg.webp');
-
-    this.renderer.listen(backgroundImage, 'load', () => {
-      this.isLoading = false;
-    });
-
-    this.renderer.listen(backgroundImage, 'error', () => {
-      this.isLoading = true;
-    });
+    backgroundImage
+      .decode()
+      .then(() => {
+        this.isLoading = false;
+      })
+      .catch(() => {
+        this.isLoading = true;
+      });
   }
 
   openDialog(): void {

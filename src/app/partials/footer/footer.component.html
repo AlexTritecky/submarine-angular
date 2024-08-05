@@ -1,6 +1,6 @@
 <footer>
   <div class="app-container footer">
-    <div class="block-info">
+    <div class="block-info" lazyLoad>
       <h2>БУДУЄМО БРЕНД-КОМУНІКАЦІЮ У СОЦІАЛЬНИХ МЕРЕЖАХ</h2>
 
       <button class="app-button" (click)="openDialog()">
@@ -17,7 +17,7 @@
 
       <p class="rigths">© Submarine Creative 2023. All rights reserved</p>
     </div>
-    <div class="block-follow">
+    <div class="block-follow" lazyLoad>
       <div class="social">
         <h4>Фолов нас:</h4>
         @for (item of footerLinks; track item.label) {
