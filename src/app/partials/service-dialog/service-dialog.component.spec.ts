@@ -3,20 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ServiceDialogComponent } from './service-dialog.component';
 
 describe('ServiceDialogComponent', () => {
-  let component: ServiceDialogComponent;
-  let fixture: ComponentFixture<ServiceDialogComponent>;
+	let component: ServiceDialogComponent;
+	let fixture: ComponentFixture<ServiceDialogComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ServiceDialogComponent],
-    }).compileComponents();
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			imports: [ServiceDialogComponent],
+		}).compileComponents();
 
-    fixture = TestBed.createComponent(ServiceDialogComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+		fixture = TestBed.createComponent(ServiceDialogComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

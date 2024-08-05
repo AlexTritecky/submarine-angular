@@ -1,20 +1,19 @@
 <div class="carousel-container scrolling-banner">
-  <div class="line">
-    @for (slide of items; track slide.id) {
-      <div class="item">
-        <img [src]="slide.image" [ngStyle]="{ width: slide.width, height: slide.height }" alt="" />
-      </div>
-    }
-    @for (slide of items; track slide.id) {
-      <div class="item">
-        <img [src]="slide.image" [ngStyle]="{ width: slide.width, height: slide.height }" alt="" />
-      </div>
-    }
-    @for (slide of items; track slide.id) {
-      <div class="item">
-        <img [src]="slide.image" [ngStyle]="{ width: slide.width, height: slide.height }" alt="" />
-      </div>
-    }
-
-  </div>
+	<div class="line">
+		@for (slide of items; track slide.id) {
+			<div class="item">
+				<img [src]="slide.image" [ngStyle]="{ width: slide.width, height: slide.height }" alt="" />
+			</div>
+		}
+		@for (slide of items; track slide.id) {
+			<div class="item">
+				<img [src]="slide.image" [ngStyle]="{ width: slide.width, height: slide.height }" alt="" />
+			</div>
+		}
+		@for (slide of items; track slide.id) {
+			<div class="item">
+				<img [src]="slide.image" [ngStyle]="{ width: slide.width, height: slide.height }" alt="" />
+			</div>
+		}
+	</div>
 </div>

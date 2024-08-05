@@ -13,59 +13,59 @@ import { HomeCooperationComponent } from '../../partials/home-cooperation/home-c
 import { isPlatformBrowser } from '@angular/common';
 import { LazyLoadDirective } from '../../lazy-load.directive';
 @Component({
-  selector: 'app-home-page',
-  standalone: true,
-  imports: [
-    HeaderComponent,
-    MatIconModule,
-    CarouselComponent,
-    MatDialogModule,
-    LoaderComponent,
-    HomeInfoComponent,
-    HomeServicesComponent,
-    HomeCasesComponent,
-    HomeCooperationComponent,
-    LoaderComponent,
-    LazyLoadDirective,
-  ],
-  providers: [StateService],
-  templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.scss',
+	selector: 'app-home-page',
+	standalone: true,
+	imports: [
+		HeaderComponent,
+		MatIconModule,
+		CarouselComponent,
+		MatDialogModule,
+		LoaderComponent,
+		HomeInfoComponent,
+		HomeServicesComponent,
+		HomeCasesComponent,
+		HomeCooperationComponent,
+		LoaderComponent,
+		LazyLoadDirective,
+	],
+	providers: [StateService],
+	templateUrl: './home-page.component.html',
+	styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent implements OnInit {
-  isLoading = true;
+	isLoading = true;
 
-  constructor(
-    public dialog: MatDialog,
-    private state: StateService,
-    private renderer: Renderer2,
-    @Inject(PLATFORM_ID) private platformId: Object,
-  ) {}
+	constructor(
+		public dialog: MatDialog,
+		private state: StateService,
+		private renderer: Renderer2,
+		@Inject(PLATFORM_ID) private platformId: Object,
+	) {}
 
-  ngOnInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.loadBackgroundImage();
-    }
-  }
+	ngOnInit() {
+		if (isPlatformBrowser(this.platformId)) {
+			this.loadBackgroundImage();
+		}
+	}
 
-  loadBackgroundImage() {
-    const backgroundImage = this.renderer.createElement('img');
-    this.renderer.setAttribute(backgroundImage, 'src', '/assets/images/hero-bg.webp');
-    backgroundImage
-      .decode()
-      .then(() => {
-        this.isLoading = false;
-      })
-      .catch(() => {
-        this.isLoading = true;
-      });
-  }
+	loadBackgroundImage() {
+		const backgroundImage = this.renderer.createElement('img');
+		this.renderer.setAttribute(backgroundImage, 'src', '/assets/images/hero-bg.webp');
+		backgroundImage
+			.decode()
+			.then(() => {
+				this.isLoading = false;
+			})
+			.catch(() => {
+				this.isLoading = true;
+			});
+	}
 
-  openDialog(): void {
-    this.state.openStateDialog();
-  }
+	openDialog(): void {
+		this.state.openStateDialog();
+	}
 
-  openServiceDialog(id: ServiceType): void {
-    this.state.openServiceDialog(id);
-  }
+	openServiceDialog(id: ServiceType): void {
+		this.state.openServiceDialog(id);
+	}
 }

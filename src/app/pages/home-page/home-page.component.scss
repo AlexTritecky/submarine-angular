@@ -1,32 +1,32 @@
 @import "breakpoints";
 
 .hero {
-  background: url(/assets/images/hero-bg.webp) lightgray 50% / cover no-repeat;
+	background: url(/assets/images/hero-bg.webp) lightgray 50% / cover no-repeat;
 }
 
 .info {
-  margin: 80px auto;
+	margin: 80px auto;
 }
 
 .clients {
-  margin: 80px auto 0;
+	margin: 80px auto 0;
 
-  h2 {
-    color: var(--default-black);
-    font-family: "Gilroy-Bold";
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 70px;
-    margin-bottom: 20px;
-  }
+	h2 {
+		color: var(--default-black);
+		font-family: "Gilroy-Bold";
+		font-size: 50px;
+		font-weight: 700;
+		line-height: 70px;
+		margin-bottom: 20px;
+	}
 }
 
 .list-items {
-  margin-top: 0;
-  margin-bottom: 30px;
-  width: 100%;
+	margin-top: 0;
+	margin-bottom: 30px;
+	width: 100%;
 }
 
 .cooperation {
-  margin: 80px auto;
+	margin: 80px auto;
 }

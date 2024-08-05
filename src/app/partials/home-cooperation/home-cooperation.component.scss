@@ -1,75 +1,75 @@
 h1 {
-  color: var(--default-black);
-  font-family: "Gilroy-Bold";
-  font-size: 50px;
-  font-weight: 700;
-  line-height: 70px;
-  margin-bottom: 42px;
+	color: var(--default-black);
+	font-family: "Gilroy-Bold";
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 70px;
+	margin-bottom: 42px;
 }
 
 .block-info {
-  padding-bottom: 57.5px;
-  display: flex;
-  flex-direction: column;
+	padding-bottom: 57.5px;
+	display: flex;
+	flex-direction: column;
 
-  .steps-titles {
-    display: flex;
-    gap: 37px;
-    margin-bottom: 11.5px;
+	.steps-titles {
+		display: flex;
+		gap: 37px;
+		margin-bottom: 11.5px;
 
-    .step {
-      width: calc(100% / 4 + 9.25px);
-      height: 71px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
+		.step {
+			width: calc(100% / 4 + 9.25px);
+			height: 71px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
 
-      h3 {
-        color: var(--default-black);
-        font-family: "Unbounded-Bold";
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 0.72px;
-      }
-    }
+			h3 {
+				color: var(--default-black);
+				font-family: "Unbounded-Bold";
+				font-size: 16px;
+				font-weight: 700;
+				line-height: 24px;
+				letter-spacing: 0.72px;
+			}
+		}
 
-    .no-active {
-      background-image: url(/assets/images/step-no-active.svg);
-    }
+		.no-active {
+			background-image: url(/assets/images/step-no-active.svg);
+		}
 
-    .active {
-      background-image: url(/assets/images/step-active.svg);
-    }
-  }
+		.active {
+			background-image: url(/assets/images/step-active.svg);
+		}
+	}
 
-  .steps-description {
-    display: flex;
-    justify-content: space-evenly;
+	.steps-description {
+		display: flex;
+		justify-content: space-evenly;
 
-    .step {
-      max-width: 200px;
-      width: 100%;
+		.step {
+			max-width: 200px;
+			width: 100%;
 
-      &:first-child {
-        margin-left: 25px;
-      }
+			&:first-child {
+				margin-left: 25px;
+			}
 
-      p {
-        font-family: "Gilroy-Regular";
-        color: var(--default-black);
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 20px;
-        letter-spacing: 0.48px;
-      }
-    }
+			p {
+				font-family: "Gilroy-Regular";
+				color: var(--default-black);
+				font-size: 15px;
+				font-weight: 400;
+				line-height: 20px;
+				letter-spacing: 0.48px;
+			}
+		}
 
-    mat-icon {
-      width: 24px;
-    }
-  }
+		mat-icon {
+			width: 24px;
+		}
+	}
 }

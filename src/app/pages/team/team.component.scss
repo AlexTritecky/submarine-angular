@@ -1,161 +1,161 @@
 @import "breakpoints";
 
 .hero {
-  background: url(/assets/images/hero-bg.webp) lightgray 50% / cover no-repeat;
+	background: url(/assets/images/hero-bg.webp) lightgray 50% / cover no-repeat;
 }
 
 .team {
-  margin: 80px auto;
-  width: 100%;
+	margin: 80px auto;
+	width: 100%;
 
-  h1 {
-    color: var(--default-black);
-    font-family: "Gilroy-Bold";
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 70px;
-    margin-bottom: 42px;
-  }
+	h1 {
+		color: var(--default-black);
+		font-family: "Gilroy-Bold";
+		font-size: 50px;
+		font-weight: 700;
+		line-height: 70px;
+		margin-bottom: 42px;
+	}
 
-  &__list {
-    margin-top: 32px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    width: 100%;
-    position: relative;
-  }
+	&__list {
+		margin-top: 32px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 24px;
+		width: 100%;
+		position: relative;
+	}
 
-  &--item {
-    position: relative;
+	&--item {
+		position: relative;
 
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
 
-    img.main-image {
-      width: 100%;
-      display: block;
-    }
+		img.main-image {
+			width: 100%;
+			display: block;
+		}
 
-    .team-member {
-      margin-top: 32px;
+		.team-member {
+			margin-top: 32px;
 
-      h3 {
-        color: var(--default-black);
-        font-family: "Unbounded-Bold";
-        font-size: 18px;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 0.72px;
-        margin-bottom: 8px;
-      }
+			h3 {
+				color: var(--default-black);
+				font-family: "Unbounded-Bold";
+				font-size: 18px;
+				font-weight: 700;
+				line-height: 24px;
+				letter-spacing: 0.72px;
+				margin-bottom: 8px;
+			}
 
-      p {
-        color: var(--default-black);
-        font-family: "Gilroy-Regular";
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 20px;
-        letter-spacing: 0.48px;
-      }
-    }
+			p {
+				color: var(--default-black);
+				font-family: "Gilroy-Regular";
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 20px;
+				letter-spacing: 0.48px;
+			}
+		}
 
-    .cover {
-      position: absolute;
-      top: 5%;
-      left: 5%;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      transform: scale(0);
-      transition: transform 0.5s ease-in-out;
-      max-height: 435px;
-    }
+		.cover {
+			position: absolute;
+			top: 5%;
+			left: 5%;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-position: center;
+			transform: scale(0);
+			transition: transform 0.5s ease-in-out;
+			max-height: 435px;
+		}
 
-    &:hover .cover {
-      z-index: 1;
-      transform-origin: top left;
-      transform: scale(1);
-    }
+		&:hover .cover {
+			z-index: 1;
+			transform-origin: top left;
+			transform: scale(1);
+		}
 
-    &:not(:hover) .cover {
-      z-index: -1;
-      transform: scale(0);
-      transition: transform 0.7s ease-in-out;
-      transform-origin: bottom right top left;
-    }
-  }
+		&:not(:hover) .cover {
+			z-index: -1;
+			transform: scale(0);
+			transition: transform 0.7s ease-in-out;
+			transform-origin: bottom right top left;
+		}
+	}
 
-  .actions {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 48px;
+	.actions {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 48px;
 
-    .app-button {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      padding: 24px 32px;
-      transition: 0.5s ease-in-out;
-      position: relative;
-      transition-duration: 0.4s;
-      -webkit-transition-duration: 0.4s;
+		.app-button {
+			display: flex;
+			gap: 10px;
+			align-items: center;
+			padding: 24px 32px;
+			transition: 0.5s ease-in-out;
+			position: relative;
+			transition-duration: 0.4s;
+			-webkit-transition-duration: 0.4s;
 
-      &:hover {
-        padding: 24px 38px;
-        transition: 0.5s ease-in-out;
-      }
+			&:hover {
+				padding: 24px 38px;
+				transition: 0.5s ease-in-out;
+			}
 
-      mat-icon {
-        width: 14px;
-        height: 14px;
-      }
+			mat-icon {
+				width: 14px;
+				height: 14px;
+			}
 
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        border-radius: 4em;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: all 0.5s;
-        box-shadow: 0 0 8px 16px var(--default-black);
-      }
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				border-radius: 4em;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				transition: all 0.5s;
+				box-shadow: 0 0 8px 16px var(--default-black);
+			}
 
-      &:active {
-        top: 1px;
-      }
+			&:active {
+				top: 1px;
+			}
 
-      &:active::after {
-        box-shadow: 0 0 0 0 var(--default-black);
-        position: absolute;
-        border-radius: 4em;
-        left: 0;
-        top: 0;
-        opacity: 1;
-        transition: 0s;
-      }
-    }
-  }
+			&:active::after {
+				box-shadow: 0 0 0 0 var(--default-black);
+				position: absolute;
+				border-radius: 4em;
+				left: 0;
+				top: 0;
+				opacity: 1;
+				transition: 0s;
+			}
+		}
+	}
 }
 
 .loader {
-  width: 100%;
-  animation: spinner 3s linear infinite;
+	width: 100%;
+	animation: spinner 3s linear infinite;
 }
 
 @keyframes spinner {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }

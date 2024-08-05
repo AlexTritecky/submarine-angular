@@ -1,36 +1,36 @@
 .carousel-container {
-  height: 200px;
-  display: flex;
-  align-items: center;
-  width: 100vw;
-  overflow: hidden; // Ensure overfl
+	height: 200px;
+	display: flex;
+	align-items: center;
+	width: 100vw;
+	overflow: hidden; // Ensure overfl
 }
 
 .carousel-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+	width: 100%;
 }
 
 @keyframes scroll {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-50%, 0);
-  }
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-50%, 0);
+	}
 }
 
 .line {
-  display: flex;
-  animation: scroll 55s linear infinite;
-  gap: 100px;
+	display: flex;
+	animation: scroll 55s linear infinite;
+	gap: 100px;
 
-  .item {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
+	.item {
+		display: flex;
+		align-items: center;
+		width: 100%;
+	}
 }

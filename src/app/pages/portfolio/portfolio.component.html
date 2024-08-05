@@ -1,24 +1,24 @@
 <section class="app-section hero">
-  <owl-carousel-o [options]="customOptions">
-    <ng-container *ngFor="let slide of items">
-      <ng-template carouselSlide [id]="slide.id">
-        <div
-          class="carousel-item"
-          [ngStyle]="{ 'background-image': 'url(' + slide.image + ')' }"></div>
-      </ng-template>
-    </ng-container>
-  </owl-carousel-o>
+	<owl-carousel-o [options]="customOptions">
+		<ng-container *ngFor="let slide of items">
+			<ng-template carouselSlide [id]="slide.id">
+				<div
+					class="carousel-item"
+					[ngStyle]="{ 'background-image': 'url(' + slide.image + ')' }"></div>
+			</ng-template>
+		</ng-container>
+	</owl-carousel-o>
 
-  <div class="static-content">
-    <app-header [isViewing]="true"></app-header>
-    <div class="carousel-actions">
-      <h2>КОЖЕН КЕЙС - ЦЕ НАША СПІЛЬНА ІСТОРІЯ</h2>
-      <div class="actions">
-        <button class="app-button">
-          <mat-icon svgIcon="icon-button-plus"></mat-icon>
-          отримати прорахунок
-        </button>
-      </div>
-    </div>
-  </div>
+	<div class="static-content">
+		<app-header [isViewing]="true"></app-header>
+		<div class="carousel-actions">
+			<h2>КОЖЕН КЕЙС - ЦЕ НАША СПІЛЬНА ІСТОРІЯ</h2>
+			<div class="actions">
+				<button class="app-button">
+					<mat-icon svgIcon="icon-button-plus"></mat-icon>
+					отримати прорахунок
+				</button>
+			</div>
+		</div>
+	</div>
 </section>

@@ -8,25 +8,25 @@ import { ContactDialogComponent } from '../contact-dialog/contact-dialog.compone
 import { LazyLoadDirective } from '../../lazy-load.directive';
 
 @Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [RouterLink, MatIconModule, NgClass, MatDialogModule, LazyLoadDirective],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss',
+	selector: 'app-footer',
+	standalone: true,
+	imports: [RouterLink, MatIconModule, NgClass, MatDialogModule, LazyLoadDirective],
+	templateUrl: './footer.component.html',
+	styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-  public footerLinks: FooterLink[] = footerSocial;
+	public footerLinks: FooterLink[] = footerSocial;
 
-  constructor(public dialog: MatDialog) {}
+	constructor(public dialog: MatDialog) {}
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(ContactDialogComponent, {
-      width: '901px',
-      height: '901px',
-      position: { right: '0' },
-      panelClass: 'contact-dialog-container',
-    });
+	openDialog(): void {
+		const dialogRef = this.dialog.open(ContactDialogComponent, {
+			width: '901px',
+			height: '901px',
+			position: { right: '0' },
+			panelClass: 'contact-dialog-container',
+		});
 
-    dialogRef.afterClosed().subscribe((result) => {});
-  }
+		dialogRef.afterClosed().subscribe((result) => {});
+	}
 }
