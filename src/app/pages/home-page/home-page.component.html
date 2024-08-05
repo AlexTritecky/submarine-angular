@@ -9,305 +9,36 @@
   </div>
 </section>
 
-@defer (on viewport) {
-  <section class="app-section info" id="about-us">
-    <div class="app-container">
-      <h1>
-        Ми — креативна агенція з України,
-        <span> СТВОРЮЄМО 🔗 МІЖ КОМПАНІЯМИ І ЛЮДЬМИ </span>
-        з 2018 року
-      </h1>
-      <p>
-        Ми творці за своїм архетипом і призначенням. Глобально — продумуємо та реалізовуємо
-        маркетингові, комунікаційні та SMM-стратегії. Якщо трішки глибше — поєднуємо систему фактів,
-        цифр та цілей зі свіжими гіпотезами та ідеями.
-      </p>
-      <p>
-        Звучить складно, але найкраще описує найбільш розмите слово у світі —
-        <span>креатив</span>.
-      </p>
-
-      <p class="mb-0">
-        Ми обрали для себе бутикову стратегію розвитку, тому не цілимось у ширину. Ми хочемо
-        досліджувати глибину. Тому вибір кандидата чи замовника — завжди проходить через запитання:
-      </p>
-
-      <p class="info-end">Чи готові ви пірнути у дослідження так глибоко, наскільки це можливо?</p>
-    </div>
-  </section>
-
-  <section class="app-section services" id="services">
-    <div class="app-container">
-      <h2>ПОСЛУГИ</h2>
-
-      <div class="cards">
-        <div class="big-card">
-          <div class="big-card--title">
-            <div class="actions">
-              <button (click)="openServiceDialog(types.SMM_SUPROVID)">
-                <mat-icon svgIcon="icon-plus"></mat-icon>
-              </button>
-            </div>
-
-            <h3>01. SMM</h3>
-          </div>
-          <div class="big-card--description">Щомісячний супровід сторінок бренду</div>
-        </div>
-        <div class="list-sm-cards">
-          <!-- Communication strategy -->
-          <div class="sm-card communication">
-            <div class="actions">
-              <button (click)="openServiceDialog(types.COMUNIKATSIYNA_STRATEGIYA)">
-                <mat-icon svgIcon="icon-plus"></mat-icon>
-              </button>
-            </div>
-            <h3>02.</h3>
-            <h4>КОМУНІКАЦІЙНА СТРАТЕГІЯ</h4>
-
-            <div class="description">
-              <p>Стратегія внутрішньої</p>
-              <p>та зовнішньої комунікації бренду</p>
-            </div>
-          </div>
-          <!-- SMM-strategy -->
-          <div class="sm-card smm-strategy">
-            <div class="actions">
-              <button (click)="openServiceDialog(types.SMM_STRATEGIYA)">
-                <mat-icon svgIcon="icon-plus"></mat-icon>
-              </button>
-            </div>
-            <h3>03.</h3>
-            <h4>SMM</h4>
-            <h4>СТРАТЕГІЯ</h4>
-            <div class="description">
-              <p>Стратегія розвитку бренду</p>
-              <p>в соціальних мережах</p>
-            </div>
-          </div>
-          <!-- Branding -->
-          <div class="sm-card branding">
-            <div class="actions">
-              <button (click)="openServiceDialog(types.BRENDING)">
-                <mat-icon svgIcon="icon-plus"></mat-icon>
-              </button>
-            </div>
-            <h3>04.</h3>
-            <h4>БРЕНДИНГ</h4>
-
-            <div class="description">
-              <p>Неймінг</p>
-              <p>Логобук</p>
-              <p>Брендбук</p>
-            </div>
-          </div>
-          <!-- Production -->
-          <div class="sm-card production">
-            <div class="actions">
-              <button (click)="openServiceDialog(types.PRODUCTION)">
-                <mat-icon svgIcon="icon-plus"></mat-icon>
-              </button>
-            </div>
-            <h3>05.</h3>
-            <h4>ПРОДАКШН</h4>
-
-            <div class="description">
-              <p>Фотозйомка</p>
-              <p>Відеозйомка</p>
-            </div>
-          </div>
-          <!-- Promotion -->
-          <div class="sm-card promotion">
-            <div class="actions">
-              <button (click)="openServiceDialog(types.PROMOTION)">
-                <mat-icon svgIcon="icon-plus"></mat-icon>
-              </button>
-            </div>
-            <h3>06.</h3>
-            <h4>ПРОМОУШН</h4>
-            <div class="description">
-              <p>Співпраця з медіа</p>
-
-              <p>Співпраця з інфлуенсерами</p>
-
-              <p>Колаборації</p>
-
-              <p>Спец-проекти</p>
-            </div>
-          </div>
-          <!-- Web Design -->
-          <div class="sm-card web-design">
-            <div class="actions">
-              <button (click)="openServiceDialog(types.WEB_DESIGN)">
-                <mat-icon svgIcon="icon-plus"></mat-icon>
-              </button>
-            </div>
-            <h3>07.</h3>
-            <h4>ВЕБДИЗАЙН</h4>
-
-            <div class="description">
-              <p>UI/UX дизайн веб сайтів</p>
-
-              <p>Веб-розробка сайтів</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-action">
-        <button class="app-button" (click)="openDialog()">
-          <mat-icon svgIcon="icon-button-plus"></mat-icon>
-          отримати прорахунок
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section class="app-section clients" id="clients">
-    <div class="app-container">
-      <h2>КЛІЄНТИ</h2>
-    </div>
-  </section>
-
-  <div class="list-items">
-    <app-carousel></app-carousel>
+<section class="app-section info" id="about-us">
+  <div class="app-container">
+    <app-home-info></app-home-info>
   </div>
+</section>
 
-  <section class="app-section cases" id="portfolio">
-    <div class="app-container">
-      <h2>КЕЙСИ</h2>
+<section class="app-section services" id="services">
+  <div class="app-container">
+    <app-home-services></app-home-services>
+  </div>
+</section>
 
-      <div class="cases__cards">
-        <div class="card purple">
-          <!-- <mat-icon svgIcon="icon-recover"></mat-icon> -->
+<section class="app-section clients" id="clients">
+  <div class="app-container">
+    <h2>КЛІЄНТИ</h2>
+  </div>
+</section>
 
-          <!-- <mat-icon class="logo-recover" svgIcon="icon-recover-logo"></mat-icon> -->
+<div class="list-items">
+  <app-carousel></app-carousel>
+</div>
 
-          <div class="time-title">
-            <h4>Скоро буде</h4>
-          </div>
+<section class="app-section cases" id="portfolio">
+  <div class="app-container">
+    <app-home-cases></app-home-cases>
+  </div>
+</section>
 
-          <!-- <p>
-
-            Відбудова країни, <br />
-            у якій хочеться жити
-          </p> -->
-
-          <div class="short-infos">
-            <div class="block">ще</div>
-            <div class="block">зовсім</div>
-            <div class="block">трошки</div>
-            <div class="block">правда</div>
-          </div>
-        </div>
-
-        <div class="card light">
-          <!-- <mat-icon svgIcon="icon-rikota"></mat-icon>
-
-          <mat-icon class="logo-rikota" svgIcon="icon-rikota-logo"></mat-icon> -->
-          <div class="time-title">
-            <h4>Ми вже працюємо над створенням кейсів</h4>
-          </div>
-
-          <!-- <p class="rikota">
-            Безкомпромісна турбота <br />
-            про вашу усмішку
-          </p> -->
-
-          <div class="short-infos">
-            <div class="block">ще</div>
-            <div class="block">зовсім</div>
-            <div class="block">трошки</div>
-            <div class="block">правда</div>
-          </div>
-        </div>
-        <div class="card purple">
-          <!-- <mat-icon svgIcon="icon-okko"></mat-icon>
-
-          <mat-icon class="logo-okko" svgIcon="icon-okko-logo"></mat-icon> -->
-
-          <!-- <p>
-            Місце зустрічей <br />
-            рідних незнайомців
-          </p> -->
-          <div class="time-title">
-            <h4>А поки що можна погортати головну сторінку</h4>
-          </div>
-
-          <div class="short-infos">
-            <div class="block">ще</div>
-            <div class="block">зовсім</div>
-            <div class="block">трошки</div>
-            <div class="block">правда</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- <div class="cases__action">
-        <button class="app-button">
-          Переглянути всі кейси
-          <mat-icon svgIcon="icon-circle-arrow"></mat-icon>
-        </button>
-      </div> -->
-    </div>
-  </section>
-
-  <section class="app-section cooperation" id="cooperation">
-    <div class="app-container">
-      <h1>СПІВПРАЦЯ</h1>
-
-      <div class="block-info">
-        <div class="steps-titles">
-          <div class="step no-active">
-            <h3>КОНСУЛЬТАЦІЯ</h3>
-          </div>
-
-          <div class="step active">
-            <h3>ПРОПОЗИЦІЯ</h3>
-          </div>
-
-          <div class="step no-active">
-            <h3>ДОГОВІР</h3>
-          </div>
-
-          <div class="step active">
-            <h3>ЗАПУСК</h3>
-          </div>
-        </div>
-
-        <div class="steps-description">
-          <div class="step">
-            <p>
-              15-хвилинний зум-брифінг з нашим стратегом , який оцінить існуючу ситуацію та
-              проблемні зони
-            </p>
-          </div>
-          <mat-icon svgIcon="icon-arrow-right"></mat-icon>
-
-          <div class="step">
-            <p>Ти отримаєш розгорнуту індивідуальну пропозицію по твоєму проекту</p>
-          </div>
-
-          <mat-icon svgIcon="icon-arrow-right"></mat-icon>
-
-          <div class="step">
-            <p>
-              Після погодження пропозиції ми підписуємо договір про співпрацю та надсилаємо
-              першийрахунок
-            </p>
-          </div>
-
-          <mat-icon svgIcon="icon-arrow-right"></mat-icon>
-
-          <div class="step">
-            <p>
-              Тут все тільки починається! Знайомство з менеджером твого проекту та майбутньою
-              командою
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-} @placeholder {
-  <app-loader></app-loader>
-}
+<section class="app-section cooperation" id="cooperation">
+  <div class="app-container">
+    <app-home-cooperation></app-home-cooperation>
+  </div>
+</section>
