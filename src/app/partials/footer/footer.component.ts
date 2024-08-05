@@ -29,4 +29,8 @@ export class FooterComponent {
 
 		dialogRef.afterClosed().subscribe((result) => {});
 	}
+
+	scrollToTop(): void {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}
 }

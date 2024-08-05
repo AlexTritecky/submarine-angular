@@ -23,6 +23,13 @@ export const SVG_ICONS: { [key: string]: string } = {
 	'icon-circle-arrow': 'assets/icons/icon-circle-arrow.svg',
 	'icon-p': 'assets/icons/icon-p.svg',
 	'icon-navigation-close': 'assets/icons/icon-navigation-close.svg',
+	'icon-arrow-down': 'assets/icons/icon-arrow-down.svg',
+	'icon-facebook': 'assets/icons/social/icon-facebook.svg',
+	'icon-instagram': 'assets/icons/social/icon-instagram.svg',
+	'icon-linkedin': 'assets/icons/social/icon-linkedin.svg',
+	'icon-tik-tok': 'assets/icons/social/icon-tiktok.svg',
+	'icon-up': 'assets/icons/icon-up.svg',
+	'icon-close-mobile': 'assets/icons/icon-close-mob.svg',
 };
 
 @Injectable({

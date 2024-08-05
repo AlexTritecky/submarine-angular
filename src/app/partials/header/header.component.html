@@ -26,7 +26,7 @@
 @if (navigationOpen) {
 	<div class="navigation-overlay">
 		<div class="navigation-overlay--black" [ngClass]="overlayBlackClass">
-			<a href="">
+			<a href="/">
 				<mat-icon svgIcon="icon-logo"></mat-icon>
 			</a>
 
@@ -63,6 +63,33 @@
 					<p>© Submarine Creative 2023.</p>
 					<p>All rights reserved</p>
 				</div>
+			</div>
+		</div>
+
+		<div class="navigation-overlay--mobile" [ngClass]="overlayBlackClass">
+
+			<div class="logo">
+				<a href="/">
+					<mat-icon svgIcon="icon-logo"></mat-icon>
+				</a>
+			</div>
+
+			<div class="actions">
+				<button (click)="closeNavigation()">
+					<mat-icon svgIcon="icon-close-mobile"></mat-icon>
+				</button>
+			</div>
+
+			<div class="items">
+				@for (link of navOverlayLinks; track link.title) {
+					<a class="nav-link" (click)="onOverlayLinkClick(link)">
+						{{ link.title }}
+					</a>
+				}
+			</div>
+
+			<div class="social">
+
 			</div>
 		</div>
 	</div>

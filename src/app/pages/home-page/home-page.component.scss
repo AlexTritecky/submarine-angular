@@ -2,6 +2,12 @@
 
 .hero {
 	background: url(/assets/images/hero-bg.webp) lightgray 50% / cover no-repeat;
+
+	// submarine-angular/src/assets/images/hero-mob-bg.webp
+
+	@include screen("tablet-portrait") {
+		background: url(/assets/images/hero-mob-bg.webp) lightgray 50% / cover no-repeat;
+	}
 }
 
 .info {
@@ -17,7 +23,6 @@
 		font-size: 50px;
 		font-weight: 700;
 		line-height: 70px;
-		margin-bottom: 20px;
 	}
 }
 
@@ -29,4 +34,19 @@
 
 .cooperation {
 	margin: 80px auto;
+
+	.desktop {
+		display: block;
+		@include screen("tablet-portrait") {
+			display: none;
+		}
+	}
+
+	.mobile {
+		display: none;
+
+		@include screen("tablet-portrait") {
+			display: block;
+		}
+	}
 }

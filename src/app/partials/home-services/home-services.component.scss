@@ -1,3 +1,5 @@
+@import "breakpoints";
+
 h2 {
 	color: var(--default-black);
 	font-family: "Gilroy-Bold";
@@ -70,6 +72,10 @@ h2 {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 24px;
+
+		@include screen("tablet-portrait") {
+			grid-template-columns: repeat(2, 1fr);
+		}
 
 		.sm-card {
 			padding: 48px 24px;

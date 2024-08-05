@@ -12,6 +12,7 @@ import { HomeCasesComponent } from '../../partials/home-cases/home-cases.compone
 import { HomeCooperationComponent } from '../../partials/home-cooperation/home-cooperation.component';
 import { isPlatformBrowser } from '@angular/common';
 import { LazyLoadDirective } from '../../lazy-load.directive';
+import { HomeCooperationMobileComponent } from '../../partials/home-cooperation-mobile/home-cooperation-mobile.component';
 @Component({
 	selector: 'app-home-page',
 	standalone: true,
@@ -27,6 +28,7 @@ import { LazyLoadDirective } from '../../lazy-load.directive';
 		HomeCooperationComponent,
 		LoaderComponent,
 		LazyLoadDirective,
+		HomeCooperationMobileComponent,
 	],
 	providers: [StateService],
 	templateUrl: './home-page.component.html',

@@ -63,6 +63,7 @@ header {
 
 .home-view {
 	justify-content: flex-end;
+
 	@include screen("tablet-portrait") {
 		justify-content: center;
 	}
@@ -86,6 +87,10 @@ header {
 		justify-content: space-between;
 		align-items: center;
 		flex-direction: column;
+
+		@include screen("tablet-portrait") {
+			display: none;
+		}
 
 		a {
 			mat-icon {
@@ -156,6 +161,10 @@ header {
 		justify-content: space-between;
 		align-items: center;
 		flex-direction: column;
+
+		@include screen("tablet-portrait") {
+			display: none;
+		}
 
 		.navigation-action {
 			display: flex;
@@ -242,6 +251,71 @@ header {
 					letter-spacing: 0.6px;
 				}
 			}
+		}
+	}
+
+	&--mobile {
+		display: none;
+		height: 100%;
+		width: 100%;
+		background: var(--default-black);
+		padding: 16px;
+
+		@include screen("tablet-portrait") {
+			display: block;
+		}
+
+		.logo {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			a {
+				width: 100%;
+				text-align: center;
+				mat-icon {
+					width: 276px;
+					height: 62.938px;
+				}
+			}
+		}
+
+		.actions {
+			margin-top: 6px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+
+			button {
+				mat-icon {
+					width: 77px;
+					height: 77px;
+				}
+			}
+		}
+
+		.items {
+			margin-top: 70px;
+			display: flex;
+			flex-direction: column;
+			gap: 24px;
+
+			.nav-link {
+				color: var(--default-white);
+				/* mobile_title_1 */
+				font-family: "Gilroy-Black";
+				font-size: 24px;
+				font-weight: 900;
+				line-height: 32px;
+				text-transform: uppercase;
+			}
+		}
+
+		.social {
+			display: flex;
+			margin-top: 50px;
 		}
 	}
 }

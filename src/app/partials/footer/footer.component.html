@@ -5,7 +5,7 @@
 
 			<button class="app-button" (click)="openDialog()">
 				<mat-icon svgIcon="icon-sm-plus"></mat-icon>
-				СТАТИ КЛІЄНТОМ
+				отримати прорахунок
 			</button>
 
 			<p>Не любите заповнювати форми?</p>
@@ -32,9 +32,29 @@
 			<div class="social contacts">
 				<h4>Контакти:</h4>
 
-				<p>79007 Україна м.Львів, вул. Шопена, 10/2</p>
+				<p>79007 Україна м.Львів, <br> вул. Шопена, 10/2</p>
 
 				<a href="tel:+380672604811">+380672604811</a>
+			</div>
+
+			<div class="mobile">
+				<div class="icons">
+					@for (item of footerLinks; track item.label) {
+						<a href="{{ item.route }}" target="_blank">
+							<mat-icon svgIcon="{{ item.icon }}"></mat-icon>
+						</a>
+					}
+				</div>
+
+				<div class="action">
+					<button (click)="scrollToTop()">
+						Повернутись догори <mat-icon svgIcon="icon-up"></mat-icon>
+					</button>
+				</div>
+
+				<div class="rights">
+					© Submarine Creative 2023. All rights reserved
+				</div>
 			</div>
 		</div>
 	</div>
