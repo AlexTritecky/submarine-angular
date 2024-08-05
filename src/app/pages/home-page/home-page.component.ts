@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { HeaderComponent } from '../../partials/header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { CarouselComponent } from '../../partials/carousel/carousel.component';
@@ -10,6 +10,7 @@ import { HomeInfoComponent } from '../../partials/home-info/home-info.component'
 import { HomeServicesComponent } from '../../partials/home-services/home-services.component';
 import { HomeCasesComponent } from '../../partials/home-cases/home-cases.component';
 import { HomeCooperationComponent } from '../../partials/home-cooperation/home-cooperation.component';
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-home-page',
   standalone: true,
@@ -23,16 +24,41 @@ import { HomeCooperationComponent } from '../../partials/home-cooperation/home-c
     HomeServicesComponent,
     HomeCasesComponent,
     HomeCooperationComponent,
+    LoaderComponent
   ],
   providers: [StateService],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
-export class HomePageComponent {
+export class HomePageComponent implements OnInit {
+  isLoading = true;
+
   constructor(
     public dialog: MatDialog,
     private state: StateService,
+    private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
+
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.loadBackgroundImage();
+    }
+  }
+
+  loadBackgroundImage() {
+    const backgroundImage = this.renderer.createElement('img');
+    this.renderer.setAttribute(backgroundImage, 'src', '/assets/images/hero-bg.webp');
+
+    this.renderer.listen(backgroundImage, 'load', () => {
+      this.isLoading = false;
+    });
+
+    this.renderer.listen(backgroundImage, 'error', () => {
+      this.isLoading = true;
+    });
+  }
 
   openDialog(): void {
     this.state.openStateDialog();

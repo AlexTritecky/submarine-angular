@@ -1,44 +1,48 @@
-<section class="app-section hero">
-  <app-header [isViewing]="false"></app-header>
+@if (isLoading) {
+  <app-loader></app-loader>
+} @else {
+  <section class="app-section hero">
+    <app-header [isViewing]="false"></app-header>
 
-  <div class="actions">
-    <button class="app-button" (click)="openDialog()">
-      <mat-icon svgIcon="icon-button-plus"></mat-icon>
-      отримати прорахунок
-    </button>
+    <div class="actions">
+      <button class="app-button" (click)="openDialog()">
+        <mat-icon svgIcon="icon-button-plus"></mat-icon>
+        отримати прорахунок
+      </button>
+    </div>
+  </section>
+
+  <section class="app-section info" id="about-us">
+    <div class="app-container">
+      <app-home-info></app-home-info>
+    </div>
+  </section>
+
+  <section class="app-section services" id="services">
+    <div class="app-container">
+      <app-home-services></app-home-services>
+    </div>
+  </section>
+
+  <section class="app-section clients" id="clients">
+    <div class="app-container">
+      <h2>КЛІЄНТИ</h2>
+    </div>
+  </section>
+
+  <div class="list-items">
+    <app-carousel></app-carousel>
   </div>
-</section>
 
-<section class="app-section info" id="about-us">
-  <div class="app-container">
-    <app-home-info></app-home-info>
-  </div>
-</section>
+  <section class="app-section cases" id="portfolio">
+    <div class="app-container">
+      <app-home-cases></app-home-cases>
+    </div>
+  </section>
 
-<section class="app-section services" id="services">
-  <div class="app-container">
-    <app-home-services></app-home-services>
-  </div>
-</section>
-
-<section class="app-section clients" id="clients">
-  <div class="app-container">
-    <h2>КЛІЄНТИ</h2>
-  </div>
-</section>
-
-<div class="list-items">
-  <app-carousel></app-carousel>
-</div>
-
-<section class="app-section cases" id="portfolio">
-  <div class="app-container">
-    <app-home-cases></app-home-cases>
-  </div>
-</section>
-
-<section class="app-section cooperation" id="cooperation">
-  <div class="app-container">
-    <app-home-cooperation></app-home-cooperation>
-  </div>
-</section>
+  <section class="app-section cooperation" id="cooperation">
+    <div class="app-container">
+      <app-home-cooperation></app-home-cooperation>
+    </div>
+  </section>
+}
