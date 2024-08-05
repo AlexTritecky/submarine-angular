@@ -5,10 +5,11 @@ import { CarouselComponent } from '../../partials/carousel/carousel.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { StateService } from '../../services/state/state.service';
 import { ServiceType } from '../../models/service.model';
+import { LoaderComponent } from '../../partials/loader/loader.component';
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [HeaderComponent, MatIconModule, CarouselComponent, MatDialogModule],
+  imports: [HeaderComponent, MatIconModule, CarouselComponent, MatDialogModule, LoaderComponent],
   providers: [StateService],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
