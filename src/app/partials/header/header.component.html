@@ -89,7 +89,15 @@
 			</div>
 
 			<div class="social">
+				@for (item of footerLinks; track item.label) {
+					<a href="{{ item.route }}" target="_blank">
+						<mat-icon [svgIcon]="item.icon_w"></mat-icon>
+					</a>
+				}
+			</div>
 
+			<div class="rights">
+				© Submarine Creative 2023. All rights reserved
 			</div>
 		</div>
 	</div>
