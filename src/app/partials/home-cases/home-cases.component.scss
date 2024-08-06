@@ -7,6 +7,12 @@ h2 {
 	font-weight: 700;
 	line-height: 70px;
 	margin-bottom: 42px;
+
+	@include screen("phone") {
+		font-size: 36px;
+		line-height: 42px;
+		margin-bottom: 28px;
+	}
 }
 
 .cases-cards {
@@ -31,6 +37,13 @@ h2 {
 		@include screen("tablet-portrait") {
 			margin: 0 auto;
 			max-width: 410px;
+		}
+
+		@include screen("phone") {
+			max-width: 340px;
+			min-height: 290px;
+			height: 100%;
+
 		}
 
 		mat-icon {

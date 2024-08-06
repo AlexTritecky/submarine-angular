@@ -1,3 +1,5 @@
+@import "breakpoints";
+
 h1 {
 	color: var(--default-black);
 	font-family: "Gilroy-Bold";
@@ -5,6 +7,13 @@ h1 {
 	font-weight: 700;
 	line-height: 70px;
 	margin-bottom: 42px;
+
+
+	@include screen("phone") {
+		font-size: 36px;
+		line-height: 42px;
+		margin-bottom: 28px;
+	}
 }
 
 .block-info {
@@ -37,6 +46,11 @@ h1 {
 				font-weight: 700;
 				line-height: 32px;
 				letter-spacing: 0.72px;
+
+				@include screen("phone") {
+					font-size: 24px;
+					line-height: 28px;
+				}
 			}
 		}
 

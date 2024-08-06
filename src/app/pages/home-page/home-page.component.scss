@@ -44,6 +44,11 @@
 		font-size: 50px;
 		font-weight: 700;
 		line-height: 70px;
+
+		@include screen("phone") {
+			font-size: 36px;
+			line-height: 42px;
+		}
 	}
 }
 
@@ -55,6 +60,10 @@
 
 .cooperation {
 	margin: 80px auto;
+
+	@include screen("phone") {
+		margin: 40px auto;
+	}
 
 	.desktop {
 		display: block;
