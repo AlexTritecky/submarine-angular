@@ -48,6 +48,10 @@ footer {
 				font-weight: 600;
 				line-height: 36px;
 				margin-bottom: 24px;
+
+				@include screen("phone") {
+					font-size: 24px;
+				}
 			}
 
 			.app-button {
@@ -107,6 +111,10 @@ footer {
 					width: 14px;
 					height: 14px;
 				}
+
+				@include screen("phone") {
+					font-size: 14px;
+				}
 			}
 
 			p {
@@ -128,6 +136,10 @@ footer {
 					font-weight: 700;
 					line-height: 20px;
 					letter-spacing: 0.6px;
+
+					@include screen("phone") {
+						font-size: 14px;
+					}
 				}
 			}
 
@@ -300,6 +312,10 @@ footer {
 					font-weight: 400;
 					line-height: 24px;
 					letter-spacing: 0.6px;
+
+					@include screen("phone") {
+						font-size: 10px;
+					}
 				}
 			}
 		}

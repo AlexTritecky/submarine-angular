@@ -128,6 +128,7 @@ export class MobileFormComponent {
 			this.emailService.sendCustomerRequest(sendObject).subscribe((res) => {
 				if (res.complete) {
 					this.emailService.clearFormState();
+					window.scrollTo(0, 0);
 					this.contactForm.reset();
 					this.showContent = res.complete;
 				}

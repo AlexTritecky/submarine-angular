@@ -32,7 +32,7 @@ export const navigation: NavigationItem[] = [
 export const navOverlayLinks: NavigationItem[] = [
 	{
 		title: 'Домашня сторінка',
-		route: '',
+		route: '/',
 	},
 	{
 		title: 'Про нас',
@@ -73,7 +73,7 @@ export const navOverlayLinks: NavigationItem[] = [
 export const navMobileLinks: NavigationItem[] = [
 	{
 		title: 'Домашня сторінка',
-		route: '',
+		route: '/',
 	},
 	{
 		title: 'Про нас',

@@ -44,6 +44,8 @@ export class HeaderComponent {
 	}
 
 	onOverlayLinkClick(link: NavigationItem) {
+		console.log(33, link);
+
 		if (link.scroll) {
 			this.navigationScrollService.navigateAndScroll(link.route, link.scroll);
 			this.closeNavigation();
@@ -55,6 +57,8 @@ export class HeaderComponent {
 		}
 
 		if (link.route) {
+			console.log(11, link.route);
+
 			this.router.navigate([link.route]);
 			this.closeNavigation();
 		}
