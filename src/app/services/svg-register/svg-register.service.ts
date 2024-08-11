@@ -35,6 +35,8 @@ export const SVG_ICONS: { [key: string]: string } = {
 	'icon-instagram-w': 'assets/icons/social/icon-instagram-w.svg',
 	'icon-linkedin-w': 'assets/icons/social/icon-linkedin-w.svg',
 	'icon-tik-tok-w': 'assets/icons/social/icon-tiktok-w.svg',
+
+	'icon-gray-arrow': 'assets/icons/icon-arrow-circle-gray.svg',
 };
 
 @Injectable({

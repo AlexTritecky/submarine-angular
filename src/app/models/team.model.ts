@@ -4,11 +4,6 @@ export interface TeamMember {
 	position: string;
 	cover_image: string;
 	id: number;
-
-	description_1?: string;
-	description_2?: string;
-	description_3?: string;
-	description_4?: string;
 }
 
 export const teamMembers: TeamMember[] = [
