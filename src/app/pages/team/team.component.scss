@@ -2,6 +2,14 @@
 
 .hero {
 	background: url(/assets/images/hero-bg.webp) lightgray 50% / cover no-repeat;
+
+	@include screen("tablet-portrait") {
+		background: url(/assets/images/hero-mob-bg.webp) lightgray 50% / cover no-repeat;
+	}
+
+	@include screen("phone") {
+		padding-bottom: 32px;
+	}
 }
 
 .team {
@@ -24,6 +32,10 @@
 		gap: 24px;
 		width: 100%;
 		position: relative;
+
+		@include screen("tablet-portrait") {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
 	&--item {

@@ -1,0 +1,73 @@
+<section class="app-section hero">
+	<app-header [isViewing]="false"></app-header>
+</section>
+
+<section>
+	<div class="app-container">
+		<div class="dialog-content">
+			<h2>РОЗКАЖІТЬ ПРО СЕБЕ</h2>
+			<p>Щоб почати з нами співпрацю</p>
+			<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+				<div class="main-infos">
+					<div class="form-field">
+						<label for="name" [ngClass]="{ 'error-label': name.invalid && name.touched }"
+							>Як до вас звертатись*</label
+						>
+						<input type="text" placeholder="Ваше Ім'я" formControlName="name" />
+					</div>
+					<div class="form-field">
+						<label for="phone" [ngClass]="{ 'error-label': phone.invalid && phone.touched }"
+							>Телефон*</label
+						>
+						<input type="text" placeholder="Ваш номер телефону" formControlName="phone" />
+					</div>
+					<div class="form-field">
+						<label for="email" [ngClass]="{ 'error-label': email.invalid && email.touched }"
+							>Email*</label
+						>
+						<input type="text" placeholder="Ваша електронна адреса" formControlName="email" />
+					</div>
+					<div class="form-field">
+						<label
+							for="company_name"
+							[ngClass]="{
+								'error-label': companyName.invalid && companyName.touched,
+							}"
+							>Назва компанії *</label
+						>
+						<input type="text" placeholder="Назва вашоі компанії" formControlName="company_name" />
+					</div>
+				</div>
+
+				<h3>ОБЕРІТЬ ПОСЛУГИ</h3>
+
+				<p>Які вас цікавлять</p>
+
+				<div class="services-container">
+					@for (service of servicesList; track service) {
+						<button
+							type="button"
+							[ngClass]="{ selected: isSelected(service) }"
+							(click)="toggleService(service)">
+							{{ service }}
+						</button>
+					}
+				</div>
+
+				<p class="for_description">Розкажіть нам більше про свій проєкт</p>
+
+				<textarea
+					formControlName="description"
+					rows="3"
+					placeholder="Додаткова інформація"></textarea>
+
+				<div class="form-actions">
+					<button type="submit">
+						<mat-icon svgIcon="icon-plus-simple"></mat-icon>
+						Надіслати
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>

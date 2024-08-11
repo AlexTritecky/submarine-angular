@@ -81,7 +81,7 @@
 			</div>
 
 			<div class="items">
-				@for (link of navOverlayLinks; track link.title) {
+				@for (link of navMobileLinks; track link.title) {
 					<a class="nav-link" (click)="onOverlayLinkClick(link)">
 						{{ link.title }}
 					</a>

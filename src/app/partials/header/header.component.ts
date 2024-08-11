@@ -6,6 +6,7 @@ import {
 	FooterLink,
 	NavigationItem,
 	footerSocial,
+	navMobileLinks,
 	navOverlayLinks,
 	navigation,
 } from '../../models/navigation.model';
@@ -29,6 +30,8 @@ export class HeaderComponent {
 	public footerLinks: FooterLink[] = footerSocial;
 	public navLinks: NavigationItem[] = navigation;
 	public navOverlayLinks: NavigationItem[] = navOverlayLinks;
+	public navMobileLinks: NavigationItem[] = navMobileLinks;
+	public navItems: NavigationItem[] = [];
 
 	constructor(
 		private navigationScrollService: NavigationScrollService,
@@ -39,9 +42,8 @@ export class HeaderComponent {
 	onNavLinkClick(link: NavigationItem) {
 		this.navigationScrollService.navigateAndScroll('', link.route);
 	}
-	onOverlayLinkClick(link: NavigationItem) {
-		console.log(1, link);
 
+	onOverlayLinkClick(link: NavigationItem) {
 		if (link.scroll) {
 			this.navigationScrollService.navigateAndScroll(link.route, link.scroll);
 			this.closeNavigation();

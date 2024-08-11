@@ -3,6 +3,7 @@ export interface NavigationItem {
 	route: string;
 	scroll?: string;
 	openForm?: boolean;
+	mobileRoute?: string;
 }
 
 export const navigation: NavigationItem[] = [
@@ -65,6 +66,47 @@ export const navOverlayLinks: NavigationItem[] = [
 		title: 'Написати нам',
 		route: '',
 		openForm: true,
+		mobileRoute: 'cooperation',
+	},
+];
+
+export const navMobileLinks: NavigationItem[] = [
+	{
+		title: 'Домашня сторінка',
+		route: '',
+	},
+	{
+		title: 'Про нас',
+		route: '',
+		scroll: 'about-us',
+	},
+	{
+		title: 'Послуги',
+		route: '',
+		scroll: 'services',
+	},
+	{
+		title: 'Портфоліо',
+		route: 'portfolio',
+	},
+	{
+		title: 'Клієнти',
+		route: '',
+		scroll: 'clients',
+	},
+	{
+		title: 'Співпраця',
+		route: '',
+		scroll: 'cooperation',
+	},
+	{
+		title: 'Команда',
+		route: 'team',
+	},
+	{
+		title: 'Написати нам',
+		route: 'cooperation',
+		openForm: false,
 	},
 ];
 
