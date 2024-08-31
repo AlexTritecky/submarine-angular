@@ -1,7 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FooterLink, footerSocial } from '../../models/navigation.model';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ContactDialogComponent } from '../contact-dialog/contact-dialog.component';
@@ -17,7 +17,7 @@ import { LazyLoadDirective } from '../../lazy-load.directive';
 export class FooterComponent {
 	public footerLinks: FooterLink[] = footerSocial;
 
-	constructor(public dialog: MatDialog) {}
+	constructor(public dialog: MatDialog, private router: Router) {}
 
 	openDialog(): void {
 		const dialogRef = this.dialog.open(ContactDialogComponent, {
@@ -32,5 +32,9 @@ export class FooterComponent {
 
 	scrollToTop(): void {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}
+
+	routeToForm(): void {
+		this.router.navigate(['/cooperation']);
 	}
 }

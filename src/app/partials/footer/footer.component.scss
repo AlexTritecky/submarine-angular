@@ -50,7 +50,7 @@ footer {
 				margin-bottom: 24px;
 
 				@include screen("phone") {
-					font-size: 24px;
+					font-size: 22px;
 				}
 			}
 
@@ -114,6 +114,23 @@ footer {
 
 				@include screen("phone") {
 					font-size: 14px;
+					padding: 12px 24px;
+				}
+			}
+
+			.desktop {
+				display: flex;
+
+				@include screen("tablet-portrait") {
+					display: none;
+				}
+			}
+
+			.mobile {
+				display: none;
+
+				@include screen("tablet-portrait") {
+					display: flex;
 				}
 			}
 

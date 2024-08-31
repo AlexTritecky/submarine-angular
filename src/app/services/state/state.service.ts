@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactDialogComponent } from '../../partials/contact-dialog/contact-dialog.component';
-import { servicePopUpItems, ServiceType } from '../../models/service.model';
+import { ServicePopUpItem, servicePopUpItems, ServiceType } from '../../models/service.model';
 import { ServiceDialogComponent } from '../../partials/service-dialog/service-dialog.component';
 
 @Injectable({
@@ -33,5 +33,18 @@ export class StateService {
 		});
 
 		dialogRef.afterClosed().subscribe((result) => {});
+	}
+
+	getServiceById(id: ServiceType): ServicePopUpItem[] {
+		let items = servicePopUpItems.filter((item) => item.id === id);
+		if (!items) {
+			throw new Error(`ServicePopUpItem with id ${id} not found`);
+		}
+
+		if (id === ServiceType.BRENDING) {
+			return items;
+		}
+
+		return items;
 	}
 }

@@ -1,8 +1,8 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import {
 	PreloadAllModules,
-	PreloadingStrategy,
 	provideRouter,
+	withInMemoryScrolling,
 	withPreloading,
 } from '@angular/router';
 
@@ -12,10 +12,11 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { svgRegistrationProvider } from './providers/svg-registration.provider';
 
+
 export const appConfig: ApplicationConfig = {
 	providers: [
 		provideZoneChangeDetection({ eventCoalescing: true }),
-		provideRouter(routes, withPreloading(PreloadAllModules)),
+		provideRouter(routes, withPreloading(PreloadAllModules), withInMemoryScrolling({ anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'})),
 		provideClientHydration(),
 		provideAnimationsAsync(),
 		provideHttpClient(withFetch()),

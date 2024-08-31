@@ -229,6 +229,10 @@ header {
 						transition: width 0.5s;
 						margin-left: 10px;
 						border-right: 1vw solid #fff;
+
+						@include screen("tablet-landscape") {
+							border: none;
+						}
 					}
 
 					&:hover {
@@ -297,6 +301,11 @@ header {
 				mat-icon {
 					width: 77px;
 					height: 77px;
+
+					@include screen("phone") {
+						width: 44px;
+						height: 44px;
+					}
 				}
 			}
 		}

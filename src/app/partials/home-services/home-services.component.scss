@@ -305,6 +305,10 @@ h2 {
 		transition-duration: 0.4s;
 		-webkit-transition-duration: 0.4s;
 
+		@include screen("tablet-portrait") {
+			padding: 16px;
+		}
+
 		&:hover {
 			padding: 24px 38px;
 			transition: 0.5s ease-in-out;
@@ -341,6 +345,22 @@ h2 {
 			top: 0;
 			opacity: 1;
 			transition: 0s;
+		}
+	}
+
+	.desktop {
+		display: flex;
+
+		@include screen("tablet-portrait") {
+			display: none;
+		}
+	}
+
+	.mobile {
+		display: none;
+
+		@include screen("tablet-portrait") {
+			display: flex;
 		}
 	}
 }

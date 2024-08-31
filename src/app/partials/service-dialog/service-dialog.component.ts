@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { ServicePopUpItem, ServiceType } from '../../models/service.model';
 import { MatIconModule } from '@angular/material/icon';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-service-dialog',
@@ -15,7 +16,7 @@ export class ServiceDialogComponent {
 	types = ServiceType;
 	dataItems!: ServicePopUpItem[];
 	dataItem!: ServicePopUpItem;
-	constructor(@Inject(MAT_DIALOG_DATA) public data: ServicePopUpItem[]) {
+	constructor(@Inject(MAT_DIALOG_DATA) public data: ServicePopUpItem[], private router: Router) {
 		if (data.length === 1) {
 			this.dataItem = data[0];
 		} else {

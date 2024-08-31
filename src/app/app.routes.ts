@@ -20,5 +20,10 @@ export const routes: Routes = [
 		path: 'cooperation',
 		loadComponent: () =>
 			import('./pages/mobile-form/mobile-form.component').then((m) => m.MobileFormComponent),
+	},
+	{
+		path: 'services/:id',
+		loadComponent: () =>
+			import('./pages/mobile-services/mobile-services.component').then((m) => m.MobileServicesComponent),
 	}
 ];

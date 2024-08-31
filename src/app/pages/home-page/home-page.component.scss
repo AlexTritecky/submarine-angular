@@ -16,12 +16,23 @@
 	.actions {
 		.app-button {
 			@include screen("phone") {
-				padding: 8px 16px;
-				font-size: 10px;
-				font-weight: 700;
-				line-height: 12px;
-				letter-spacing: 0.3px;
-				text-transform: uppercase;
+				padding: 16px;
+			}
+		}
+
+		.desktop {
+			display: flex;
+
+			@include screen("tablet-portrait") {
+				display: none;
+			}
+		}
+
+		.mobile {
+			display: none;
+
+			@include screen("tablet-portrait") {
+				display: flex;
 			}
 		}
 	}

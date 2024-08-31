@@ -16,6 +16,11 @@
 	margin: 80px auto;
 	width: 100%;
 
+	@include screen("tablet-portrait") {
+		margin: 24px auto 0;
+		padding-bottom: 40px;
+	}
+
 	h1 {
 		color: var(--default-black);
 		font-family: "Gilroy-Bold";
@@ -23,6 +28,13 @@
 		font-weight: 700;
 		line-height: 70px;
 		margin-bottom: 42px;
+
+		@include screen("tablet-portrait") {
+			font-size: 36px;
+			line-height: 50px;
+			text-align: center;
+			margin-bottom: 24px;
+		}
 	}
 
 	&__list {
@@ -41,7 +53,7 @@
 	.desktop {
 		display: block;
 
-		@include screen("tablet-portrait") {
+		@include screen("tablet-landscape") {
 			display: none;
 		}
 	}
@@ -49,7 +61,7 @@
 	.mobile-team-list {
 		display: none;
 
-		@include screen("tablet-portrait") {
+		@include screen("tablet-landscape") {
 			display: flex;
 			align-items: center;
 			flex-direction: column;
@@ -183,6 +195,12 @@
 			position: relative;
 			transition-duration: 0.4s;
 			-webkit-transition-duration: 0.4s;
+
+
+			@include screen("tablet-portrait") {
+				padding: 16px;
+			}
+
 
 			&:hover {
 				padding: 24px 38px;

@@ -186,7 +186,12 @@
 </div>
 
 <div class="service-action">
-	<button class="app-button" (click)="openDialog()">
+	<button class="app-button desktop" (click)="openDialog()">
+		<mat-icon svgIcon="icon-button-plus"></mat-icon>
+		отримати прорахунок
+	</button>
+
+	<button class="app-button mobile" (click)="routeToForm()">
 		<mat-icon svgIcon="icon-button-plus"></mat-icon>
 		отримати прорахунок
 	</button>

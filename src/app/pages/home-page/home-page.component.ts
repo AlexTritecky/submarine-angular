@@ -13,6 +13,7 @@ import { HomeCooperationComponent } from '../../partials/home-cooperation/home-c
 import { isPlatformBrowser } from '@angular/common';
 import { LazyLoadDirective } from '../../lazy-load.directive';
 import { HomeCooperationMobileComponent } from '../../partials/home-cooperation-mobile/home-cooperation-mobile.component';
+import { Router } from '@angular/router';
 @Component({
 	selector: 'app-home-page',
 	standalone: true,
@@ -41,6 +42,7 @@ export class HomePageComponent implements OnInit {
 		public dialog: MatDialog,
 		private state: StateService,
 		private renderer: Renderer2,
+		private router: Router,
 		@Inject(PLATFORM_ID) private platformId: Object,
 	) {}
 
@@ -69,5 +71,9 @@ export class HomePageComponent implements OnInit {
 
 	openServiceDialog(id: ServiceType): void {
 		this.state.openServiceDialog(id);
+	}
+
+	routeToForm(): void {
+		this.router.navigate(['/cooperation']);
 	}
 }

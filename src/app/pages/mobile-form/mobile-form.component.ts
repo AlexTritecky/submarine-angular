@@ -56,6 +56,10 @@ export class MobileFormComponent {
 				this.emailService.saveFormState(value);
 			}
 		});
+
+		if (typeof window !== 'undefined') {
+			window.scrollTo(0, 0);
+		}
 	}
 
 	get name(): AbstractControl {

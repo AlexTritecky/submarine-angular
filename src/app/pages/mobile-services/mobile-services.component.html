@@ -1,0 +1,107 @@
+<section class="app-section hero">
+	<app-header [isViewing]="false"></app-header>
+</section>
+
+@if (dataItem) {
+<section>
+	<div class="app-container">
+
+		@for(item of dataItem; track item.title) {
+		<div class="content">
+
+			<div class="for_img">
+
+				<div class="for_labels">
+					@if (item.small_title) {
+					<div class="label">{{ item.small_title }}</div>
+					}
+					<div class="label">{{ item.days }} днів</div>
+				</div>
+
+				<img [src]="item.image_desktop" alt="" />
+			</div>
+
+			<div class="for_team">
+				@for (role of item.roles; track role) {
+				<div class="label">
+					{{ role }}
+				</div>
+				}
+			</div>
+
+
+			<h1>
+				{{ item.title }}
+			</h1>
+
+			<div class="for_text">
+
+				@if (item.id === types.COMUNIKATSIYNA_STRATEGIYA) {
+				<mat-accordion class="mob-view">
+					<mat-expansion-panel [expanded]="true">
+						<mat-expansion-panel-header>
+							<h5>{{ item.sub_title_1 }}</h5>
+						</mat-expansion-panel-header>
+						<div class="list">
+							@for (itemP of item.properties; track itemP) {
+							<div class="item">
+								<mat-icon svgIcon="icon-b-circle"></mat-icon>
+								<p>{{ itemP }}</p>
+							</div>
+							}
+						</div>
+					</mat-expansion-panel>
+
+					<mat-expansion-panel>
+						<mat-expansion-panel-header>
+							<h5>{{ item.sub_title_2 }}</h5>
+						</mat-expansion-panel-header>
+						<div class="list">
+							@for (itemP2 of item.properties_2; track itemP2) {
+							<div class="item">
+								<mat-icon svgIcon="icon-b-circle"></mat-icon>
+								<p>{{ itemP2 }}</p>
+							</div>
+							}
+							<div class="small-list">
+								@for (itemS of item.sub_properties; track itemS) {
+								<div class="item">- {{ itemS }}</div>
+								}
+							</div>
+						</div>
+					</mat-expansion-panel>
+				</mat-accordion>
+				} @else {
+				@for (dataP of item.properties; track dataP) {
+				<div class="item">
+					<mat-icon class="icon" svgIcon="icon-b-circle"></mat-icon>
+					<p>{{ dataP }}</p>
+				</div>
+				}
+				}
+
+				@if (item.id === types.PROMOTION) {
+				<h3 class="mt-16">{{ item.title_2 }}</h3>
+				<div class="list">
+					@for (itemP of item.properties_2; track itemP) {
+					<div class="item">
+						<mat-icon class="icon" svgIcon="icon-b-circle"></mat-icon>
+						<p>{{ itemP }}</p>
+					</div>
+					}
+				</div>
+				}
+			</div>
+		</div>
+
+		}
+	</div>
+
+	<div class="block-actions">
+		<button class="app-button">
+			<mat-icon svgIcon="icon-button-plus"></mat-icon>
+			отримати прорахунок
+		</button>
+	</div>
+</section>
+}
