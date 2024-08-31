@@ -44,10 +44,10 @@ export const navOverlayLinks: NavigationItem[] = [
 		route: '',
 		scroll: 'services',
 	},
-	{
-		title: 'Портфоліо',
-		route: 'portfolio',
-	},
+	// {
+	// 	title: 'Портфоліо',
+	// 	route: 'portfolio',
+	// },
 	{
 		title: 'Клієнти',
 		route: '',
@@ -85,10 +85,10 @@ export const navMobileLinks: NavigationItem[] = [
 		route: '',
 		scroll: 'services',
 	},
-	{
-		title: 'Портфоліо',
-		route: 'portfolio',
-	},
+	// {
+	// 	title: 'Портфоліо',
+	// 	route: 'portfolio',
+	// },
 	{
 		title: 'Клієнти',
 		route: '',

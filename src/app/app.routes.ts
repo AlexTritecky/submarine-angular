@@ -10,11 +10,11 @@ export const routes: Routes = [
 		path: 'team',
 		loadComponent: () => import('./pages/team/team.component').then((m) => m.TeamComponent),
 	},
-	{
-		path: 'portfolio',
-		loadComponent: () =>
-			import('./pages/portfolio/portfolio.component').then((m) => m.PortfolioComponent),
-	},
+	// {
+	// 	path: 'portfolio',
+	// 	loadComponent: () =>
+	// 		import('./pages/portfolio/portfolio.component').then((m) => m.PortfolioComponent),
+	// },
 
 	{
 		path: 'cooperation',
@@ -25,5 +25,9 @@ export const routes: Routes = [
 		path: 'services/:id',
 		loadComponent: () =>
 			import('./pages/mobile-services/mobile-services.component').then((m) => m.MobileServicesComponent),
+	},
+	{
+		path: '**',
+		redirectTo: '',
 	}
 ];
