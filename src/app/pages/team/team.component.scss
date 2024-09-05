@@ -51,7 +51,7 @@
 	}
 
 	.desktop {
-		display: block;
+		display: grid;
 
 		@include screen("tablet-landscape") {
 			display: none;
