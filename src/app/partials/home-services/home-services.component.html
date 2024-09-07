@@ -1,7 +1,7 @@
 <h2>ПОСЛУГИ</h2>
 
 <div class="cards">
-	<div class="big-card">
+	<div class="big-card" (click)="openServiceDialog(types.SMM_SUPROVID)">
 		<div class="big-card--title">
 			<div class="actions">
 				<button (click)="openServiceDialog(types.SMM_SUPROVID)">
@@ -15,7 +15,7 @@
 	</div>
 	<div class="list-sm-cards">
 		<!-- Communication strategy -->
-		<div class="sm-card communication">
+		<div class="sm-card communication" (click)="openServiceDialog(types.COMUNIKATSIYNA_STRATEGIYA)">
 			<div class="actions">
 				<button (click)="openServiceDialog(types.COMUNIKATSIYNA_STRATEGIYA)">
 					<mat-icon svgIcon="icon-plus"></mat-icon>
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<!-- SMM-strategy -->
-		<div class="sm-card smm-strategy">
+		<div class="sm-card smm-strategy" (click)="openServiceDialog(types.SMM_STRATEGIYA)">
 			<div class="actions">
 				<button (click)="openServiceDialog(types.SMM_STRATEGIYA)">
 					<mat-icon svgIcon="icon-plus"></mat-icon>
@@ -45,7 +45,7 @@
 			</div>
 		</div>
 		<!-- Branding -->
-		<div class="sm-card branding">
+		<div class="sm-card branding" (click)="openServiceDialog(types.BRENDING)">
 			<div class="actions">
 				<button (click)="openServiceDialog(types.BRENDING)">
 					<mat-icon svgIcon="icon-plus"></mat-icon>
@@ -61,7 +61,7 @@
 			</div>
 		</div>
 		<!-- Production -->
-		<div class="sm-card production">
+		<div class="sm-card production" (click)="openServiceDialog(types.PRODUCTION)">
 			<div class="actions">
 				<button (click)="openServiceDialog(types.PRODUCTION)">
 					<mat-icon svgIcon="icon-plus"></mat-icon>
@@ -76,7 +76,7 @@
 			</div>
 		</div>
 		<!-- Promotion -->
-		<div class="sm-card promotion">
+		<div class="sm-card promotion" (click)="openServiceDialog(types.PROMOTION)">
 			<div class="actions">
 				<button (click)="openServiceDialog(types.PROMOTION)">
 					<mat-icon svgIcon="icon-plus"></mat-icon>
@@ -95,7 +95,7 @@
 			</div>
 		</div>
 		<!-- Web Design -->
-		<div class="sm-card web-design">
+		<div class="sm-card web-design" (click)="openServiceDialog(types.WEB_DESIGN)">
 			<div class="actions">
 				<button (click)="openServiceDialog(types.WEB_DESIGN)">
 					<mat-icon svgIcon="icon-plus"></mat-icon>

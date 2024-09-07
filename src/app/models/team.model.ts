@@ -51,14 +51,6 @@ export const teamMembers: TeamMember[] = [
 		cover_image: 'assets/images/teams/graph-desighner-2-cover.svg',
 	},
 
-	// {
-	// 	id: 7,
-	// 	image: 'assets/images/teams/content-manager.svg',
-	// 	name: 'Валерія',
-	// 	position: 'проджект-менеджер, стратег',
-	// 	cover_image: 'assets/images/teams/content-manager-cover.svg',
-	// },
-
 	{
 		id: 7,
 		image: 'assets/images/teams/content-manager-2.svg',
@@ -69,14 +61,6 @@ export const teamMembers: TeamMember[] = [
 
 	{
 		id: 8,
-		image: 'assets/images/teams/copywriter.svg',
-		name: 'Анна',
-		position: 'копірайтер',
-		cover_image: 'assets/images/teams/copywriter-cover.svg',
-	},
-
-	{
-		id: 9,
 		image: 'assets/images/teams/stories-designer.svg',
 		name: 'Христина',
 		position: 'stories-дизайнер ',
@@ -84,7 +68,7 @@ export const teamMembers: TeamMember[] = [
 	},
 
 	{
-		id: 10,
+		id: 9,
 		image: 'assets/images/teams/people-ops.svg',
 		name: 'Катерина',
 		position: 'people Ops',
@@ -92,17 +76,10 @@ export const teamMembers: TeamMember[] = [
 	},
 
 	{
-		id: 11,
+		id: 10,
 		image: 'assets/images/teams/project-manager-darya.svg',
 		name: 'Дар’я',
 		position: 'проджект-менеджер',
 		cover_image: 'assets/images/teams/project-manager-darya-cover.svg',
 	},
-	// {
-	// 	id: 13,
-	// 	image: 'assets/images/teams/project-manager-anastasia.svg',
-	// 	name: 'Анастасія',
-	// 	position: 'проджект-менеджер',
-	// 	cover_image: 'assets/images/teams/project-manager-anastasia-cover.svg',
-	// },
 ];

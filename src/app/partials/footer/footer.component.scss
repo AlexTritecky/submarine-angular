@@ -103,7 +103,6 @@ footer {
 				}
 
 				&:hover {
-					padding: 24px 32px;
 					transition: 0.5s ease-in-out;
 				}
 
@@ -155,7 +154,7 @@ footer {
 					letter-spacing: 0.6px;
 
 					@include screen("phone") {
-						font-size: 14px;
+						font-size: 12px;
 					}
 				}
 			}

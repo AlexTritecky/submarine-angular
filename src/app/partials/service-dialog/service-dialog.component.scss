@@ -106,7 +106,7 @@
 
 				.item {
 					display: flex;
-					align-items: center;
+					align-items: flex-start;
 					gap: 16px;
 
 					mat-icon {
@@ -297,7 +297,7 @@
 
 		.item {
 			display: flex;
-			align-items: center;
+			align-items: flex-start;
 			gap: 16px;
 
 			mat-icon {
@@ -324,4 +324,13 @@
 
 .mt-16 {
 	margin-top: 16px;
+}
+
+
+.mat-accordion>.mat-expansion-panel-spacing:first-child {
+	margin-top: 24px;
+}
+
+.mat-accordion .mat-expansion-panel:first-of-type {
+	margin-top: 24px;
 }

@@ -68,7 +68,7 @@
 		<div class="text-block">
 			<h3>{{ dataItem.title }}</h3>
 
-			@if (dataItem.id === types.COMUNIKATSIYNA_STRATEGIYA) {
+			@if (dataItem.id === types.COMUNIKATSIYNA_STRATEGIYA || dataItem.id === types.PRODUCTION) {
 			<mat-accordion>
 				<mat-expansion-panel [expanded]="true">
 					<mat-expansion-panel-header>

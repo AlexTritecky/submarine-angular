@@ -32,6 +32,7 @@ h2 {
 		flex-direction: column;
 		background: var(--smm-main);
 		justify-content: space-between;
+		cursor: pointer;
 
 		@include screen("phone") {
 			padding: 24px;
@@ -46,10 +47,21 @@ h2 {
 				display: flex;
 				justify-content: flex-end;
 				margin-bottom: 4px;
+
 				button {
+					transition: 0.5s ease-in-out;
+
 					mat-icon {
 						width: 45px;
 						height: 45px;
+						transition: 0.5s ease-in-out;
+
+					}
+
+					&:hover {
+						mat-icon {
+							rotate: 3.1416rad;
+						}
 					}
 				}
 			}
@@ -104,6 +116,7 @@ h2 {
 			border-radius: 50px;
 			display: flex;
 			flex-direction: column;
+			cursor: pointer;
 
 			.actions {
 				display: flex;
@@ -112,6 +125,7 @@ h2 {
 
 				button {
 					transition: 0.5s ease-in-out;
+
 					mat-icon {
 						width: 45px;
 						height: 45px;
@@ -307,6 +321,7 @@ h2 {
 
 		@include screen("tablet-portrait") {
 			padding: 16px;
+			font-size: 12px;
 		}
 
 		&:hover {
