@@ -7,6 +7,8 @@ footer {
 	padding-top: 72px;
 	padding-bottom: 8px;
 
+	position: relative;
+
 	@include screen("tablet-portrait") {
 		padding-bottom: 32px;
 	}
@@ -229,6 +231,23 @@ footer {
 							transition: transform 0.4s linear;
 							transform: rotate(90deg);
 						}
+					}
+
+
+				}
+
+				.tg-channel {
+
+					max-width: 220px;
+
+					mat-icon {
+						margin-left: 42px;
+					}
+
+					img {
+						width: 24px;
+						height: 24px;
+						margin-left: 16px;
 					}
 				}
 			}
