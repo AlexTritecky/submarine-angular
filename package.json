@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --c=production",
+    "build": "npm prune --production && ng build --c=production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "fotmat_prettier": "prettier --write \"src/**/*.ts\"",
