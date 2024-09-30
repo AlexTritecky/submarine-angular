@@ -11,7 +11,6 @@ import { HomeServicesComponent } from '../../partials/home-services/home-service
 import { HomeCasesComponent } from '../../partials/home-cases/home-cases.component';
 import { HomeCooperationComponent } from '../../partials/home-cooperation/home-cooperation.component';
 import { isPlatformBrowser } from '@angular/common';
-import { LazyLoadDirective } from '../../lazy-load.directive';
 import { HomeCooperationMobileComponent } from '../../partials/home-cooperation-mobile/home-cooperation-mobile.component';
 import { Router } from '@angular/router';
 @Component({
@@ -28,7 +27,6 @@ import { Router } from '@angular/router';
 		HomeCasesComponent,
 		HomeCooperationComponent,
 		LoaderComponent,
-		LazyLoadDirective,
 		HomeCooperationMobileComponent,
 	],
 	providers: [StateService],

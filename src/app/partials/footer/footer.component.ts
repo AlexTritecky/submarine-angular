@@ -5,12 +5,11 @@ import { Router, RouterLink } from '@angular/router';
 import { FooterLink, footerSocial } from '../../models/navigation.model';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ContactDialogComponent } from '../contact-dialog/contact-dialog.component';
-import { LazyLoadDirective } from '../../lazy-load.directive';
 
 @Component({
 	selector: 'app-footer',
 	standalone: true,
-	imports: [RouterLink, MatIconModule, NgClass, MatDialogModule, LazyLoadDirective],
+	imports: [RouterLink, MatIconModule, NgClass, MatDialogModule],
 	templateUrl: './footer.component.html',
 	styleUrl: './footer.component.scss',
 })
