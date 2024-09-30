@@ -10,7 +10,9 @@
   ],
   "functions": {
     "api/index.js": {
-      "includeFiles": "dist/app/**"
+      "includeFiles": "dist/app/**",
+			"memory": 3009,
+			"maxDuration": 30
     }
   }
 }
