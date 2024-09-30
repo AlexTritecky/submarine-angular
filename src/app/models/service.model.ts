@@ -192,24 +192,17 @@ export const servicePopUpItems: ServicePopUpItem[] = [
 		days: '10',
 		image_desktop: 'assets/images/services/production_desktop.webp',
 		id: ServiceType.PRODUCTION,
-		roles: ['арт-директор', 'відеооператор', 'контент-менеджер', 'фотограф'],
+		roles: ['контент-менеджер', 'відеооператор', 'арт-директор', 'фотограф'],
 		title: 'Продакшн',
 		sub_title_1: 'ФОТОЗЙОМКА',
-		sub_title_2: 'ВІДЕОЗЙОМКА',
 		properties: [
 			'Підготовка кошторису, таймінгів, розкадровки та плану зйомки',
 			'Предметна фотозйомка',
 			'Іміджева фотозйомка',
 			'Командна фотозйомка',
 			'Фотозйомка локації, інтер’єру та екстер’єру',
+			'Зйомка Reels',
 		],
-		properties_2: [
-			'Написання сценаріїв/трітментів',
-			'Складання таймлайну зйомки',
-			'Пошук локації, акторів, реквізиту',
-			'Підбір команди зйомки',
-			'Пост-продакшн'
-		]
 
 	},
 	// SMM SUPROVID
@@ -229,6 +222,38 @@ export const servicePopUpItems: ServicePopUpItem[] = [
 			'Проведення активацій',
 		],
 	},
+
+	// SMM GUIDE
+	{
+		days: '30',
+		image_desktop: 'assets/images/services/smm-guide_pop_up_desktop.webp',
+		id: ServiceType.SMM_GUIDE,
+		roles: ['копірайтер', 'сторіс-дизайнер', 'дизайнер', 'контент-менеджер'],
+		title: 'SMM GUIDE',
+		properties: [
+			'Інструкція "про що наші соціальні мережі"',
+			'Розробка унікального рубрикатору, формати, які ми використовуємо на сторінці',
+			'Розробка 2-х альтернативних візуальних концепцій',
+			'Мудборд фотосесій',
+			'Індивідуальна логіка побудови контент-плану'
+		]
+	},
+
+
+	// SMM Campaign
+	{
+		days: '30',
+		image_desktop: 'assets/images/services/smm-campaighn_pop_up_desktop.webp',
+		id: ServiceType.CAMPAIGN,
+		roles: ['копірайтер', 'сторіс-дизайнер', 'дизайнер', 'контент-менеджер'],
+		title: 'CAMPAIGN',
+		properties: [
+			'Ідея та кей-меседж кампанії',
+			'Сценарій рекламного ролику',
+			'План зйомки та її бюджетування',
+			'Промо-план кампанії',
+		]
+	}
 ];
 
 export interface IServiceType {
