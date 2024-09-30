@@ -21,6 +21,22 @@ export class StateService {
 		dialogRef.afterClosed().subscribe((result) => {});
 	}
 
+
+	openFormStateDialog(serviceType: ServiceType): void {
+
+		this.dialog.closeAll();
+
+    const dialogRef = this.dialog.open(ContactDialogComponent, {
+      width: '901px',
+      height: '901px',
+      position: { right: '0' },
+      panelClass: 'contact-dialog-container',
+      data: { serviceType },  // Pass the serviceType as dialog data
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {});
+  }
+
 	openServiceDialog(id: ServiceType): void {
 		const dataDialog = servicePopUpItems.filter((item) => item.id === id);
 		if (!dataDialog) return console.error('Service not found');

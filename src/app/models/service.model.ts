@@ -28,6 +28,22 @@ export enum ServiceType {
 	WEB_DESIGN = 'web_design',
 }
 
+export enum FormServiceType {
+	smm_suprovid = 'SMM супровід',
+	comunikatsiyna_strategiya = 'Комунікаційна стратегія',
+	smm_strategiya = 'SMM-стратегія',
+	naming = 'Неймінг',
+	logo_book = 'Логобук',
+	brand_book = 'Брендбук',
+	production = 'Продакшн',
+	photozyomka = 'Фотозйомка',
+	videozyomka = 'Відеозйомка',
+	smm_guide = 'SMM Guide',
+	campaign = 'Campaign',
+	promotion = 'Промоушн',
+	web_design = 'Веб-дизайн',
+}
+
 export enum SubServiceType {
 	NAMING = 'naming',
 	LOGO_BOOK = 'logo_book',

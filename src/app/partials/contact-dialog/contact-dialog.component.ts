@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import {
 	AbstractControl,
 	FormBuilder,
@@ -11,8 +11,9 @@ import {
 import { EmailService } from '../../services/email/email.service';
 import { MatIconModule } from '@angular/material/icon';
 import { CustomerRequest } from '../../models/customer.model';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
+import { FormServiceType, ServiceType } from '../../models/service.model';
 
 @Component({
 	selector: 'app-contact-dialog',
@@ -22,26 +23,36 @@ import { Subscription } from 'rxjs';
 	styleUrls: ['./contact-dialog.component.scss'],
 })
 export class ContactDialogComponent {
-	servicesList: string[] = [
-		'Візуал',
-		'Айдентика',
-		'SMM-стратегія',
-		'Комунікаційна стратегія',
-		'SMM',
-		'Дизайн та веб-розробка сайту',
-		'Консультація',
-	];
+	servicesList: string[] = [];
 
 	public showContent = false;
 
-	contactForm: FormGroup;
+	contactForm                  : FormGroup;
 	private formStateSubscription: Subscription;
-	private isPatchingForm = false;
+	private isPatchingForm       = false;
+
+	// Mapping between ServiceType and the corresponding FormServiceType values
+	private serviceTypeMapping: Record<ServiceType, FormServiceType[]> = {
+		[ServiceType.SMM_SUPROVID]: [FormServiceType.smm_suprovid],
+		[ServiceType.COMUNIKATSIYNA_STRATEGIYA]: [FormServiceType.comunikatsiyna_strategiya],
+		[ServiceType.SMM_STRATEGIYA]: [FormServiceType.smm_strategiya],
+		[ServiceType.BRENDING]: [
+			FormServiceType.naming,
+			FormServiceType.logo_book,
+			FormServiceType.brand_book,
+		],
+		[ServiceType.PRODUCTION]: [FormServiceType.production],
+		[ServiceType.SMM_GUIDE]: [FormServiceType.smm_guide],
+		[ServiceType.CAMPAIGN]: [FormServiceType.campaign],
+		[ServiceType.PROMOTION]: [FormServiceType.promotion],
+		[ServiceType.WEB_DESIGN]: [FormServiceType.web_design],
+	};
 
 	constructor(
 		private fb: FormBuilder,
 		private emailService: EmailService,
 		private dialogRef: MatDialogRef<ContactDialogComponent>,
+		@Inject(MAT_DIALOG_DATA) public data: { serviceType: ServiceType },
 	) {
 		this.contactForm = this.fb.group({
 			name: ['', Validators.required],
@@ -76,6 +87,13 @@ export class ContactDialogComponent {
 	}
 
 	ngOnInit(): void {
+
+		this.servicesList = Object.values(FormServiceType);
+
+		if (this.data?.serviceType) {
+			this.autoSelectServices(this.data.serviceType);
+		}
+		
 		this.emailService.getFormState().subscribe((state) => {
 			if (state) {
 				this.isPatchingForm = true;
@@ -147,5 +165,12 @@ export class ContactDialogComponent {
 
 	private saveFormState(): void {
 		this.emailService.saveFormState(this.contactForm.value);
+	}
+
+	private autoSelectServices(serviceType: ServiceType): void {
+		const selectedServices = this.serviceTypeMapping[serviceType];
+		if (selectedServices) {
+			selectedServices.forEach((service) => this.toggleService(service));
+		}
 	}
 }
