@@ -17,85 +17,9 @@ h2 {
 
 .cards {
 	display: flex;
-	gap: 24px;
-	flex-direction: column;
 
 	@include screen("phone") {
 		display: none;
-	}
-
-	.big-card {
-		border-radius: 50px;
-		padding: 48px 24px;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		background: var(--smm-main);
-		justify-content: space-between;
-		cursor: pointer;
-
-		@include screen("phone") {
-			padding: 24px;
-		}
-
-		&--title {
-			width: 100%;
-			display: flex;
-			flex-direction: column;
-
-			.actions {
-				display: flex;
-				justify-content: flex-end;
-				margin-bottom: 4px;
-
-				button {
-					transition: 0.5s ease-in-out;
-
-					mat-icon {
-						width: 45px;
-						height: 45px;
-						transition: 0.5s ease-in-out;
-
-					}
-
-					&:hover {
-						mat-icon {
-							rotate: 3.1416rad;
-						}
-					}
-				}
-			}
-
-			h3 {
-				color: var(--default-black);
-				font-family: "Gilroy-Bold";
-				font-size: 45px;
-				font-weight: 700;
-				line-height: 32px;
-				margin-bottom: 14px;
-
-				@include screen("phone") {
-					font-size: 32px;
-				}
-			}
-
-			h4 {
-				color: var(--default-black);
-				font-family: "Gilroy-Bold";
-				font-size: 52px;
-				font-weight: 700;
-				line-height: 32px;
-			}
-		}
-
-		&--description {
-			color: var(--default-black);
-			font-family: "Gilroy-Regular";
-			font-size: 20px;
-			font-weight: 400;
-			line-height: 24px;
-			letter-spacing: 0.6px;
-		}
 	}
 
 	.list-sm-cards {
@@ -175,6 +99,10 @@ h2 {
 			}
 		}
 
+		.smm-main {
+			background: var(--smm-main);
+		}
+
 		.communication {
 			background-color: var(--smm-comunicacation);
 		}
@@ -202,7 +130,7 @@ h2 {
 		}
 
 		.promotion {
-			background-color: var(--smm-promoution);
+			background-color: var(--smm-main);
 
 			.description {
 				height: 96px;
@@ -210,12 +138,21 @@ h2 {
 			}
 		}
 
+		.smm-guide {
+			background-color: var(--smm-guide);
+		}
+
 		.web-design {
-			background-color: var(--smm-webdesign);
+			background-color: var(--smm-branding);
+
 			.description {
 				height: 96px;
 				margin-top: 16px;
 			}
+		}
+
+		.smm-campaighn {
+			background-color: var(--smm-campaighn);
 		}
 	}
 }
@@ -245,6 +182,7 @@ h2 {
 		.actions {
 			display: flex;
 			justify-content: flex-end;
+
 			// margin-bottom: 20px;
 			button {
 				mat-icon {

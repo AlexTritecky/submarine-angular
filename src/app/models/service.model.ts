@@ -22,6 +22,8 @@ export enum ServiceType {
 	SMM_STRATEGIYA = 'smm_strategiya',
 	BRENDING = 'brending',
 	PRODUCTION = 'production',
+	SMM_GUIDE = 'smm_guide',
+	CAMPAIGN = 'campaign',
 	PROMOTION = 'promotion',
 	WEB_DESIGN = 'web_design',
 }
@@ -201,7 +203,7 @@ export const servicePopUpItems: ServicePopUpItem[] = [
 			'Командна фотозйомка',
 			'Фотозйомка локації, інтер’єру та екстер’єру',
 		],
-		properties_2 : [
+		properties_2: [
 			'Написання сценаріїв/трітментів',
 			'Складання таймлайну зйомки',
 			'Пошук локації, акторів, реквізиту',
@@ -226,5 +228,69 @@ export const servicePopUpItems: ServicePopUpItem[] = [
 			'Модерація сторінки',
 			'Проведення активацій',
 		],
+	},
+];
+
+export interface IServiceType {
+	id: number;
+	name: string;
+	description: string[];
+	type: ServiceType;
+}
+
+export const serviceCards: IServiceType[] = [
+	{
+		id: 1,
+		name: 'SMM',
+		description: ['Щомісячний супровід сторінок бренду'],
+		type: ServiceType.SMM_SUPROVID,
+	},
+	{
+		id: 2,
+		name: 'КОМУНІКАЦІЙНА СТРАТЕГІЯ',
+		description: ['Стратегія внутрішньої', 'та зовнішньої комунікації бренду'],
+		type: ServiceType.COMUNIKATSIYNA_STRATEGIYA,
+	},
+	{
+		id: 3,
+		name: 'SMM СТРАТЕГІЯ',
+		description: ['Стратегія розвитку бренду', 'в соціальних мережах'],
+		type: ServiceType.SMM_STRATEGIYA,
+	},
+	{
+		id: 4,
+		name: 'БРЕНДИНГ',
+		description: ['Неймінг', 'Логобук', 'Брендбук'],
+		type: ServiceType.BRENDING,
+	},
+	{
+		id: 5,
+		name: 'ПРОДАКШН',
+		description: ['Фотозйомка', 'Відеозйомка'],
+		type: ServiceType.PRODUCTION,
+	},
+	{
+		id: 6,
+		name: 'SMM GUIDE',
+		description: ['Стиль та унікальні правила для ведення соц.мереж'],
+		type: ServiceType.SMM_GUIDE,
+	},
+	{
+		id: 7,
+		name: 'CAMPAIGN',
+		description: ['Розробка ідеї креативної кампанії для промо'],
+		type: ServiceType.CAMPAIGN,
+	},
+	{
+		id: 8,
+		name: 'ПРОМОУШН',
+		description: ['Співпраця з медіа', 'Співпраця з інфлуенсерами', 'Колаборації', 'Спец-проекти'],
+		type: ServiceType.PROMOTION,
+	},
+	{
+		id: 9,
+		name: 'ВЕБДИЗАЙН',
+		description: ['UI/UX дизайн веб сайтів', 'Веб-розробка сайтів'],
+		type: ServiceType.WEB_DESIGN,
 	},
 ];

@@ -1,115 +1,34 @@
 <h2>ПОСЛУГИ</h2>
 
 <div class="cards">
-	<div class="big-card" (click)="openServiceDialog(types.SMM_SUPROVID)">
-		<div class="big-card--title">
-			<div class="actions">
-				<button (click)="openServiceDialog(types.SMM_SUPROVID)">
-					<mat-icon svgIcon="icon-plus"></mat-icon>
-				</button>
-			</div>
-
-			<h3>01. SMM</h3>
-		</div>
-		<div class="big-card--description">Щомісячний супровід сторінок бренду</div>
-	</div>
 	<div class="list-sm-cards">
-		<!-- Communication strategy -->
-		<div class="sm-card communication" (click)="openServiceDialog(types.COMUNIKATSIYNA_STRATEGIYA)">
+
+		@for (service of cards; track service.id) {
+		<div class="sm-card" [ngClass]="{
+				'smm-main': service.type === types.SMM_SUPROVID,
+				'communication': service.type === types.COMUNIKATSIYNA_STRATEGIYA,
+				'smm-strategy': service.type === types.SMM_STRATEGIYA,
+				'branding': service.type === types.BRENDING,
+				'production': service.type === types.PRODUCTION,
+				'smm-guide': service.type === types.SMM_GUIDE,
+				'promotion': service.type === types.PROMOTION,
+				'smm-campaighn': service.type === types.CAMPAIGN,
+				'web-design': service.type === types.WEB_DESIGN
+			}" (click)="openServiceDialog(service.type)">
+
 			<div class="actions">
-				<button (click)="openServiceDialog(types.COMUNIKATSIYNA_STRATEGIYA)">
+				<button (click)="openServiceDialog(service.type); $event.stopPropagation()">
 					<mat-icon svgIcon="icon-plus"></mat-icon>
 				</button>
 			</div>
-			<h3>02.</h3>
-			<h4>КОМУНІКАЦІЙНА СТРАТЕГІЯ</h4>
+			<h3>{{ service.id < 10 ? '0' + service.id : service.id }}.</h3>
+					<h4>{{ service.name }}</h4>
 
-			<div class="description">
-				<p>Стратегія внутрішньої</p>
-				<p>та зовнішньої комунікації бренду</p>
-			</div>
+					<div class="description">
+						<p *ngFor="let desc of service.description">{{ desc }}</p>
+					</div>
 		</div>
-		<!-- SMM-strategy -->
-		<div class="sm-card smm-strategy" (click)="openServiceDialog(types.SMM_STRATEGIYA)">
-			<div class="actions">
-				<button (click)="openServiceDialog(types.SMM_STRATEGIYA)">
-					<mat-icon svgIcon="icon-plus"></mat-icon>
-				</button>
-			</div>
-			<h3>03.</h3>
-			<h4>SMM</h4>
-			<h4>СТРАТЕГІЯ</h4>
-			<div class="description">
-				<p>Стратегія розвитку бренду</p>
-				<p>в соціальних мережах</p>
-			</div>
-		</div>
-		<!-- Branding -->
-		<div class="sm-card branding" (click)="openServiceDialog(types.BRENDING)">
-			<div class="actions">
-				<button (click)="openServiceDialog(types.BRENDING)">
-					<mat-icon svgIcon="icon-plus"></mat-icon>
-				</button>
-			</div>
-			<h3>04.</h3>
-			<h4>БРЕНДИНГ</h4>
-
-			<div class="description">
-				<p>Неймінг</p>
-				<p>Логобук</p>
-				<p>Брендбук</p>
-			</div>
-		</div>
-		<!-- Production -->
-		<div class="sm-card production" (click)="openServiceDialog(types.PRODUCTION)">
-			<div class="actions">
-				<button (click)="openServiceDialog(types.PRODUCTION)">
-					<mat-icon svgIcon="icon-plus"></mat-icon>
-				</button>
-			</div>
-			<h3>05.</h3>
-			<h4>ПРОДАКШН</h4>
-
-			<div class="description">
-				<p>Фотозйомка</p>
-				<p>Відеозйомка</p>
-			</div>
-		</div>
-		<!-- Promotion -->
-		<div class="sm-card promotion" (click)="openServiceDialog(types.PROMOTION)">
-			<div class="actions">
-				<button (click)="openServiceDialog(types.PROMOTION)">
-					<mat-icon svgIcon="icon-plus"></mat-icon>
-				</button>
-			</div>
-			<h3>06.</h3>
-			<h4>ПРОМОУШН</h4>
-			<div class="description">
-				<p>Співпраця з медіа</p>
-
-				<p>Співпраця з інфлуенсерами</p>
-
-				<p>Колаборації</p>
-
-				<p>Спец-проекти</p>
-			</div>
-		</div>
-		<!-- Web Design -->
-		<div class="sm-card web-design" (click)="openServiceDialog(types.WEB_DESIGN)">
-			<div class="actions">
-				<button (click)="openServiceDialog(types.WEB_DESIGN)">
-					<mat-icon svgIcon="icon-plus"></mat-icon>
-				</button>
-			</div>
-			<h3>07.</h3>
-			<h4>ВЕБДИЗАЙН</h4>
-
-			<div class="description">
-				<p>UI/UX дизайн веб сайтів</p>
-
-				<p>Веб-розробка сайтів</p>
-			</div>
-		</div>
+		}
 	</div>
 </div>
 
