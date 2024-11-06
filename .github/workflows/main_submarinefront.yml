@@ -48,7 +48,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: angular-ssr-app
+          name: angular-app
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
