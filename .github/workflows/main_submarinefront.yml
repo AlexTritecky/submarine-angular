@@ -65,7 +65,7 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'submarinefront'  # Correct app service name
-          package: dist/app  # Deploy only the SSR build directory
+          package: dist/app  # Deploy only the S1SR build directory
 
       - name: Set Startup Command
         run: |
