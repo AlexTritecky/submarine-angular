@@ -58,14 +58,13 @@ jobs:
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_41DD9048978948CC8CBCF8A21A291C42 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1DCA504402254862AAC0F7B20915FC90 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_631D2ECBA87540E6BE74340656BBC08F }}
+          subscription-id: '589d70bf-00ff-48a5-9307-5587fb4ca59c'
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'submarinefront'
-          slot-name: 'Production'
           package: dist/app  # Deploy only the SSR build directory
 
       - name: Set Startup Command
