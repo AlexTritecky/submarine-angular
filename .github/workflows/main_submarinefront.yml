@@ -69,6 +69,7 @@ jobs:
 
       - name: Set Startup Command
         run: |
-          az webapp config appsettings set --name submarinefront --resource-group SubmarineFront --settings \  # Correct resource group name
-          PORT=8080 \
-          STARTUP_COMMAND="npm run serve:ssr:app"
+         az webapp config appsettings set --name submarinefront --resource-group SubmarineFront --settings \
+            PORT=8080 \
+            STARTUP_COMMAND="npm run serve:ssr:app"
+
