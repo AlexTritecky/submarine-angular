@@ -5,7 +5,7 @@ footer {
 	background-color: var(--default-black);
 	position: relative;
 	padding-top: 72px;
-	padding-bottom: 8px;
+	padding-bottom: 40px;
 
 	position: relative;
 
@@ -49,10 +49,13 @@ footer {
 				font-size: 33px;
 				font-weight: 600;
 				line-height: 36px;
-				margin-bottom: 24px;
+				margin-bottom: 40px;
 
 				@include screen("phone") {
-					font-size: 22px;
+					font-size: 20px;
+					font-weight: 900;
+					font-family: "Gilroy-Black";
+					margin-bottom: 16px;
 				}
 			}
 
@@ -121,6 +124,7 @@ footer {
 
 			.desktop {
 				display: flex;
+				margin-bottom: 40px;
 
 				@include screen("tablet-portrait") {
 					display: none;
@@ -138,22 +142,26 @@ footer {
 			p {
 				color: var(--default-white);
 				font-family: "Gilroy-Regular";
-				font-size: 14px;
+				font-size: 18px;
 				width: 100%;
 				font-weight: 400;
-				line-height: 20px;
-				letter-spacing: 0.6px;
-				margin-top: 24px;
-				margin-bottom: 24px;
+				line-height: 24px;
+				letter-spacing: 0.54px;
+				margin-top: 40px;
+
+				@include screen("phone") {
+					margin-top: 16px;
+					font-size: 8px;
+				}
 
 				a {
 					text-decoration: none;
 					color: var(--default-white);
 					font-family: "Unbounded-Medium";
-					font-size: 16px;
+					font-size: 18px;
 					font-weight: 700;
-					line-height: 20px;
-					letter-spacing: 0.6px;
+					line-height: 24px;
+					letter-spacing: 0.54px;
 
 					@include screen("phone") {
 						font-size: 12px;
@@ -161,8 +169,28 @@ footer {
 				}
 			}
 
+			.desktop-view {
+				display: block;
+
+				@include screen("tablet-portrait") {
+					display: none;
+				}
+			}
+
+			.mail-info {
+				margin-top: 0;
+
+				span {
+					display: inline;
+
+					@include screen("tablet-portrait") {
+						display: none;
+					}
+				}
+			}
+
 			.rigths {
-				margin-top: 45px;
+				// margin-top: 45px;
 
 				@include screen("tablet-portrait") {
 					display: none;
@@ -202,12 +230,12 @@ footer {
 					color: var(--default-white);
 					text-decoration: none;
 					font-family: "Gilroy-Regular";
-					font-size: 18px;
+					font-size: 19px;
 					display: inline-flex;
 					justify-content: space-between;
 					align-items: center;
 					font-weight: 400;
-					max-width: 162px;
+					max-width: 166px;
 					width: 100%;
 					line-height: 24px;
 					letter-spacing: 0.6px;
@@ -246,6 +274,7 @@ footer {
 
 					img {
 						width: 24px;
+						display: none;
 						height: 24px;
 						margin-left: 16px;
 					}
@@ -269,21 +298,28 @@ footer {
 					line-height: 24px;
 					letter-spacing: 0.6px;
 
+					@include screen("tablet-portrait") {
+						font-size: 9px;
+						width: 126px;
+						line-height: 16px;
+					}
+
 					br {
 						display: none;
-
-						@include screen("tablet-portrait") {
-							display: block;
-						}
 					}
 				}
 
 				a {
-					margin-top: 8px;
+					margin-top: 16px;
 					font-size: 18px;
 					font-weight: 400;
 					line-height: 24px;
 					letter-spacing: 0.6px;
+
+					@include screen("tablet-portrait") {
+						font-size: 9px;
+						margin-top: 4px;
+					}
 				}
 			}
 
