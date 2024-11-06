@@ -27,9 +27,9 @@ export class ContactDialogComponent {
 
 	public showContent = false;
 
-	contactForm                  : FormGroup;
+	contactForm: FormGroup;
 	private formStateSubscription: Subscription;
-	private isPatchingForm       = false;
+	private isPatchingForm = false;
 
 	// Mapping between ServiceType and the corresponding FormServiceType values
 	private serviceTypeMapping: Record<ServiceType, FormServiceType[]> = {
@@ -87,13 +87,12 @@ export class ContactDialogComponent {
 	}
 
 	ngOnInit(): void {
-
 		this.servicesList = Object.values(FormServiceType);
 
 		if (this.data?.serviceType) {
 			this.autoSelectServices(this.data.serviceType);
 		}
-		
+
 		this.emailService.getFormState().subscribe((state) => {
 			if (state) {
 				this.isPatchingForm = true;

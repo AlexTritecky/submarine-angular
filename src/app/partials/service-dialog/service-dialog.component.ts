@@ -19,7 +19,11 @@ export class ServiceDialogComponent {
 	dataItems!: ServicePopUpItem[];
 	dataItem!: ServicePopUpItem;
 
-	constructor(@Inject(MAT_DIALOG_DATA) public data: ServicePopUpItem[], private router: Router, private state: StateService,) {
+	constructor(
+		@Inject(MAT_DIALOG_DATA) public data: ServicePopUpItem[],
+		private router: Router,
+		private state: StateService,
+	) {
 		if (data.length === 1) {
 			this.dataItem = data[0];
 		} else {
@@ -33,7 +37,6 @@ export class ServiceDialogComponent {
 	}
 
 	openDialog(data: ServicePopUpItem): void {
-
 		if (!data) {
 			this.state.openFormStateDialog(this.types.BRENDING);
 		}

@@ -24,10 +24,12 @@ export const routes: Routes = [
 	{
 		path: 'services/:id',
 		loadComponent: () =>
-			import('./pages/mobile-services/mobile-services.component').then((m) => m.MobileServicesComponent),
+			import('./pages/mobile-services/mobile-services.component').then(
+				(m) => m.MobileServicesComponent,
+			),
 	},
 	{
 		path: '**',
 		redirectTo: '',
-	}
+	},
 ];

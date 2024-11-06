@@ -12,11 +12,14 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { svgRegistrationProvider } from './providers/svg-registration.provider';
 
-
 export const appConfig: ApplicationConfig = {
 	providers: [
 		provideZoneChangeDetection({ eventCoalescing: true }),
-		provideRouter(routes, withPreloading(PreloadAllModules), withInMemoryScrolling({ anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'})),
+		provideRouter(
+			routes,
+			withPreloading(PreloadAllModules),
+			withInMemoryScrolling({ anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled' }),
+		),
 		provideClientHydration(),
 		provideAnimationsAsync(),
 		provideHttpClient(withFetch()),

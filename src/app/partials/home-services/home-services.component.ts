@@ -19,11 +19,11 @@ export class HomeServicesComponent {
 	cards = serviceCards;
 
 	constructor(
-		public dialog             : MatDialog,
-		private state             : StateService,
+		public dialog: MatDialog,
+		private state: StateService,
 		private breakpointObserver: BreakpointObserver,
-		private router            : Router,
-	) { }
+		private router: Router,
+	) {}
 
 	openServiceDialog(id: ServiceType): void {
 		this.breakpointObserver

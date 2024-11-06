@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
-  apiUrl: 'https://submarinewebtest.azurewebsites.net/api/customer',
+	production: true,
+	apiUrl: 'https://submarinewebtest.azurewebsites.net/api/customer',
 };

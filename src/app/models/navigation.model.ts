@@ -114,7 +114,7 @@ export interface FooterLink {
 	label: string;
 	route: string;
 	icon: string;
-	icon_w :string;
+	icon_w: string;
 }
 
 export const footerSocial: FooterLink[] = [

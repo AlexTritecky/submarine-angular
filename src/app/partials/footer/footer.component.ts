@@ -16,7 +16,10 @@ import { ContactDialogComponent } from '../contact-dialog/contact-dialog.compone
 export class FooterComponent {
 	public footerLinks: FooterLink[] = footerSocial;
 
-	constructor(public dialog: MatDialog, private router: Router) {}
+	constructor(
+		public dialog: MatDialog,
+		private router: Router,
+	) {}
 
 	openDialog(): void {
 		const dialogRef = this.dialog.open(ContactDialogComponent, {

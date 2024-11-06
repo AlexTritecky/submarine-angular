@@ -78,6 +78,6 @@ export class TeamComponent implements OnInit {
 	}
 
 	toggleImage(id: number) {
-    this.toggledId = this.toggledId === id ? null : id; // Toggle or reset the ID
-  }
+		this.toggledId = this.toggledId === id ? null : id; // Toggle or reset the ID
+	}
 }
