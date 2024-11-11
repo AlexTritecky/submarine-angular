@@ -65,9 +65,3 @@ jobs:
         with:
           app-name: 'submarinefront'
           package: dist/app  # Ensure correct SSR build directory
-
-      - name: Set Startup Command
-        run: |
-          az webapp config appsettings set --name submarinefront --resource-group submarinefront --settings \
-            PORT=8080 \
-            STARTUP_COMMAND="npm run serve:ssr:app"
