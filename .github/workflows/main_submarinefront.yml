@@ -24,10 +24,10 @@ jobs:
         run: npm install
 
       - name: Build Angular application
-        run: npm run build  # This runs the build script
+        run: npm run build:ssr  # This runs the SSR build script
 
       - name: Zip artifact for deployment
-        run: zip -r release.zip dist/app  # Zips only the SSR build directory
+        run: zip -r release.zip dist/app  # Zips the SSR build directory
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -40,7 +40,6 @@ jobs:
     needs: build
     environment:
       name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
       id-token: write
 
@@ -56,20 +55,19 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_41DD9048978948CC8CBCF8A21A291C42 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1DCA504402254862AAC0F7B20915FC90 }}
-          subscription-id: '589d70bf-00ff-48a5-9307-5587fb4ca59c'  # Correct subscription ID
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID }}
+          subscription-id: '589d70bf-00ff-48a5-9307-5587fb4ca59c'
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'submarinefront'  # Correct app service name
-          package: dist/app  # Deploy only the S1SR build directory
+          app-name: 'submarinefront'
+          package: dist/app  # Ensure correct SSR build directory
 
       - name: Set Startup Command
         run: |
-         az webapp config appsettings set --name submarinefront --resource-group SubmarineFront --settings \
+          az webapp config appsettings set --name submarinefront --resource-group submarinefront --settings \
             PORT=8080 \
             STARTUP_COMMAND="npm run serve:ssr:app"
-
