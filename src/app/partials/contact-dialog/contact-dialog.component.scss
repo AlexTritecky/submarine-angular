@@ -11,6 +11,7 @@
 		line-height: 94.447%;
 		margin-bottom: 16px;
 	}
+
 	p {
 		color: var(--default-black);
 		font-size: 20px;
@@ -38,7 +39,6 @@
 
 				label {
 					color: var(--default-black);
-
 					font-family: "Gilroy-Regular";
 					font-size: 20px;
 					font-weight: 400;
@@ -58,7 +58,6 @@
 
 					&::placeholder {
 						color: var(--default-black);
-
 						font-family: "Gilroy-Regular";
 						font-size: 16px;
 						font-style: normal;
@@ -100,11 +99,9 @@
 				border-radius: 20px;
 				cursor: pointer;
 				padding: 8px 16px;
-
 				border-radius: 50px;
 				background: var(--default-white);
 				box-shadow: 2px 2px 5px 0px #000;
-
 				color: var(--default-black);
 				font-family: "Gilroy-Regular";
 				font-size: 18px;
@@ -170,7 +167,6 @@
 				letter-spacing: 0.48px;
 				text-transform: uppercase;
 				color: var(--default-white);
-
 				position: relative;
 				transition-duration: 0.4s;
 				-webkit-transition-duration: 0.4s;
@@ -248,9 +244,7 @@
 			padding: 24px;
 			border-radius: 50px;
 			background: var(--default-black);
-
 			color: var(--default-white);
-
 			font-family: "Unbounded-Regular";
 			font-size: 14px;
 			font-weight: 500;

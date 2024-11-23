@@ -83,7 +83,6 @@
 				justify-content: space-between;
 				align-items: center;
 
-
 				.team-member {
 					margin-top: 32px;
 
@@ -119,7 +118,6 @@
 
 	&--item {
 		position: relative;
-
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;
@@ -196,11 +194,9 @@
 			transition-duration: 0.4s;
 			-webkit-transition-duration: 0.4s;
 
-
 			@include screen("tablet-portrait") {
 				padding: 16px;
 			}
-
 
 			&:hover {
 				padding: 24px 38px;
@@ -252,11 +248,8 @@
 	from {
 		transform: rotate(0deg);
 	}
+
 	to {
 		transform: rotate(360deg);
 	}
 }
-
-
-
-

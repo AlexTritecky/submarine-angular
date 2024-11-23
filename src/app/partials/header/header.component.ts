@@ -40,7 +40,11 @@ export class HeaderComponent {
 	) {}
 
 	onNavLinkClick(link: NavigationItem) {
-		this.navigationScrollService.navigateAndScroll('', link.route);
+		if (link.scroll) {
+			this.navigationScrollService.navigateAndScroll('', link.scroll);
+		} else {
+			this.router.navigate([link.route]);
+		}
 	}
 
 	onOverlayLinkClick(link: NavigationItem) {

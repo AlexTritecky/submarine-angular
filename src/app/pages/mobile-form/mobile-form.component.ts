@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from '../../partials/header/header.component';
 import {
@@ -22,6 +22,10 @@ import { NgClass } from '@angular/common';
 	styleUrl: './mobile-form.component.scss',
 })
 export class MobileFormComponent {
+
+	private readonly fb = inject(FormBuilder);
+	private readonly emailService = inject(EmailService);
+
 	servicesList: string[] = [
 		'Візуал',
 		'Айдентика',
@@ -39,8 +43,6 @@ export class MobileFormComponent {
 	private isPatchingForm = false;
 
 	constructor(
-		private fb: FormBuilder,
-		private emailService: EmailService,
 	) {
 		this.contactForm = this.fb.group({
 			name: ['', Validators.required],

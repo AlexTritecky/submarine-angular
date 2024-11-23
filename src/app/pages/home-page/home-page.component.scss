@@ -4,7 +4,6 @@
 	background: url(/assets/images/hero-bg.webp) lightgray 50% / cover no-repeat;
 
 	// submarine-angular/src/assets/images/hero-mob-bg.webp
-
 	@include screen("tablet-portrait") {
 		background: url(/assets/images/hero-mob-bg.webp) lightgray 50% / cover no-repeat;
 	}
@@ -79,6 +78,7 @@
 
 	.desktop {
 		display: block;
+
 		@include screen("tablet-portrait") {
 			display: none;
 		}

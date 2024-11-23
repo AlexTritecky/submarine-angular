@@ -1,8 +1,8 @@
-import { Component, Inject, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { Component, inject, Inject, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { HeaderComponent } from '../../partials/header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { CarouselComponent } from '../../partials/carousel/carousel.component';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { StateService } from '../../services/state/state.service';
 import { ServiceType } from '../../models/service.model';
 import { LoaderComponent } from '../../partials/loader/loader.component';
@@ -34,15 +34,16 @@ import { Router } from '@angular/router';
 	styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent implements OnInit {
+
+	private readonly router = inject(Router);
+	private readonly state = inject(StateService);
+	private readonly renderer = inject(Renderer2);
+
 	isLoading = true;
 
 	constructor(
-		public dialog: MatDialog,
-		private state: StateService,
-		private renderer: Renderer2,
-		private router: Router,
 		@Inject(PLATFORM_ID) private platformId: Object,
-	) {}
+	) { }
 
 	ngOnInit() {
 		if (isPlatformBrowser(this.platformId)) {

@@ -10,14 +10,17 @@ export const navigation: NavigationItem[] = [
 	{
 		title: 'Про нас',
 		route: 'about-us',
+		scroll: 'about-us',
 	},
 	{
 		title: 'Послуги',
 		route: 'services',
+		scroll: 'services',
 	},
 	{
 		title: 'Клієнти',
 		route: 'clients',
+		scroll: 'clients',
 	},
 	{
 		title: 'Портфоліо',
@@ -26,6 +29,7 @@ export const navigation: NavigationItem[] = [
 	{
 		title: 'Співпраця',
 		route: 'cooperation',
+		scroll: 'cooperation',
 	},
 ];
 
@@ -44,10 +48,10 @@ export const navOverlayLinks: NavigationItem[] = [
 		route: '',
 		scroll: 'services',
 	},
-	// {
-	// 	title: 'Портфоліо',
-	// 	route: 'portfolio',
-	// },
+	{
+		title: 'Портфоліо',
+		route: 'portfolio',
+	},
 	{
 		title: 'Клієнти',
 		route: '',
@@ -85,10 +89,10 @@ export const navMobileLinks: NavigationItem[] = [
 		route: '',
 		scroll: 'services',
 	},
-	// {
-	// 	title: 'Портфоліо',
-	// 	route: 'portfolio',
-	// },
+	{
+		title: 'Портфоліо',
+		route: 'portfolio',
+	},
 	{
 		title: 'Клієнти',
 		route: '',

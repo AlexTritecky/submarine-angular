@@ -1,8 +1,68 @@
 @if (isLoading) {
-	<app-loader></app-loader>
+<app-loader></app-loader>
 } @else {
-	<section class="app-section hero">
-		<app-header [isViewing]="false"></app-header>
+<section class="app-section hero">
+	<app-header [isViewing]="false"></app-header>
+
+	<div class="actions">
+		<button class="app-button" (click)="becameMember()">
+			<mat-icon svgIcon="icon-button-plus"></mat-icon>
+			Стати частиною команди
+		</button>
+	</div>
+</section>
+
+<section class="app-section team">
+	<div class="app-container">
+		<h1>КОМАНДА</h1>
+
+		<div class="team__list desktop">
+			@for (team of teams; track team.id) {
+			<div class="team--item">
+				<img [src]="team.image" alt="" class="main-image" loading="lazy" />
+				<div class="team-member">
+					<h3>
+						{{ team.name }}
+					</h3>
+					<p>
+						{{ team.position }}
+					</p>
+				</div>
+				<div class="cover" [ngStyle]="{ 'background-image': 'url(' + team.cover_image + ')' }"></div>
+			</div>
+			}
+			<div class="team--item">
+				<img src="assets/images/teams/new-team.svg" class="main-image" />
+			</div>
+		</div>
+
+		<div class="mobile-team-list">
+			@for (team of teams; track team.id) {
+			<div class="item" (click)="toggleImage(team.id)">
+				<img [src]="toggledId === team.id ? team.cover_image : team.image" alt="" class="main-image" loading="lazy" />
+				<div class="mob-view">
+					<div class="team-member">
+						<h3>
+							{{ team.name }}
+						</h3>
+						<p>
+							{{ team.position }}
+						</p>
+					</div>
+
+					<button>
+						<mat-icon [ngStyle]="{ transform: toggledId === team.id ? 'rotate(270deg)' : 'rotate(0deg)' }"
+							svgIcon="icon-gray-arrow"></mat-icon>
+					</button>
+				</div>
+
+			</div>
+			}
+
+			<div class="team--item">
+				<img src="assets/images/teams/new-team.svg" class="main-image" />
+			</div>
+		</div>
 
 		<div class="actions">
 			<button class="app-button" (click)="becameMember()">
@@ -10,67 +70,6 @@
 				Стати частиною команди
 			</button>
 		</div>
-	</section>
-
-	<section class="app-section team">
-		<div class="app-container">
-			<h1>КОМАНДА</h1>
-
-			<div class="team__list desktop">
-				@for (team of teams; track team.id) {
-					<div class="team--item">
-						<img [src]="team.image" alt="" class="main-image" loading="lazy" />
-						<div class="team-member">
-							<h3>
-								{{ team.name }}
-							</h3>
-							<p>
-								{{ team.position }}
-							</p>
-						</div>
-						<div
-							class="cover"
-							[ngStyle]="{ 'background-image': 'url(' + team.cover_image + ')' }"></div>
-					</div>
-				}
-				<div class="team--item">
-					<img src="assets/images/teams/new-team.svg" class="main-image" />
-				</div>
-			</div>
-
-			<div class="mobile-team-list">
-				@for (team of teams; track team.id) {
-					<div class="item" (click)="toggleImage(team.id)">
-						<img [src]="toggledId === team.id ? team.cover_image : team.image" alt="" class="main-image" loading="lazy" />
-						<div class="mob-view">
-							<div class="team-member">
-								<h3>
-									{{ team.name }}
-								</h3>
-								<p>
-									{{ team.position }}
-								</p>
-							</div>
-
-							<button >
-								<mat-icon [ngStyle]="{ transform: toggledId === team.id ? 'rotate(270deg)' : 'rotate(0deg)' }" svgIcon="icon-gray-arrow"></mat-icon>
-							</button>
-						</div>
-
-					</div>
-				}
-
-				<div class="team--item">
-					<img src="assets/images/teams/new-team.svg" class="main-image" />
-				</div>
-			</div>
-
-			<div class="actions">
-				<button class="app-button" (click)="becameMember()">
-					<mat-icon svgIcon="icon-button-plus"></mat-icon>
-					Стати частиною команди
-				</button>
-			</div>
-		</div>
-	</section>
+	</div>
+</section>
 }

@@ -12,5 +12,5 @@ import { NgFor, NgStyle } from '@angular/common';
 })
 export class CarouselComponent {
 	items: CarouselItem[] = carouselItems.sort((a, b) => a.order - b.order);
-	constructor() {}
+	constructor() { }
 }

@@ -10,12 +10,6 @@ export const routes: Routes = [
 		path: 'team',
 		loadComponent: () => import('./pages/team/team.component').then((m) => m.TeamComponent),
 	},
-	// {
-	// 	path: 'portfolio',
-	// 	loadComponent: () =>
-	// 		import('./pages/portfolio/portfolio.component').then((m) => m.PortfolioComponent),
-	// },
-
 	{
 		path: 'cooperation',
 		loadComponent: () =>
@@ -26,6 +20,13 @@ export const routes: Routes = [
 		loadComponent: () =>
 			import('./pages/mobile-services/mobile-services.component').then(
 				(m) => m.MobileServicesComponent,
+			),
+	},
+	{
+		path: 'portfolio',
+		loadComponent: () =>
+			import('./pages/cases-global-page/cases-global-page.component').then(
+				(m) => m.CasesGlobalPageComponent,
 			),
 	},
 	{
