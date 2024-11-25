@@ -37,7 +37,10 @@ export const SVG_ICONS: { [key: string]: string } = {
 	'icon-gray-arrow'      : 'assets/icons/icon-arrow-circle-gray.svg',
 	'icon-b-circle'        : 'assets/icons/icon-circle.svg',
 	'icon-okko-title'      : 'assets/icons/cases/okko-title.svg',
-	'icon-recover-title'   : 'assets/icons/cases/recover-title.svg'
+	'icon-recover-title'   : 'assets/icons/cases/recover-title.svg',
+	'icon-sound-on'        : 'assets/icons/cases/sound-on.svg',
+	'icon-sound-off'       : 'assets/icons/cases/sounds-off.svg',
+	'icon-arrow-circle'    : 'assets/icons/cases/arrow-circle.svg',
 };
 
 @Injectable({

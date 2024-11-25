@@ -9,8 +9,8 @@
 	background-size: 32%, auto, 32%;
 }
 
-.cases-info {
-	margin: 80px auto;
+.section-container {
+	margin: 80px auto 0;
 
 	@include screen("phone") {
 		margin: 40px auto;
@@ -126,6 +126,135 @@
 		.labels {
 			flex-wrap: wrap;
 			justify-content: center;
+		}
+	}
+}
+
+.reels {
+	.carousel-container {
+		position: relative;
+		perspective: 1000px;
+		width: 100%;
+		height: 400px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.carousel {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transform-style: preserve-3d;
+			transition: transform 1s ease-in-out;
+
+			.carousel-item {
+				position: absolute;
+				width: 180px;
+				/* Adjust to fit the desired card size */
+				height: 280px;
+				/* Adjust for aspect ratio */
+				border-radius: 15px;
+				overflow: hidden;
+				box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+				transform-style: preserve-3d;
+				backface-visibility: hidden;
+				transition: transform 1s ease, opacity 0.5s ease;
+				opacity: 0.5;
+
+				&.active {
+					transform: scale(1.2) translateZ(100px);
+					/* Larger and closer for emphasis */
+					opacity: 1;
+					z-index: 10;
+				}
+
+				video {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					display: block;
+				}
+			}
+		}
+
+		.mute-button {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 14px;
+
+			mat-icon {
+				width: 18px;
+				height: 18px;
+			}
+		}
+
+		.carousel-control {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background-color: #9b59b6;
+			color: #fff;
+			border: none;
+			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+
+			&:hover {
+				background-color: #8e44ad;
+			}
+
+			&.left {
+				left: 20px;
+			}
+
+			&.right {
+				right: 20px;
+			}
+		}
+	}
+}
+
+.d-flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.actions {
+	margin-bottom: 80px;
+
+	.app-button {
+		display: flex;
+		align-items: center;
+		padding: 24px 48px;
+		border-radius: 50px;
+		background: var(--222121, #222121);
+
+
+		color: var(--ffffff, #FFF);
+		font-family: "Unbounded-Medium";
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 16px; /* 100% */
+letter-spacing: 0.48px;
+text-transform: uppercase;
+
+		mat-icon {
+			margin-left: 24px;
 		}
 	}
 }
