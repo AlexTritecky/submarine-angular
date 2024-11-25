@@ -63,7 +63,7 @@
 <section class="section-container reels">
 	<div class="app-container">
 		<h2>Знімаємо</h2>
-		<div class="carousel-container">
+		<div class="carousel-container desktop-carousel">
 			<div class="carousel" [ngStyle]="{ transform: 'rotateY(' + angle + 'deg)' }">
 				<div class="carousel-item" *ngFor="let video of videos; let i = index" [class.active]="i === activeIndex"
 					[ngStyle]="{ transform: 'rotateY(' + i * rotationStep + 'deg) translateZ(300px)' }">
@@ -82,8 +82,13 @@
 
 <section class="section-container actions">
 	<div class="app-container d-flex">
-		<button class="app-button" (click)="routeToMain()">
+		<button class="app-button desktop" (click)="routeToMain()">
 			ПОВЕРНУТИСЬ НА ГОЛОВНУ
+			<mat-icon svgIcon="icon-arrow-circle"></mat-icon>
+		</button>
+
+		<button class="app-button mobile" (click)="routeToMain()">
+			До головної сторінки
 			<mat-icon svgIcon="icon-arrow-circle"></mat-icon>
 		</button>
 	</div>

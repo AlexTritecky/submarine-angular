@@ -3,12 +3,12 @@ import { HeaderComponent } from '../../partials/header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { StateService } from '../../services/state/state.service';
-import { NgClass, NgFor, NgStyle } from '@angular/common';
+import { NgFor, NgStyle } from '@angular/common';
 
 @Component({
 	selector: 'app-cases-global-page',
 	standalone: true,
-	imports: [HeaderComponent, MatIconModule, NgStyle, NgFor, NgClass],
+	imports: [HeaderComponent, MatIconModule, NgStyle, NgFor],
 	templateUrl: './cases-global-page.component.html',
 	styleUrl: './cases-global-page.component.scss'
 })

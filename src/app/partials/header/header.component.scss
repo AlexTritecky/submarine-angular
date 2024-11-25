@@ -22,7 +22,7 @@ header {
 			background: var(--default-white);
 			display: flex;
 
-			@include screen("tablet-portrait") {
+			@include screen("tablet-landscape") {
 				display: none;
 			}
 

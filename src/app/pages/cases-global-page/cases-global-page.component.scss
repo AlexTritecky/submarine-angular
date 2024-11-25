@@ -2,11 +2,16 @@
 
 .hero {
 	width: 100%;
-	background:
-		url('/assets/images/cases/desktop-right.webp') no-repeat right,
-		url('/assets/images/cases/desktop-middle.webp') no-repeat center,
-		url('/assets/images/cases/desktop-left.webp') no-repeat left;
-	background-size: 32%, auto, 32%;
+	background-image: url('/assets/images/cases/desktop-case.webp');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;	
+
+	@include screen("tablet-landscape") {
+		background-image: url('/assets/images/cases/mobile-bg.webp');
+		background-size: cover;
+		max-height: 400px;
+	}
 }
 
 .section-container {
@@ -25,12 +30,23 @@
 		line-height: 70px;
 		text-transform: uppercase;
 		margin-bottom: 40px;
+
+		@include screen("phone") {
+			font-size: 40px;
+			line-height: 40px;
+			text-align: start;
+		}
 	}
 }
 
 .cases-cards {
 	display: flex;
 	gap: 24px;
+
+	@include screen("tablet-landscape") {
+		flex-direction: column;
+		align-items: center;
+	}
 
 	.card {
 		width: 350px;
@@ -44,6 +60,12 @@
 		flex-direction: column;
 		justify-content: space-between;
 
+		@include screen("phone") {
+			width: 296px;
+			height: 340px;
+			padding: 48px 24px;
+		}
+
 		.info {
 			display: block;
 			padding-left: 10px;
@@ -56,12 +78,23 @@
 				line-height: 24px;
 				letter-spacing: 0.72px;
 				margin-top: 16px;
+
+				@include screen("phone") {
+					font-size: 16px;
+					line-height: 16px;
+				}
 			}
 		}
 
 		.labels {
 			display: flex;
 			gap: 16px;
+
+			@include screen("phone") {
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 4px;
+			}
 
 			.label {
 				padding: 4px 16px;
@@ -78,6 +111,10 @@
 				line-height: 24px;
 				/* 120% */
 				letter-spacing: 0.6px;
+
+				@include screen("phone") {
+					font-size: 14px;
+				}
 			}
 		}
 	}
@@ -85,6 +122,10 @@
 	.okko {
 		background: url('/assets/images/cases/okko-card.webp');
 		padding-bottom: 83px;
+
+		@include screen("phone") {
+			padding-bottom: 48px;
+		}
 
 		.info {
 			mat-icon {
@@ -101,6 +142,10 @@
 	.recover {
 		background: url('/assets/images/cases/recover-card.webp');
 		padding-bottom: 83px;
+
+		@include screen("phone") {
+			padding-bottom: 48px;
+		}
 
 		.info {
 			mat-icon {
@@ -119,7 +164,12 @@
 
 		.info {
 			p {
+				width: 100%;
 				margin-top: 56px;
+				text-align: center;
+				font-size: 20px;
+				line-height: 24px;
+				font-family: "Gilroy-Bold";
 			}
 		}
 
@@ -136,7 +186,6 @@
 		perspective: 1000px;
 		width: 100%;
 		height: 400px;
-		display: flex;
 		justify-content: center;
 		align-items: center;
 
@@ -153,9 +202,7 @@
 			.carousel-item {
 				position: absolute;
 				width: 180px;
-				/* Adjust to fit the desired card size */
 				height: 280px;
-				/* Adjust for aspect ratio */
 				border-radius: 15px;
 				overflow: hidden;
 				box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
@@ -225,6 +272,14 @@
 			}
 		}
 	}
+
+	.desktop-carousel {
+		display: flex;
+
+		@include screen("phone") {
+			display: none;
+		}
+	}
 }
 
 .d-flex {
@@ -237,24 +292,48 @@
 	margin-bottom: 80px;
 
 	.app-button {
-		display: flex;
 		align-items: center;
 		padding: 24px 48px;
 		border-radius: 50px;
-		background: var(--222121, #222121);
-
-
-		color: var(--ffffff, #FFF);
+		background: var(--default-black);
+		color: var(--default-white);
 		font-family: "Unbounded-Medium";
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 16px; /* 100% */
-letter-spacing: 0.48px;
-text-transform: uppercase;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 16px;
+		/* 100% */
+		letter-spacing: 0.48px;
+		text-transform: uppercase;
 
 		mat-icon {
 			margin-left: 24px;
+		}
+	}
+
+	.desktop {
+		display: flex;
+
+		@include screen("tablet-portrait") {
+			display: none;
+		}
+	}
+
+	.mobile {
+		display: none;
+		padding: 17px;
+		font-size: 10px;
+		line-height: 10px;
+		/* 100% */
+		letter-spacing: 0.3px;
+
+		@include screen("tablet-portrait") {
+			display: flex;
+		}
+
+		mat-icon {
+			width: 14px;
+			height: 14px;
+			margin-left: 8px;
 		}
 	}
 }
