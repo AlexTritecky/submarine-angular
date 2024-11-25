@@ -27,3 +27,105 @@
 		margin-bottom: 40px;
 	}
 }
+
+.cases-cards {
+	display: flex;
+	gap: 24px;
+
+	.card {
+		width: 350px;
+		height: 500px;
+		padding: 80px 14px 35px;
+		background-size: auto;
+		background-repeat: no-repeat;
+		box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.35);
+		border-radius: 50px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.info {
+			display: block;
+			padding-left: 10px;
+
+			p {
+				width: 90%;
+				color: var(--default-white);
+				font-family: "Gilroy-Bold";
+				font-size: 24px;
+				line-height: 24px;
+				letter-spacing: 0.72px;
+				margin-top: 16px;
+			}
+		}
+
+		.labels {
+			display: flex;
+			gap: 16px;
+
+			.label {
+				padding: 4px 16px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50px;
+				background-color: var(--smm-strategy);
+				color: var(--default-white);
+				text-align: center;
+				font-family: "Gilroy-Regular";
+				font-size: 20px;
+				font-weight: 400;
+				line-height: 24px;
+				/* 120% */
+				letter-spacing: 0.6px;
+			}
+		}
+	}
+
+	.okko {
+		background: url('/assets/images/cases/okko-card.webp');
+		padding-bottom: 83px;
+
+		.info {
+			mat-icon {
+				width: 172px;
+				height: 40px;
+			}
+
+			p {
+				margin-top: 16px;
+			}
+		}
+	}
+
+	.recover {
+		background: url('/assets/images/cases/recover-card.webp');
+		padding-bottom: 83px;
+
+		.info {
+			mat-icon {
+				width: 255px;
+				height: 23px;
+			}
+
+			p {
+				margin-top: 33px;
+			}
+		}
+	}
+
+	.cooming-soon {
+		background-color: var(--smm-main);
+
+		.info {
+			p {
+				margin-top: 56px;
+			}
+		}
+
+		.labels {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+}
