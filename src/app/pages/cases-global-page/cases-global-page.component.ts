@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, Renderer2 } from '@angular/core';
 import { HeaderComponent } from '../../partials/header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
@@ -12,10 +12,12 @@ import { NgFor, NgStyle } from '@angular/common';
 	templateUrl: './cases-global-page.component.html',
 	styleUrl: './cases-global-page.component.scss'
 })
-export class CasesGlobalPageComponent {
+export class CasesGlobalPageComponent implements AfterViewInit {
 
 	private readonly router = inject(Router);
 	private readonly state = inject(StateService);
+	private readonly renderer = inject(Renderer2);
+	private readonly elementRef = inject(ElementRef);
 
 	videos = [
 		{ src: 'assets/videos/case-1.MP4', muted: true },
@@ -34,9 +36,45 @@ export class CasesGlobalPageComponent {
 	angle = 0;
 	rotationStep = 45; // Smaller steps for tighter positioning
 	translateZ = 250; // Adjust for card depth positioning
+	private startX = 0;
+	private endX = 0;
 
 	constructor() { }
 
+	ngAfterViewInit(): void {
+		const container = this.elementRef.nativeElement.querySelector(
+			'.mobile-carousel'
+		);
+
+		// Attach touch events
+		this.renderer.listen(container, 'touchstart', (event: TouchEvent) => {
+			this.startX = event.touches[0].clientX;
+		});
+
+		this.renderer.listen(container, 'touchmove', (event: TouchEvent) => {
+			this.endX = event.touches[0].clientX;
+		});
+
+		this.renderer.listen(container, 'touchend', () => {
+			this.handleSwipe();
+		});
+	}
+
+	handleSwipe(): void {
+		const swipeDistance = this.endX - this.startX;
+
+		if (Math.abs(swipeDistance) > 50) {
+			if (swipeDistance < 0) {
+				this.next(); // Swipe left
+			} else {
+				this.prev(); // Swipe right
+			}
+		}
+
+		// Reset swipe positions
+		this.startX = 0;
+		this.endX = 0;
+	}
 
 	routeToMain(): void {
 		this.router.navigate(['/']);

@@ -5,7 +5,7 @@
 	background-image: url('/assets/images/cases/desktop-case.webp');
 	background-size: 100%;
 	background-repeat: no-repeat;
-	background-size: contain;	
+	// background-size: contain;
 
 	@include screen("tablet-landscape") {
 		background-image: url('/assets/images/cases/mobile-bg.webp');
@@ -181,13 +181,18 @@
 }
 
 .reels {
-	.carousel-container {
+	.desktop-carousel {
 		position: relative;
 		perspective: 1000px;
 		width: 100%;
 		height: 400px;
+		display: flex;
 		justify-content: center;
 		align-items: center;
+
+		@include screen("phone") {
+			display: none;
+		}
 
 		.carousel {
 			position: relative;
@@ -273,12 +278,84 @@
 		}
 	}
 
-	.desktop-carousel {
-		display: flex;
+	.mobile-carousel {
+		display: none;
+			position: relative;
+			width: 100%;
+			max-width: 600px;
+			margin: 0 auto;
+			overflow: hidden;
+			// display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #fff;
 
-		@include screen("phone") {
-			display: none;
+		
+		.carousel-wrapper {
+			display: flex;
+			transition: transform 0.5s ease-in-out;
+			transform-style: preserve-3d;
+			gap: 20px; // Spacing between carousel items
 		}
+		
+		.carousel-item {
+			flex: 0 0 80%; // Adjust width to match the design
+			max-width: 300px;
+			height: 400px;
+			background-color: #ddd;
+			border-radius: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transform: scale(0.8); // Scale down non-active items
+			transition: transform 0.5s ease, opacity 0.5s ease;
+		
+			&.active {
+				transform: scale(1); // Scale up the active item
+				z-index: 1;
+			}
+		}
+		
+		video {
+			width: 100%;
+			height: 100%;
+			border-radius: 20px;
+			object-fit: cover; // Ensures video fills the container
+		}
+		
+		.mute-button {
+			position: absolute;
+			bottom: 15px;
+			right: 15px;
+			background-color: rgba(0, 0, 0, 0.6);
+			color: #fff;
+			border: none;
+			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			font-size: 1.2rem;
+		
+			mat-icon {
+				font-size: 1.5rem;
+			}
+		}
+		
+		.carousel-background {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: radial-gradient(circle, #ddd, #aaa);
+			border-radius: 20px;
+			z-index: -1;
+		}
+		
 	}
 }
 

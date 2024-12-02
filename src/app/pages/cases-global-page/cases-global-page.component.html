@@ -77,6 +77,37 @@
 			<button class="carousel-control left" (click)="prev()">&#8592;</button>
 			<button class="carousel-control right" (click)="next()">&#8594;</button>
 		</div>
+
+		<div class="carousel-container mobile-carousel">
+			<div
+			class="carousel-wrapper"
+			[style.transform]="'translateX(-' + activeIndex * 100 + '%)'"
+			[style.transition]="'transform 0.5s ease-in-out'"
+		>
+			<div
+				*ngFor="let video of videos; let i = index"
+				class="carousel-item"
+				[class.active]="activeIndex === i"
+			>
+				<video
+					#videoPlayer
+					[src]="video.src"
+					[muted]="video.muted"
+					playsinline
+					(loadedmetadata)="onVideoLoad($event)"
+				></video>
+				<button
+					class="mute-button"
+					(click)="toggleMute(i)"
+					[ngStyle]="{ bottom: '10px', right: '10px' }"
+				>
+					<mat-icon>
+						{{ video.muted ? 'volume_off' : 'volume_up' }}
+					</mat-icon>
+				</button>
+			</div>
+		</div>
+		</div>
 	</div>
 </section>
 
