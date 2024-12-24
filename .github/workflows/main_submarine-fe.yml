@@ -63,4 +63,4 @@ jobs:
           app-name: 'submarine-fe'
           slot-name: 'Production'
           package: dist/ # Deploy the SSR build directory
-          startup-command: 'node dist/server/server.mjs' # Run the SSR server script
+          startup-command: 'node server/server.mjs' # Run the SSR server script
