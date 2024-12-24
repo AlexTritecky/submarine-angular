@@ -25,7 +25,7 @@ jobs:
         run: npm run build --c=production
 
       - name: Zip artifact for deployment
-        run: zip -r release.zip dist/app # Package the `dist` directory containing the built app
+        run: zip -r release.zip dist/ # Package the `dist` directory containing the built app
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -63,4 +63,4 @@ jobs:
           app-name: 'submarine-fe'
           slot-name: 'Production'
           package: dist/ # Deploy the SSR build directory
-          startup-command: 'node dist/app/server/server.mjs' # Run the SSR server script
+          startup-command: 'node dist/server/server.mjs' # Run the SSR server script
