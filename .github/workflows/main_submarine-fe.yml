@@ -53,9 +53,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: 7fe0de6b-a5ce-4b34-b8a7-0adefaef33d3
-          tenant-id: b7253a37-9654-48b4-8cab-60b69cd48967
-          subscription-id: 589d70bf-00ff-48a5-9307-5587fb4ca59c
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID }}
 
       - name: Deploy SSR app to Azure
         uses: azure/webapps-deploy@v3
