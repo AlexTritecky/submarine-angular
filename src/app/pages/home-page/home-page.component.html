@@ -30,7 +30,7 @@
 
 <section class="app-section clients" id="clients">
 	<div class="app-container" lazyLoad>
-		<h2>КЛІЄНТИ</h2>
+		<h2>ПАРТНЕРИ</h2>
 	</div>
 </section>
 
@@ -46,10 +46,10 @@
 
 <section class="app-section cooperation" id="cooperation">
 	<div class="app-container desktop" lazyLoad>
-		<app-home-cooperation></app-home-cooperation>
+		<app-home-cooperation (eventOpenDialog)="openDialog()"></app-home-cooperation>
 	</div>
 	<div class="app-container mobile" lazyLoad>
-		<app-home-cooperation-mobile></app-home-cooperation-mobile>
+		<app-home-cooperation-mobile (eventOpenDialog)="openDialog()"></app-home-cooperation-mobile>
 	</div>
 </section>
 }

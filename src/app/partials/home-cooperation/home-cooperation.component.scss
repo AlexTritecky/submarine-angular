@@ -8,9 +8,10 @@ h1 {
 }
 
 .block-info {
-	padding-bottom: 57.5px;
+	padding-bottom: 37.5px;
 	display: flex;
 	flex-direction: column;
+
 
 	.steps-titles {
 		display: flex;
@@ -70,6 +71,19 @@ h1 {
 
 		mat-icon {
 			width: 24px;
+		}
+	}
+
+	.actions {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		margin-top: 40px;
+
+		.consult {
+			display: block;
+			max-width: 340px;
+			padding: 10px 20px;
 		}
 	}
 }

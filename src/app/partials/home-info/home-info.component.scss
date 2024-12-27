@@ -8,11 +8,13 @@ h1 {
 	line-height: 70px;
 	text-transform: uppercase;
 	margin-bottom: 42px;
+	width: 75%;
 
 	@include screen("phone") {
 		font-size: 16px;
 		line-height: 24px;
 		margin-bottom: 16px;
+		width: 100%;
 	}
 
 	br {

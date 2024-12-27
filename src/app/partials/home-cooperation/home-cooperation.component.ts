@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -8,4 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 	templateUrl: './home-cooperation.component.html',
 	styleUrl: './home-cooperation.component.scss',
 })
-export class HomeCooperationComponent {}
+export class HomeCooperationComponent {
+
+	readonly eventOpenDialog = output<void>();
+}

@@ -76,3 +76,16 @@ h1 {
 		}
 	}
 }
+
+.actions {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top: 40px;
+
+	.consult {
+		display: block;
+		max-width: 340px;
+		padding: 10px 20px;
+	}
+}
