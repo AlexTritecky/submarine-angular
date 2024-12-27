@@ -177,6 +177,14 @@ footer {
 				}
 			}
 
+			.mobile-view {
+				display: none;
+
+				@include screen("tablet-portrait") {
+					display: block;
+				}
+			}
+
 			.mail-info {
 				margin-top: 0;
 
