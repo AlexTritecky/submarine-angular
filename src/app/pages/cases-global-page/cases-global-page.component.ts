@@ -6,17 +6,17 @@ import { StateService } from '../../services/state/state.service';
 import { NgFor, NgStyle } from '@angular/common';
 
 @Component({
-	selector: 'app-cases-global-page',
-	standalone: true,
-	imports: [HeaderComponent, MatIconModule, NgStyle, NgFor],
+	selector   : 'app-cases-global-page',
+	standalone : true,
+	imports    : [HeaderComponent, MatIconModule, NgStyle, NgFor],
 	templateUrl: './cases-global-page.component.html',
-	styleUrl: './cases-global-page.component.scss'
+	styleUrl   : './cases-global-page.component.scss'
 })
 export class CasesGlobalPageComponent implements AfterViewInit {
 
-	private readonly router = inject(Router);
-	private readonly state = inject(StateService);
-	private readonly renderer = inject(Renderer2);
+	private readonly router     = inject(Router);
+	private readonly state      = inject(StateService);
+	private readonly renderer   = inject(Renderer2);
 	private readonly elementRef = inject(ElementRef);
 
 	videos = [
@@ -32,14 +32,15 @@ export class CasesGlobalPageComponent implements AfterViewInit {
 		{ src: 'assets/videos/case-10.MP4', muted: true },
 		{ src: 'assets/videos/case-11.MP4', muted: true },
 	];
-	activeIndex = 0;
-	angle = 0;
-	rotationStep = 45; // Smaller steps for tighter positioning
-	translateZ = 250; // Adjust for card depth positioning
+	activeIndex    = 0;
+	angle          = 0;
+	rotationStep   = 45; // Smaller steps for tighter positioning
+	translateZ     = 250; // Adjust for card depth positioning
 	private startX = 0;
-	private endX = 0;
+	private endX   = 0;
 
 	constructor() { }
+
 
 	ngAfterViewInit(): void {
 		const container = this.elementRef.nativeElement.querySelector(
@@ -60,6 +61,7 @@ export class CasesGlobalPageComponent implements AfterViewInit {
 		});
 	}
 
+
 	handleSwipe(): void {
 		const swipeDistance = this.endX - this.startX;
 
@@ -76,13 +78,16 @@ export class CasesGlobalPageComponent implements AfterViewInit {
 		this.endX = 0;
 	}
 
+
 	routeToMain(): void {
 		this.router.navigate(['/']);
 	}
 
+
 	openDialog(): void {
 		this.state.openStateDialog();
 	}
+
 
 	next() {
 		this.updateVideoState();
@@ -90,6 +95,7 @@ export class CasesGlobalPageComponent implements AfterViewInit {
 		this.angle -= this.rotationStep;
 		this.updateActiveVideo();
 	}
+
 
 	prev() {
 		this.updateVideoState();
@@ -99,12 +105,14 @@ export class CasesGlobalPageComponent implements AfterViewInit {
 		this.updateActiveVideo();
 	}
 
+
 	onVideoLoad(event: Event) {
 		const video = event.target as HTMLVideoElement;
 		if (this.videos[this.activeIndex].src === video.src) {
 			video.play();
 		}
 	}
+
 
 	toggleMute(index: number) {
 		this.videos[index].muted = !this.videos[index].muted;
@@ -113,6 +121,7 @@ export class CasesGlobalPageComponent implements AfterViewInit {
 			videoElement.muted = this.videos[index].muted;
 		}
 	}
+
 
 	updateActiveVideo() {
 		const videos = document.querySelectorAll('video');
@@ -127,6 +136,7 @@ export class CasesGlobalPageComponent implements AfterViewInit {
 			}
 		});
 	}
+
 
 	updateVideoState() {
 		const activeVideo = document.querySelectorAll('video')[this.activeIndex];

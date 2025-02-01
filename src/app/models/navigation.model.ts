@@ -1,37 +1,40 @@
 export interface NavigationItem {
-	title: string;
-	route: string;
-	scroll?: string;
-	openForm?: boolean;
+	title       : string;
+	route       : string;
+	scroll?     : string;
+	openForm?   : boolean;
 	mobileRoute?: string;
 }
 
+
 export const navigation: NavigationItem[] = [
 	{
-		title: 'Про нас',
-		route: 'about-us',
+		title : 'Про нас',
+		route : 'about-us',
 		scroll: 'about-us',
 	},
 	{
-		title: 'Послуги',
-		route: 'services',
+		title : 'Послуги',
+		route : 'services',
 		scroll: 'services',
 	},
 	{
-		title: 'Клієнти',
-		route: 'clients',
+		title : 'Клієнти',
+		route : 'clients',
 		scroll: 'clients',
 	},
 	{
-		title: 'Портфоліо',
-		route: 'portfolio',
+		title : 'Портфоліо',
+		route : 'portfolio',
+		scroll: 'portfolio',
 	},
 	{
-		title: 'Співпраця',
-		route: 'cooperation',
+		title : 'Співпраця',
+		route : 'cooperation',
 		scroll: 'cooperation',
 	},
 ];
+
 
 export const navOverlayLinks: NavigationItem[] = [
 	{
@@ -39,13 +42,13 @@ export const navOverlayLinks: NavigationItem[] = [
 		route: '/',
 	},
 	{
-		title: 'Про нас',
-		route: '',
+		title : 'Про нас',
+		route : '',
 		scroll: 'about-us',
 	},
 	{
-		title: 'Послуги',
-		route: '',
+		title : 'Послуги',
+		route : '',
 		scroll: 'services',
 	},
 	{
@@ -53,13 +56,13 @@ export const navOverlayLinks: NavigationItem[] = [
 		route: 'portfolio',
 	},
 	{
-		title: 'Клієнти',
-		route: '',
+		title : 'Клієнти',
+		route : '',
 		scroll: 'clients',
 	},
 	{
-		title: 'Співпраця',
-		route: '',
+		title : 'Співпраця',
+		route : '',
 		scroll: 'cooperation',
 	},
 	{
@@ -67,12 +70,13 @@ export const navOverlayLinks: NavigationItem[] = [
 		route: 'team',
 	},
 	{
-		title: 'Написати нам',
-		route: '',
-		openForm: true,
+		title      : 'Написати нам',
+		route      : '',
+		openForm   : true,
 		mobileRoute: 'cooperation',
 	},
 ];
+
 
 export const navMobileLinks: NavigationItem[] = [
 	{
@@ -80,27 +84,28 @@ export const navMobileLinks: NavigationItem[] = [
 		route: '/',
 	},
 	{
-		title: 'Про нас',
-		route: '',
+		title : 'Про нас',
+		route : '',
 		scroll: 'about-us',
 	},
 	{
-		title: 'Послуги',
-		route: '',
+		title : 'Послуги',
+		route : '',
 		scroll: 'services',
 	},
 	{
-		title: 'Портфоліо',
-		route: 'portfolio',
+		title : 'Портфоліо',
+		route : 'portfolio',
+		scroll: 'portfolio',
 	},
 	{
-		title: 'Клієнти',
-		route: '',
+		title : 'Клієнти',
+		route : '',
 		scroll: 'clients',
 	},
 	{
-		title: 'Співпраця',
-		route: '',
+		title : 'Співпраця',
+		route : '',
 		scroll: 'cooperation',
 	},
 	{
@@ -108,8 +113,8 @@ export const navMobileLinks: NavigationItem[] = [
 		route: 'team',
 	},
 	{
-		title: 'Написати нам',
-		route: 'cooperation',
+		title   : 'Написати нам',
+		route   : 'cooperation',
 		openForm: false,
 	},
 ];

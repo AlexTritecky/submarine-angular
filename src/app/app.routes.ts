@@ -22,13 +22,13 @@ export const routes: Routes = [
 				(m) => m.MobileServicesComponent,
 			),
 	},
-	{
-		path: 'portfolio',
-		loadComponent: () =>
-			import('./pages/cases-global-page/cases-global-page.component').then(
-				(m) => m.CasesGlobalPageComponent,
-			),
-	},
+	// {
+	// 	path: 'portfolio',
+	// 	loadComponent: () =>
+	// 		import('./pages/cases-global-page/cases-global-page.component').then(
+	// 			(m) => m.CasesGlobalPageComponent,
+	// 		),
+	// },
 	{
 		path: '**',
 		redirectTo: '',

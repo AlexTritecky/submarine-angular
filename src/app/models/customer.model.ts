@@ -1,13 +1,13 @@
 export interface CustomerRequest {
-	name: string;
-	phone: string;
-	email: string;
+	name       : string;
+	phone      : string;
+	email      : string;
 	companyName: string;
-	services: string[];
-	message: string;
+	services   : string[];
+	message    : string;
 }
 
 export interface CustomerResponse {
-	message: string;
+	message : string;
 	complete: boolean;
 }

@@ -16,7 +16,7 @@ import { StateService } from '../../services/state/state.service';
 @Component({
 	selector: 'app-header',
 	standalone: true,
-	imports: [RouterLink, MatIconModule, NgClass],
+	imports: [ MatIconModule, NgClass ],
 	templateUrl: './header.component.html',
 	styleUrl: './header.component.scss',
 })

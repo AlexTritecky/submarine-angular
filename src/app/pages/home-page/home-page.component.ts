@@ -14,9 +14,9 @@ import { isPlatformBrowser } from '@angular/common';
 import { HomeCooperationMobileComponent } from '../../partials/home-cooperation-mobile/home-cooperation-mobile.component';
 import { Router } from '@angular/router';
 @Component({
-	selector: 'app-home-page',
-	standalone: true,
-	imports: [
+	selector   : 'app-home-page',
+	standalone : true,
+	imports    : [
 		HeaderComponent,
 		MatIconModule,
 		CarouselComponent,
@@ -29,14 +29,14 @@ import { Router } from '@angular/router';
 		LoaderComponent,
 		HomeCooperationMobileComponent,
 	],
-	providers: [StateService],
+	providers  : [StateService],
 	templateUrl: './home-page.component.html',
-	styleUrl: './home-page.component.scss',
+	styleUrl   : './home-page.component.scss',
 })
 export class HomePageComponent implements OnInit {
 
-	private readonly router = inject(Router);
-	private readonly state = inject(StateService);
+	private readonly router   = inject(Router);
+	private readonly state    = inject(StateService);
 	private readonly renderer = inject(Renderer2);
 
 	isLoading = true;
